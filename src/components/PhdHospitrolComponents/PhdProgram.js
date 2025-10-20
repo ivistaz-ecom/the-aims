@@ -24,7 +24,7 @@ const PhdProgram = () => {
                         {/* Right Side - Paragraph */}
                         <div className="lg:w-1/2 flex items-start">
                             <p className="text-gray-700 text-sm md:text-base lg:text-lg leading-relaxed text-center lg:text-left">
-                                All provisionally registered candidates shall undergo course-work of one semester duration of 20 weeks inclusive course-end assessment. The University shall notify the time table and details of the course work including the schedule.
+                            All provisionally registered candidates shall undergo coursework of one semester over a duration of 20 weeks, inclusive of the course-end assessment. The University shall notify the timetable and details of the coursework, including the schedule.
                             </p>
                         </div>
                     </div>
@@ -39,12 +39,12 @@ const PhdProgram = () => {
                         <h2 className="text-lg md:text-xl font-semibold mb-4">
                             The suggested course structure for PhD Programs in Management, Commerce and English of UoM generally consists of:
                         </h2>
-                        <ul className="list-disc list-inside space-y-2 mb-6 text-sm md:text-base pl-1">
-                            <li>Research Methodology</li>
-                            <li>Review of Literature and Seminars</li>
-                            <li>Submission of Annual progress reports</li>
-                            <li>Two research paper publications</li>
-                            <li>Thesis submission - After 30 months (minimum)</li>
+                        <ul className="list-disc list-inside space-y-2 mb-6 pl-1">
+                            <li className='text-lg'>Research Methodology</li>
+                            <li className='text-lg'>Review of Literature and Seminars</li>
+                            <li className='text-lg'>Submission of Annual progress reports</li>
+                            <li className='text-lg'>Two research paper publications</li>
+                            <li className='text-lg'>Thesis submission - After 30 months (minimum)</li>
                         </ul>
                     </div>
 
@@ -79,7 +79,7 @@ const PhdProgram = () => {
                             showArrow={true}
                             showReadMore={false}
                             variant="secondary"
-                            className="bg-white text-[#0C2165] px-4 py-2 rounded-full hover:bg-gray-100 flex items-center gap-1"
+                            className="text-[#0C2165] px-4 py-2 rounded-full flex items-center gap-1"
                         >
                             Download PDF
                         </Button>

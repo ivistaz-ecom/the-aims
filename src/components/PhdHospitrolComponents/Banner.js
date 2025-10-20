@@ -16,19 +16,19 @@ const PhdBanner = ({ announcements, pageType = 'phd' }) => {
         <div className="relative z-10 container mx-auto h-full flex flex-col md:justify-between justify-center px-4 lg:px-6">
 
           {/* Top-right Logo */}
-          <div className="absolute top-4 sm:top-6 lg:top-4 right-4 sm:right-6 lg:right-8 z-20">
+          <div className="absolute top-4 sm:top-6 lg:top-8 right-4 sm:right-6 lg:right-8 z-20">
             <Image
               src="/pre-university-college/empowering_minds_since1994.webp"
               alt="Empowering Minds Since 1994"
-              width={160}
-              height={60}
-              className="object-contain"
+              width={200}
+              height={200}
+              className="object-contain h-auto w-50 "
               priority
             />
           </div>
 
           {/* Headline */}
-          <div className="pt-20 lg:pt-0 text-white text-center md:text-left">
+          <div className="pt-20 lg:pt-0 text-white text-center md:text-left lg:mt-5">
             <h1 className="font-bold leading-tight md:text-left text-center text-3xl sm:text-4xl lg:text-5xl">
               Focused Research.<br /> Real-World Impact.
             </h1>
@@ -49,7 +49,7 @@ const PhdBanner = ({ announcements, pageType = 'phd' }) => {
               <Image
                 src="/business_school/phd/phd_logo.webp"
                 alt="Accreditations"
-                width={400}
+                width={200}
                 height={100}
                 className="w-[350px] h-auto object-contain"
               />
