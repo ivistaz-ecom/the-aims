@@ -87,14 +87,18 @@ const SGRC = () => {
           </div>
         </div>
       </div>
-      <div className="px-4 md:px-6 lg:px-8 py-6 md:py-10">
+      <div className="px-4 md:px-6 lg:px-8 py-4 md:py-10">
         <div className="container mx-auto">
+          <h5 className="text-center text-[#0C2165] playfair-300 text-3xl md:text-3xl lg:text-6xl mb-6 lg:mb-8">
+            Students Grievance Redressal <br className="hidden md:block" />{" "}
+            Mechanism
+          </h5>
           <Image
             src="/grievance-redressal/chart-new.webp"
             alt="SGRC"
             width={1000}
             height={1000}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover px-4 lg:px-8 mb-6 lg:md-0"
             priority
           />
         </div>

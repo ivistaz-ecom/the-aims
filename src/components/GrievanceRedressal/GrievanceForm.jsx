@@ -226,7 +226,7 @@ const GrievanceForm = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name Section */}
             <div className="space-y-4">
-              <h2 className="text-white text-3xl md:text-4xl monser-600">
+              <h2 className="text-white text-2xl md:text-4xl monser-600">
                 Name{" "}
                 <span className="text-white text-sm monser-400">
                   (required)
@@ -307,7 +307,7 @@ const GrievanceForm = () => {
 
             {/* Contact Number Section */}
             <div className="space-y-4">
-              <h2 className="text-white text-3xl md:text-4xl monser-600">
+              <h2 className="text-white text-2xl md:text-4xl monser-600">
                 Contact Number{" "}
                 <span className="text-white text-sm monser-400">
                   (required)
