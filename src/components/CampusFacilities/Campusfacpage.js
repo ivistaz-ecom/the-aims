@@ -92,7 +92,7 @@ const Campusfacpage = () => {
                   "polygon(0 0, calc(100% - 45px) 0, 100% 50%, calc(100% - 45px) 100%, 0 100%, 50px 50%)",
               }}
             >
-              <span className="px-2 md:line-clamp-10">{club.text}</span>
+              <span className="px-2 md:line-clamp-">{club.text}</span>
             </div>
           ))}
         </div>

@@ -23,7 +23,7 @@ const Banner = ({ announcements, pageType = "engineering" }) => {
         <div className="absolute top-2 left-0 right-0 px-4 lg:px-8">
           <div className="container mx-auto py-4 ">
             <div>
-              <h6 className="tracking-wider text-xs sm:text-sm lg:text-base text-black">
+              <h6 className="tracking-[0.25em] !font-[500] text-[13px] text-black">
                 EMPOWERING MINDS
               </h6>
               <h5
