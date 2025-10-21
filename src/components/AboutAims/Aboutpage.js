@@ -21,14 +21,13 @@ const Aboutpage = () => {
                 focused on helping students set clear goals and build the
                 precision, discipline, and confidence required to reach them.
               </p>
-              <p className="">
+              <p>
                 Recognised as one of the top business & hospitality colleges in
                 Bangalore, AIMS offers industry-relevant programs,
                 outcome-focused lectures, and a strong commitment to student
                 transformation. Our ecosystem supports every learner, from
-                <br className="block md:hidden" />
-                <span className="">first-generation students</span> to future
-                entrepreneurs, with a clear roadmap to success.
+                first-generation students to future entrepreneurs, with a clear
+                roadmap to success.
               </p>
             </div>
           </div>
