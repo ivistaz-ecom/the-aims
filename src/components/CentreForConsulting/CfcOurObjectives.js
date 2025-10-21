@@ -33,7 +33,7 @@ const CfcOurObjectives = () => {
                                         As a Centre of Excellence, ACC is committed to:
                                     </h5>
                                     <div>
-                                        <ul className="list-disc list-inside text-start monser-400 text-lg lg:text-[20px] flex flex-col gap-4">
+                                        <ul className="list-disc list-inside text-start monser-400 text-lg lg:text-[18px] flex flex-col gap-4">
                                             <li className="flex items-start gap-3">
                                                 <span className="text-black">•</span>
                                                 Enhance the practical capabilities of AIMS students and faculty through hands-on learning and industry exposure

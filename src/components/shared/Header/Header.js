@@ -119,7 +119,7 @@ export default function Header() {
               >
                 <Link href="/" scroll={false} onClick={handleLogoClick}>
                   <Image
-                    src="/logo.svg"
+                    src="/AIMS-logo.svg"
                     alt="AIMS Logo"
                     width={360}
                     height={120}
@@ -239,7 +239,7 @@ export default function Header() {
                 <div className="flex justify-between items-center p-4 bg-white border-b border-gray-200 flex-shrink-0">
                   <Link href="/" scroll={false} onClick={handleLogoClick}>
                     <Image
-                      src="/logo.svg"
+                      src="/AIMS-logo.svg"
                       alt="AIMS Logo"
                       width={280}
                       height={94}

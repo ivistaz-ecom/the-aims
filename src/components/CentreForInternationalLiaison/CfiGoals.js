@@ -17,16 +17,16 @@ const CfiGoals = () => {
                                         Goals
                                     </h3>
                                     <ul className='list-disc list-inside text-start monser-400 flex flex-col gap-4'>
-                                        <li className='text-lg lg:text-[20px] monser-400'>
+                                        <li className='text-lg lg:text-[18px] monser-400'>
                                             Represent AIMS Institutes on global platforms that would help us achieve AIMS Institute’s vision of moulding professionals of global excellence
                                         </li>
-                                        <li className='text-lg lg:text-[20px] monser-400'>
+                                        <li className='text-lg lg:text-[18px] monser-400'>
                                             Facilitate strategic collaborations with Global Universities/Institutions and Organisations of repute for activities like student/faculty exchange programs, joint research and conferences, and facilitating intake into various courses offered at AIMS Institutes, apart from providing career pathways for AIMERS
                                         </li>
-                                        <li className='text-lg lg:text-[20px] monser-400'>
+                                        <li className='text-lg lg:text-[18px] monser-400'>
                                             Provide a support system and assistance to international students and professors visiting AIMS Institutes
                                         </li>
-                                        <li className='text-lg lg:text-[20px] monser-400'>
+                                        <li className='text-lg lg:text-[18px] monser-400'>
                                             Plan and organise global immersion programs that add value for AIMERS and host delegations from foreign Universities and organisations
                                         </li>
                                     </ul>

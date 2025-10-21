@@ -28,7 +28,7 @@ const OurGoalsandObjectives = () => {
                     At ACS, we aim to:
                   </h5>
                   <div>
-                    <ul className='list-disc list-inside text-start monser-400 flex flex-col gap-4'>
+                    <ul className='list-disc list-inside text-start monser-400 flex flex-col gap-4 text-[18px]'>
                       <li>
                         Study best practices adopted by civic bodies, academic institutions, industries, and communities, and adapt them into practical, sustainable development programs for college students
                       </li>
@@ -67,7 +67,7 @@ const OurGoalsandObjectives = () => {
                     ACS works to:
                   </h5>
                   <div>
-                    <ul className='list-disc list-inside text-start monser-400 flex flex-col gap-4'>
+                    <ul className='list-disc list-inside text-start monser-400 flex flex-col gap-4 text-[18px]'>
                       <li>
                         Facilitate industry-academia collaboration for sustainability in Bangalore, sharing global best practices in clean energy, water use, waste management, and carbon mitigation
                       </li>

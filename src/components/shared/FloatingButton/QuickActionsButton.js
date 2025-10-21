@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaWhatsapp, FaPlus, FaFacebook } from "react-icons/fa";
-import { SiOpenai } from "react-icons/si";
 
 const QuickActionsButton = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -139,23 +138,6 @@ const QuickActionsButton = () => {
                         <FaWhatsapp className="w-7 h-7" />
                         {/* Glow Ring */}
                         <div className="absolute inset-0 rounded-full bg-green-400/30 animate-ping"></div>
-                    </Link>
-
-                    {/* Lyro AI Button - Top Left */}
-                    <Link
-                        href="https://lyro.ai"
-                        target="_blank"
-                        className={`absolute bg-gradient-to-br from-blue-400 to-blue-600 text-white w-14 h-14 rounded-full shadow-2xl hover:shadow-blue-500/50 transition-all duration-1000 flex items-center justify-center
-                        transform border-2 border-blue-300/30 backdrop-blur-sm hover:scale-110
-                        ${isMobile ?
-                                (isExpanded ? 'opacity-100 scale-100 translate-x-[-80px] translate-y-[-80px] animate-pulse' : 'opacity-0 scale-0') :
-                                'opacity-0 scale-0 group-hover:scale-100 group-hover:opacity-100 group-hover:translate-x-[-80px] group-hover:translate-y-[-80px] group-hover:animate-pulse hover:opacity-100 hover:scale-100'
-                            }`}
-                        style={{ transitionDelay: '100ms' }}
-                    >
-                        <SiOpenai className="w-7 h-7" />
-                        {/* Glow Ring */}
-                        <div className="absolute inset-0 rounded-full bg-blue-400/30 animate-ping" style={{ animationDelay: '0.5s' }}></div>
                     </Link>
 
                     {/* Facebook Button - Left */}
