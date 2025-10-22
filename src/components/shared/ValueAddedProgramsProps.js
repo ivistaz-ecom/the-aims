@@ -37,7 +37,7 @@ const ValueAddedPrograms = ({
   return (
     <>
       <div className="py-6 md:py-10 bg-white px-4 lg:px-8">
-        <div className="hidden lg:block absolute right-0 z-40">
+        <div className="hidden lg:block absolute right-0">
           <Image
             src="/MBA/semi-circle.svg"
             alt="Semicircle"

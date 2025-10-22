@@ -13,7 +13,7 @@ const LibraryAndPhysicalEducation = () => {
   const data = [
     [
       "1",
-      "Mr. Vidya Sagar R J",
+      "Mr Vidya Sagar R J",
       "BA, MLISC",
       "Assistant Professor & Librarian",
       "-",
@@ -27,8 +27,8 @@ const LibraryAndPhysicalEducation = () => {
     ],
     [
       "3",
-      "Dr. Shiva Prasad N S",
-      "BsDIP, BA, MPES, NET, Ph.D",
+      "Dr Shiva Prasad N S",
+      "BsDIP, BA, MPES, NET, PhD",
       "Assistant Professor & Physical Director",
       "Physical Education",
     ],

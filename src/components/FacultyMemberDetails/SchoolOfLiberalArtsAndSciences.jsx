@@ -14,7 +14,7 @@ const SchoolOfLiberalArtsAndSciences = () => {
     [
       "1",
       "Ms Anitha B",
-      "MSW, KSET, NET (Ph.D)",
+      "MSW, KSET, NET (PhD)",
       "Assistant Professor",
       "Social Work",
     ],
@@ -28,14 +28,14 @@ const SchoolOfLiberalArtsAndSciences = () => {
     [
       "3",
       "Ms Deepa V H",
-      "B.Sc, M.Sc, B.Ed, NET (Ph.D)",
+      "B.Sc, M.Sc, B.Ed, NET (PhD)",
       "Assistant Professor",
       "Science",
     ],
     [
       "4",
       "Ms Vijayaraj K S",
-      "MA, M.Phil, (Ph.D)",
+      "MA, M.Phil, (PhD)",
       "Assistant Professor",
       "English Literature",
     ],

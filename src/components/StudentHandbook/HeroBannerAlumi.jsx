@@ -42,7 +42,7 @@ const HeroBannerRc = ({ announcements, pageType = "engineering" }) => {
         {/* White Empower Logo */}
         <div className="absolute top-5 left-0 right-0 lg:mx-20 mx-0">
           <div className="container mx-auto py-4 px-4 md:px-0 lg:px-0">
-            <div className="flex lg:flex-row flex-col md:items-end items-start md:justify-end justify-start md:gap-10 gap-4 ">
+            <div className="flex lg:flex-row flex-col  items-start justify-start md:gap-10 gap-4 md:ml-18 ml-0">
               <div className="flex items-center">
                 <Image
                   src="/white-empower.svg"

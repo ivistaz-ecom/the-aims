@@ -13,7 +13,7 @@ const SchoolOfHospitalityAndTourism = () => {
     [
       "1",
       "Mr Karthikeyan K",
-      "B.Sc, MBA, PGDHA (Ph.D)",
+      "B.Sc, MBA, PGDHA (PhD)",
       "Assistant Professor",
       "Food and Beverages Production",
     ],

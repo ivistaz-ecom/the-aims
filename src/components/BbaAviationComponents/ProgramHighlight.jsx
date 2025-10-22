@@ -35,7 +35,7 @@ const ProgramHighlight = () => {
       <div className="relative z-10 h-full flex flex-col items-center justify-center mt-30 md:mt-80 lg:mt-0 ml-0 md:ml-0 lg:ml-20">
         <div className="container mx-auto px-4 md:px-0 lg:px-0">
           <div className="flex lg:justify-end md:justify-center">
-            <div className="w-full md:max-w-xl">
+            <div className="w-full md:max-w-xl lg:pl-20 pl-0">
               <h3
                 className="text-white text-lg md:text-3xl lg:text-3xl playfair-300 leading-tight mb-3 md:mb-6 tracking-wider text-center md:text-center lg:text-left"
                 dangerouslySetInnerHTML={{
