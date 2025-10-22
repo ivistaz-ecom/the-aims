@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const MeetOurResearchGuides = () => {
     const guides = {
-        "Dr. Kiran Reddy": {
+        "Dr Kiran Reddy": {
             categoryData: [
                 { category: "General Merit", vacancies: 1 },
                 { category: "Other Backward Classes", vacancies: 1 },
@@ -11,7 +11,7 @@ const MeetOurResearchGuides = () => {
                 { category: "Foreign Nationals", vacancies: 1 },
             ],
         },
-        "Dr. Renati Jayaprakash Reddy": {
+        "Dr Renati Jayaprakash Reddy": {
             categoryData: [
                 { category: "General Merit", vacancies: 0 },
                 { category: "Other Backward Classes", vacancies: 0 },
@@ -19,7 +19,7 @@ const MeetOurResearchGuides = () => {
                 { category: "Foreign Nationals", vacancies: 0 },
             ],
         },
-        "Dr. B.A. Karunakara Reddy": {
+        "Dr B.A. Karunakara Reddy": {
             categoryData: [
                 { category: "General Merit", vacancies: 0 },
                 { category: "Other Backward Classes", vacancies: 0 },
@@ -29,7 +29,7 @@ const MeetOurResearchGuides = () => {
         },
     };
 
-    const [selectedGuide, setSelectedGuide] = useState("Dr. Kiran Reddy");
+    const [selectedGuide, setSelectedGuide] = useState("Dr Kiran Reddy");
 
     const totalVacancies = guides[selectedGuide].categoryData.reduce(
         (sum, item) => sum + item.vacancies,
@@ -57,17 +57,17 @@ const MeetOurResearchGuides = () => {
                             <div className="flex-1 w-full">
                                 <div className="text-2xl font-bold mb-2.5">Management</div>
                                 <button
-                                    onClick={() => setSelectedGuide("Dr. Kiran Reddy")}
-                                    className={`w-full sm:w-auto px-3.5 py-1 rounded-full border cursor-pointer mb-2.5 text-sm font-medium block ${selectedGuide === "Dr. Kiran Reddy"
+                                    onClick={() => setSelectedGuide("Dr Kiran Reddy")}
+                                    className={`w-full sm:w-auto px-3.5 py-1 rounded-full border cursor-pointer mb-2.5 text-sm font-medium block ${selectedGuide === "Dr Kiran Reddy"
                                         ? "bg-[#a2396e] text-white border-none"
                                         : "bg-white text-black border border-black"
                                         }`}
                                 >
-                                    Dr. Kiran Reddy
+                                    Dr Kiran Reddy
                                 </button>
 
                                 <div className="text-2xl font-bold mb-2.5 mt-5">Commerce</div>
-                                {["Dr. Renati Jayaprakash Reddy", "Dr. B.A. Karunakara Reddy"].map(
+                                {["Dr Renati Jayaprakash Reddy", "Dr B.A. Karunakara Reddy"].map(
                                     (name) => (
                                         <button
                                             key={name}

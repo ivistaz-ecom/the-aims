@@ -3,31 +3,13 @@ import React from 'react';
 const IcssrFunded = () => {
     const projects = [
         {
-            year: "2016",
-            title: "An Empirical Study on Problems Faced by the Farmers in Agri-storage Facilities with Reference to Rural Bangalore",
-            duration: "18 Months",
-            status: "Completed",
-            fundingAgency: "ICSSR, New Delhi, India",
-            director: "Prof. Saravana Kumar, Assistant Professor, Management Studies",
-            amount: "₹ 2,00,000"
-        },
-        {
-            year: "2017",
-            title: "An Empirical Investigation on Problems in Agricultural Marketing with Special Reference to Rural Bangalore",
-            duration: "24 Months",
+            year: "2019",
+            title: "An Empirical Study to Identify Reasons for Post-harvest Spoilage of Fruits and Vegetables and Remedial Measures Required",
+            duration: "12 Months",
             status: "Ongoing",
             fundingAgency: "ICSSR, New Delhi, India",
-            director: "Dr. Kiran Reddy, Principal & CEO & Professor, Management Studies",
-            amount: "₹ 8,00,000"
-        },
-        {
-            year: "2017",
-            title: "An Analytical Study on Impact of GST Influencing Ease of Doing Business and Focusing on Indian Automotive Industry - A Case Study based on Karnataka",
-            duration: "12 Months",
-            status: "Completed",
-            fundingAgency: "ICSSR, New Delhi, India",
-            director: "Prof. Dr. Vijay Bhasker Velury, Associate Professor, Management Studies",
-            amount: "₹ 1,25,000"
+            director: "Dr. Sharma, Professor, Management Studies",
+            amount: "₹ 4,00,000"
         },
         {
             year: "2019",
@@ -39,14 +21,36 @@ const IcssrFunded = () => {
             amount: "₹ 1,44,500"
         },
         {
-            year: "2019",
-            title: "An Empirical Study to Identify Reasons for Post-harvest Spoilage of Fruits and Vegetables and Remedial Measures Required",
+            year: "2017",
+            title: "An Analytical Study on Impact of GST Influencing Ease of Doing Business and Focusing on Indian Automotive Industry - A Case Study based on Karnataka",
             duration: "12 Months",
+            status: "Completed",
+            fundingAgency: "ICSSR, New Delhi, India",
+            director: "Prof. Dr. Vijay Bhasker Velury, Associate Professor, Management Studies",
+            amount: "₹ 1,25,000"
+        },
+        {
+            year: "2017",
+            title: "An Empirical Investigation on Problems in Agricultural Marketing with Special Reference to Rural Bangalore",
+            duration: "24 Months",
             status: "Ongoing",
             fundingAgency: "ICSSR, New Delhi, India",
-            director: "Dr. Sharma, Professor, Management Studies",
-            amount: "₹ 4,00,000"
-        }
+            director: "Dr. Kiran Reddy, Principal & CEO & Professor, Management Studies",
+            amount: "₹ 8,00,000"
+        },
+        {
+            year: "2016",
+            title: "An Empirical Study on Problems Faced by the Farmers in Agri-storage Facilities with Reference to Rural Bangalore",
+            duration: "18 Months",
+            status: "Completed",
+            fundingAgency: "ICSSR, New Delhi, India",
+            director: "Prof. Saravana Kumar, Assistant Professor, Management Studies",
+            amount: "₹ 2,00,000"
+        },
+
+
+
+
     ];
 
     return (

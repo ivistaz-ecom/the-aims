@@ -3,45 +3,45 @@ import React, { useState } from "react";
 
 const PursuingScholars = () => {
   const scholarsData = {
-    "Dr. Kiran Reddy": [
-      "Ms. Hemalatha - Registered",
-      "Ms. Padmini V - Registered",
-      "Mr. Gourav Koundal - Registered",
-      "Mr. Vikram M - Registered",
-      "Mr. Bhaskar Sailesh - Provisionally Registered",
-      "Mr. Rajashekar J - Provisionally Registered",
+    "Dr Kiran Reddy": [
+      "Ms Hemalatha - Registered",
+      "Ms Padmini V - Registered",
+      "Mr Gourav Koundal - Registered",
+      "Mr Vikram M - Registered",
+      "Mr Bhaskar Sailesh - Provisionally Registered",
+      "Mr Rajashekar J - Provisionally Registered",
 
     ],
-    "Dr. Saurabh Srivastava": [
-      "Mr. Jagadeesh Babu M K - Thesis Submitted",
-      "Ms. Chandrika P - Registered",
-      "Mr. Umashankar N R - Provisionally Registered",
+    "Dr Saurabh Srivastava": [
+      "Mr Jagadeesh Babu M K - Thesis Submitted",
+      "Ms Chandrika P - Registered",
+      "Mr Umashankar N R - Provisionally Registered",
     ],
-    "Dr. Renati Jayaprakash Reddy": [
-      "Mr. Vinayaka Shantesh Angadi - Thesis Submitted",
-      "Ms. Deepthi S J - Registered",
-      "Ms. Anita Kurian - Registered",
-      "Ms. Sushmitha P - Provisionally Registered",
-      "Mr. Sreedhar B N - Provisionally Registered",
-      "Mr. Ranganatha R - Provisionally Registered",
-      "Ms. Shambhavi B R - Provisionally Registered",
-      "Mr. Nataraja - Provisionally Registered",
-      "Ms. Pushpa M - Provisionally Registered",
+    "Dr Renati Jayaprakash Reddy": [
+      "Mr Vinayaka Shantesh Angadi - Thesis Submitted",
+      "Ms Deepthi S J - Registered",
+      "Ms Anita Kurian - Registered",
+      "Ms Sushmitha P - Provisionally Registered",
+      "Mr Sreedhar B N - Provisionally Registered",
+      "Mr Ranganatha R - Provisionally Registered",
+      "Ms Shambhavi B R - Provisionally Registered",
+      "Mr Nataraja - Provisionally Registered",
+      "Ms Pushpa M - Provisionally Registered",
     ],
-    "Dr. B.A.Karunakara Reddy": [
-      "Ms. Nitu Sharma - Thesis Submitted",
-      "Ms. Sangeetha S - Registered",
-      "Ms. Diana Erudiyanathan - Registered",
-      "Mr. Virupaksha J D - Registered",
-      "Mr. Vedanandaprabhu P G - Registered",
-      "Ms. Sowmyashree A - Registered",
-      "Ms. Tejaswini S - Registered",
-      "Mr. Chiranth R - Registered",
-      "Ms. Hema N - Provisionally Registered",
+    "Dr B.A.Karunakara Reddy": [
+      "Ms Nitu Sharma - Thesis Submitted",
+      "Ms Sangeetha S - Registered",
+      "Ms Diana Erudiyanathan - Registered",
+      "Mr Virupaksha J D - Registered",
+      "Mr Vedanandaprabhu P G - Registered",
+      "Ms Sowmyashree A - Registered",
+      "Ms Tejaswini S - Registered",
+      "Mr Chiranth R - Registered",
+      "Ms Hema N - Provisionally Registered",
     ],
   };
 
-  const [selectedGuide, setSelectedGuide] = useState("Dr. Kiran Reddy");
+  const [selectedGuide, setSelectedGuide] = useState("Dr Kiran Reddy");
 
   return (
     <div className="border-b border-gray-500 mb-10">
@@ -62,7 +62,7 @@ const PursuingScholars = () => {
             {/* Left Side */}
             <div className="flex-1 w-full">
               <div className="text-2xl font-bold mb-2.5">Management</div>
-              {["Dr. Kiran Reddy", "Dr. Saurabh Srivastava"].map((name) => (
+              {["Dr Kiran Reddy", "Dr Saurabh Srivastava"].map((name) => (
                 <button
                   key={name}
                   onClick={() => setSelectedGuide(name)}
@@ -76,7 +76,7 @@ const PursuingScholars = () => {
               ))}
 
               <div className="text-2xl font-bold mb-2.5 mt-5">Commerce</div>
-              {["Dr. Renati Jayaprakash Reddy", "Dr. B.A.Karunakara Reddy"].map(
+              {["Dr Renati Jayaprakash Reddy", "Dr B.A.Karunakara Reddy"].map(
                 (name) => (
                   <button
                     key={name}

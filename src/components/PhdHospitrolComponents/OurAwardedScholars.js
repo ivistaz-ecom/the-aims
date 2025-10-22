@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const OurAwardedScholars = () => {
     const scholarsData = {
-        "Dr. Kiran Reddy": [
+        "Dr Kiran Reddy": [
             {
                 year: "2022",
                 entries: [
@@ -30,7 +30,7 @@ const OurAwardedScholars = () => {
                 entries: ["Mohammad Javad Ghalambor"],
             },
         ],
-        "Dr. Kavitha Desai": [
+        "Dr Kavitha Desai": [
             {
                 year: "2020",
                 entries: ["Mr. Mehrdad Nazari - Strategic Planning and Performance: A Study of Select Companies in Indian Automobile Industry.",
@@ -45,7 +45,7 @@ const OurAwardedScholars = () => {
                 ]
             },
         ],
-        "Dr. Somanath V.S": [
+        "Dr Somanath V.S": [
             {
                 year: "2020",
                 entries: ["Mr. Pramu Kumar Raje Urs M N - A Comparative Study of Green Human Resources Management Practices in Manufacturing and Information Technology Firms in Bangalore.",
@@ -55,7 +55,7 @@ const OurAwardedScholars = () => {
                 ]
             },
         ],
-        "Dr. Renati Jayaprakash Reddy": [
+        "Dr Renati Jayaprakash Reddy": [
             {
                 year: "2022",
                 entries: ["Ms. Hridhya.P.K - Financial Literacy and Personal Investment Decisions by Individual Investors of Kerala.",
@@ -74,7 +74,7 @@ const OurAwardedScholars = () => {
                 ]
             },
         ],
-        "Dr. B.A.Karunakara Reddy": [
+        "Dr B.A.Karunakara Reddy": [
             {
                 year: "2021",
                 entries: ["Mr. Hariharan.R - A Study of price fixation Mechanism in Indian Commodity Market - A Special Reference to Selected Agricultural Commodities."]
@@ -88,7 +88,7 @@ const OurAwardedScholars = () => {
         ],
     };
 
-    const [selectedGuide, setSelectedGuide] = useState("Dr. Kiran Reddy");
+    const [selectedGuide, setSelectedGuide] = useState("Dr Kiran Reddy");
 
     return (
         <div className="border-b border-gray-500 md:mb-10 mb-6">
@@ -109,7 +109,7 @@ const OurAwardedScholars = () => {
                         {/* Left Side */}
                         <div className="flex-1 w-full">
                             <div className="text-2xl font-bold mb-2.5">Management</div>
-                            {["Dr. Kiran Reddy", "Dr. Kavitha Desai", "Dr. Somanath V.S"].map(
+                            {["Dr Kiran Reddy", "Dr Kavitha Desai", "Dr Somanath V.S"].map(
                                 (name) => (
                                     <button
                                         key={name}
@@ -125,7 +125,7 @@ const OurAwardedScholars = () => {
                             )}
 
                             <div className="text-2xl font-bold mb-2.5 mt-5">Commerce</div>
-                            {["Dr. Renati Jayaprakash Reddy", "Dr. B.A.Karunakara Reddy"].map(
+                            {["Dr Renati Jayaprakash Reddy", "Dr B.A.Karunakara Reddy"].map(
                                 (name) => (
                                     <button
                                         key={name}
