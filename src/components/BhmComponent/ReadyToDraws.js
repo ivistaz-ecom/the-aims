@@ -47,7 +47,7 @@ const ReadyToDraw = ({
                 <Button
                   variant="placement"
                   className="whitespace-nowrap text-xs sm:text-sm md:text-base"
-                  href="https://www.theaims.ac.in/brochure-enquiry"
+                  href="https://www.theaims.ac.in/contact-us"
                   target="_blank"
                 >
                   {secondaryButtonText}
@@ -58,7 +58,7 @@ const ReadyToDraw = ({
                 <Button
                   variant="secondary"
                   className="whitespace-nowrap text-xs sm:text-sm md:text-base"
-                  href="https://enquiry.theaims.ac.in/"
+                  href="https://www.theaims.ac.in/brochure-enquiry"
                   target="_blank"
                 >
                   {tertiaryButtonText}

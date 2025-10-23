@@ -68,7 +68,7 @@ const HeroBannerSoH = ({ announcements, pageType = "engineering" }) => {
                   alt="IACBE"
                   width={200}
                   height={300}
-                  className="h-[11vh]"
+                  className="h-[12vh] w-full"
                 />
               </div>
             </div>

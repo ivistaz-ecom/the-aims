@@ -32,7 +32,7 @@ const Objectives = () => {
     <>
       {/* Desktop + Tablet View */}
 
-      <section className="bg-teal-50 py-10 hidden sm:block">
+      <section className="bg-[#E1F9F4] py-10 hidden sm:block">
         <div className=" px-4 lg:px-8 mb-5">
           <div className="container mx-auto ">
             {/* Title */}

@@ -12,7 +12,7 @@ const Aboutpage = () => {
           </h3>
         </div>
 
-        <div className="bg-[#E0F7F4] py-10  rounded-md  lg:px-8 px-4">
+        <div className="bg-[#E1F9F4] py-10  rounded-md  lg:px-8 px-4">
           <div className="container mx-auto">
             <div className="flex flex-col gap-4">
               <p>

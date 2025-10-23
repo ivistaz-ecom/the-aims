@@ -48,7 +48,7 @@ const ReadyToDraw = ({
                   <Button
                     variant="placement"
                     className="whitespace-nowrap text-xs sm:text-sm md:text-base"
-                    href="https://www.theaims.ac.in/brochure-enquiry"
+                    href="https://www.theaims.ac.in/contact-us"
                     target="_blank"
                   >
                     {secondaryButtonText}
