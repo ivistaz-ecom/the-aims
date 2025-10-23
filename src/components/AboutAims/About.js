@@ -17,7 +17,7 @@ const GetInvolvedSection = () => {
               Every student who walks through our gates brings their own
               aspirations. Our role is to help them sharpen their aim, stay the
               course, and deliver on their potential. That&#39;s the AIMS
-              <br className="block md:hidden" /> approach-focused, forward-looking, and fiercely committed to
+               approach-focused, forward-looking, and fiercely committed to
               long-term success.
             </p>
           </div>

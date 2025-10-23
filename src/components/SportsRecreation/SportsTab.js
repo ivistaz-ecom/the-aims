@@ -146,7 +146,7 @@ const StudentclubTab = () => {
                 <ul className="space-y-3 mb-4">
                   {tabData[activeTab].content.features.map((feature, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <span className="text-white mt-2">•</span>
+                      <span className="text-white ">•</span>
                       <span className="monser-400">{feature}</span>
                     </li>
                   ))}
