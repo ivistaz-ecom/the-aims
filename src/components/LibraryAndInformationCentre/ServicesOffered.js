@@ -38,9 +38,11 @@ const ServicesOffered = () => {
         <div className="flex flex-col lg:flex-row lg:items-center lg:items-start gap-8">
           {/* Text Content */}
           <div className="flex-1 order-2 lg:order-1">
-            <ul className="list-disc list-inside space-y-2 text-gray-900 text-lg pl-1">
+            <ul className="list-disc list-outside space-y-2 text-gray-900 text-lg pl-6 marker:text-[#0d2352]">
               {services.map((service, index) => (
-                <li key={index}>{service}</li>
+                <li key={index} className="pl-2">
+                  {service}
+                </li>
               ))}
             </ul>
           </div>

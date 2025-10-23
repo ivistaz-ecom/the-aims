@@ -12,14 +12,20 @@ const PhdProgram = () => {
 
                         {/* Left Side - Title */}
 
-                        <div className="lg:w-1/2 items-center text-center lg:text-left">
+                        {/* <div className="lg:w-1/2 items-center text-center lg:text-left">
                             <h3 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#A22877] italic">
                                 PhD Program
                             </h3>
                             <h3 className="text-3xl md:text-4xl lg:text-5xl text-[#0c2165] -mt-6 md:-mt-8">
                                 Course Structure
                             </h3>
-                        </div>
+                        </div> */}
+                        <div className="lg:w-1/2">
+                        <h3 className="text-3xl md:text-4xl font-semibold text-left text-[#0c2165]  pb-0 mb-0">
+                            <span style={{ fontWeight: '500', color: '#a22978', fontFamily: 'Playfair Display' }} className="italic -mt-10 md:-mt-10"> PhD Program</span> <br />
+                            Course Structure
+                        </h3>
+                    </div>
 
                         {/* Right Side - Paragraph */}
                         <div className="lg:w-1/2 flex items-start">

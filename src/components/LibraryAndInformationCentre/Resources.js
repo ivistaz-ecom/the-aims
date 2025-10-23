@@ -164,7 +164,7 @@ const Resources = () => {
 
         {/* Contact */}
         <div className="mt-8 text-center text-gray-700">
-          Get in Touch Email:{" "}
+        Get in Touch:{" "}
           <a
             href="mailto:library@theaims.ac.in"
             className="text-[#531675] underline"
