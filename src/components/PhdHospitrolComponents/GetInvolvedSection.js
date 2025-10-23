@@ -28,14 +28,22 @@ const GetInvolvedSection = () => {
                 Apply Now
               </Button>
 
-              <Button
+              {/* <Button
                 href="https://enquiry.theaims.ac.in/"
                 target="_blank"
                 variant="secondary"
                 showReadMore={false}
               >
                 Enquire Now
-              </Button>
+              </Button> */}
+              {/* <Button
+                href="/contact-us"
+                target="_blank"
+                variant="secondary"
+                showReadMore={false}
+              >
+                Contact Us
+              </Button> */}
             </div>
 
           </div>
