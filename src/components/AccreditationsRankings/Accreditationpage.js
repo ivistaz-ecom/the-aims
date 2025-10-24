@@ -496,7 +496,7 @@ const PatentsTimeline = () => {
     2021: [
       {
         title: "AIMS SCHOOL OF BUSINESS",
-        titles: " The Week Best B-School Surve",
+        titles: " The Week Best B-School Survey",
         description: (
           <ul className="list-disc pl-5 space-y-1">
             <li>32nd Best Private Business School in India</li>
@@ -603,7 +603,7 @@ const PatentsTimeline = () => {
     2020: [
       {
         title: "AIMS SCHOOL OF BUSINESS",
-        titles: " The Week Best B-School Surve",
+        titles: " The Week Best B-School Survey",
         description: (
           <ul className="list-disc pl-5 space-y-1">
             <li>2nd Best Private Business School in Bangalore</li>
@@ -663,7 +663,7 @@ const PatentsTimeline = () => {
     2019: [
       {
         title: "AIMS SCHOOL OF BUSINESS",
-        titles: " The Week Best B-School Surve",
+        titles: " The Week Best B-School Survey",
         description: (
           <ul className="list-disc pl-5 space-y-1">
             <li>The Week Best B-School Survey</li>
@@ -776,7 +776,7 @@ const PatentsTimeline = () => {
       },
       {
         title: "AIMS SCHOOL OF HOSPITALITY & TOURISM",
-        titles: "AIMS SCHOOL OF HOSPITALITY & TOURISM",
+        titles: "GHRDC Hotel Management Survey, 2018.",
         description: (
           <ul className="list-disc pl-5 space-y-1">
             <li>3rd Best Hotel Management Institution in Karnataka</li>
@@ -877,10 +877,10 @@ const PatentsTimeline = () => {
 
         description: (
           <ul className="list-disc pl-5 space-y-1">
-            <li>53rd Place in all over India - out of 156 B - Schools</li>
-            <li>34th Place in Private B - Schools</li>
-            <li>9th Place in South Zone private B - Schools</li>
-            <li>4th Place in Bangalore B - Schools</li>
+            <li>53rd Place in all over India - out of 156 B-Schools</li>
+            <li>34th Place in Private B-Schools</li>
+            <li>9th Place in South Zone private B-Schools</li>
+            <li>4th Place in Bangalore B-Schools</li>
           </ul>
         ),
       },
@@ -898,7 +898,7 @@ const PatentsTimeline = () => {
         ),
       },
       {
-        titles: "Business Standard- IMRB International Survey ,17 June 2016",
+        titles: "Business Standard- IMRB International Survey, 17 June 2016",
         description: (
           <ul className="list-disc pl-5 space-y-1">
             <li>

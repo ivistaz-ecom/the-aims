@@ -7,7 +7,7 @@ const foundersData = [
   {
     title: "Our Founder",
     titles: ["About Our Founder", "Our Founder’s Message"],
-    name: "Dr. Kerron G Reddy",
+    name: "Dr Kerron G Reddy",
     names: "Founder, AIMS Institutes",
     image: "/founders-message/leader-img1.webp",
     about: `Dr Kerron G Reddy is the Founder of AIMS Institutes, Peenya, Bangalore, Karnataka, India, which she established in 1994. She is an accomplished educationist with demonstrated ability to lead, teach, motivate, and direct students while maintaining high interest and achievement in research, projects, and consultancy services. A multifaceted social entrepreneur, administrator, and academician, she has over 30 years of rich experience in institution building, teaching, research, and running premier higher education institutions in India and overseas.
@@ -37,7 +37,7 @@ He is a member of “Chaîne des Rôtisseurs,” an International Association of
   {
     title: "Our Executive Director",
     titles: ["About Our Executive Director", "Our Executive Director’s Message"],
-    name: "Dr. Roja Reddy Meka",
+    name: "Dr Roja Reddy Meka",
     names: "Executive Director, AIMS Institutes",
     image: "/founders-message/leader-img3.webp",
     about: `Dr Roja Reddy Meka is a visionary educationist and academic strategist, widely respected for her transformational contributions to higher education in India. Over the last 16 years, she has crafted academic experiences that empower learners, inspire faculty, and elevate institutions.
@@ -52,7 +52,7 @@ Recognised as one of the ‘Power Women’ by Vision Digital in 2023 and the Lea
   {
     title: "Our Principal",
     titles: ["About Founder", "Founder’s Message"],
-    name: "Dr. Rama Murthy",
+    name: "Dr Rama Murthy",
     names: "Principal, AIMS Institutes",
     image: "/founders-message/leader-img4.webp",
     about: `As the Principal of AIMS Institutes, Dr Ramamurthy focuses on strengthening academic programs, promoting research, and enhancing industry collaborations. He has held several leadership roles, including Associate Professor, Program Director, and Registrar, before becoming Principal.
@@ -136,11 +136,11 @@ const FoundersMessage = () => {
             </div>
 
             {/* Content */}
-            <div className="mt-4 text-left">
+            <div className="mt-4 text-left ">
               {activeTabs[index] === 0 ? (
                 <>
                   <p
-                    className={`leading-relaxed text-base whitespace-pre-line text-black  ${
+                    className={`leading-relaxed text-base  whitespace-pre-line text-black  ${
                       !showFullAbout[index] ? "line-clamp-3" : ""
                     }`}
                   >

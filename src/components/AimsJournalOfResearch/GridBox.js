@@ -25,7 +25,7 @@ const GridBox = () => {
           {/* Content */}
           <div className="text-gray-800 space-y-4">
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li><b className="monser-600">Editor:</b> Dr. Kiran Reddy</li>
+              <li><b className="monser-600">Editor:</b> Dr Kiran Reddy</li>
               <li><b className="monser-600">ISSN:</b> 2321-8487</li>
               <li><b className="monser-600">Frequency:</b> Bi-Annual</li>
               <li><b className="monser-600">Publisher:</b> AIMS Institutes</li>
@@ -63,14 +63,14 @@ const GridBox = () => {
             {/* <p className="text-lg monser-600">The Ones Guiding Your Aim.</p> */}
 
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li><b className="monser-600">Editor-in-Chief:</b> Dr. Kiran Reddy</li>
+              <li><b className="monser-600">Editor-in-Chief:</b> Dr Kiran Reddy</li>
               <li><b className="monser-600">Editorial Board:</b></li>
-              <li className="">Dr. Jayaprakash Reddy</li>
-              <li>Dr. Gsiree Panthura</li>
-              <li>Dr. Jayashree Nair</li>
-              <li>Dr. Roja Reddy</li>  
-              <li>Dr. Denisa Arudan</li>
-              <li>Dr. Javad Ghalambor</li>
+              <li className="">Dr Jayaprakash Reddy</li>
+              <li>Dr Gsiree Panthura</li>
+              <li>Dr Jayashree Nair</li>
+              <li>Dr Roja Reddy</li>  
+              <li>Dr Denisa Arudan</li>
+              <li>Dr Javad Ghalambor</li>
             </ul>
           </div>
         </div>
