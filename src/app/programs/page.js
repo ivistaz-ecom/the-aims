@@ -1,18 +1,16 @@
 import React from 'react'
-import Seo from '../../components/shared/Seo/Seo'
+import SeoMetadata from '../../components/shared/Seo/SeoMetadata'
 
 const page = () => {
-  const seoField = {
-    title: "Top MBA & Hospitality Programs at Bangalore's Leading Institute",
-    description: "Top MBA colleges in Bangalore. Your path to industry-ready programs, from hospitality and tourism to BBA aviation management, designed for your future.",
-    path: "/programs",
-    metaImage: "/images/aims-logo.png",
-    pageType: "EducationalOrganization",
-  }
-
   return (
     <>
-      <Seo {...seoField} />
+      <SeoMetadata
+        title="Top MBA & Hospitality Programs at Bangalore's Leading Institute"
+        description="Top MBA colleges in Bangalore. Your path to industry-ready programs, from hospitality and tourism to BBA aviation management, designed for your future."
+        path="/programs"
+        metaImage="/images/aims-logo.png"
+        schemaType="EducationalOrganization"
+      />
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center mb-8">Academic Programs at AIMS Institutes</h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

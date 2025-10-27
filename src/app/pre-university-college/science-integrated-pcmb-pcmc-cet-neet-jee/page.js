@@ -4,7 +4,7 @@ import ScienceIntegratedPcmbPcmcCetNeetJee from '@/components/ScienceIntegratedP
 const page = () => {
   return (
     <div>
-        <ScienceIntegratedPcmbPcmcCetNeetJee />
+      <ScienceIntegratedPcmbPcmcCetNeetJee />
     </div>
   )
 }
