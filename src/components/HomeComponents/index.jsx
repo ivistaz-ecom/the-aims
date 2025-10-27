@@ -32,7 +32,7 @@ const HomeComponents = () => {
           </>
         }
         subtitle="From helping you define your goals to guiding you through every step, we're here to help you take that first shot."
-        primaryButtonText="Enquire Now"
+        primaryButtonText={false}
         secondaryButtonText="Download Brochure"
         tertiaryButtonText="Contact Us"
       />

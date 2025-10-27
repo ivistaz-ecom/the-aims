@@ -58,8 +58,8 @@ const ReadyToDraw = ({
                 {tertiaryButtonText && tertiaryButtonText.trim() !== "" && (
                   <Button
                     variant="secondary"
-                    className="whitespace-nowrap text-xs sm:text-sm md:text-base"
-                    href="https://www.theaims.ac.in/brochure-enquiry"
+                    className="whitespace-nowrap "
+                    href="/contact-us"
                     target="_blank"
                   >
                     {tertiaryButtonText}

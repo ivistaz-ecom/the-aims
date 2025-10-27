@@ -172,8 +172,8 @@ export default function Footer() {
                 <div className="flex space-x-4 mt-2 text-2xl">
                   <a target="_blank" href="https://www.instagram.com/aimsinstitutes1994/?hl=en" className="hover:text-gray-300 transition-colors"><FaInstagram /></a>
                   <a target="_blank" href="https://www.facebook.com/AIMS1994" className="hover:text-gray-300 transition-colors"><FaFacebookF /></a>
-                  <a target="_blank" href="#" className="hover:text-gray-300 transition-colors"><FaXTwitter /></a>
-                  <a target="_blank" href="#" className="hover:text-gray-300 transition-colors"><FaYoutube /></a>
+                  <a target="_blank" href="https://x.com/AIMSinstitutes" className="hover:text-gray-300 transition-colors"><FaXTwitter /></a>
+                  <a target="_blank" href="https://www.youtube.com/@AIMSInstitutesBangalore" className="hover:text-gray-300 transition-colors"><FaYoutube /></a>
                 </div>
               </div>
 

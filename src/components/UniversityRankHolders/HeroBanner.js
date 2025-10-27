@@ -85,7 +85,7 @@ const HeroBannerSoB = ({ announcements, pageType = "engineering" }) => {
               "linear-gradient(179deg, rgba(12, 33, 101, 0.00) 11%, #08101D 99%)",
           }}
         ></div>
-        <div className="absolute top-0 lg:top-20 lg:left-8 px-4 lg:px-0">
+        <div className="absolute top-0 lg:top-10 lg:right-20 px-4 lg:px-0">
           <div className="container mx-auto py-4">
             <div className="flex lg:flex-row flex-col items-start justify-between md:gap-10 gap-4">
               <div className="flex items-center">
@@ -107,9 +107,9 @@ const HeroBannerSoB = ({ announcements, pageType = "engineering" }) => {
               <div className="flex lg:flex-row flex-col items-center justify-between md:gap-4 gap-4">
                 <div className="flex items-center">
                   <h1 className="text-white text-left lg:text-left md:text-left xl:text-left text-2xl lg:text-[60px] playfair-300 lg:leading-16">
-                    Safeguarding Integrity.
+                  Celebrating Excellence. 
                     <br className="" />
-                    Empowering Voices.
+                    Our University Rank Holders.
                   </h1>
                 </div>
                 {/* <div className="flex items-center">

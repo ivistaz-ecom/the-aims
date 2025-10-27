@@ -30,7 +30,7 @@ const courses = [
     ],
     leftImage: "/home/course/school-of-buisnesss-left.webp",
     rightImage: "/home/course/slides/school-of-buisnesss.webp",
-    mobileImage: "/home/course/slides/school-of-buisnesss.webp",
+    mobileImage: "/home/course/slides/business.webp",
     browseAllLink: "/business-school",
     buttonText: "Browse Business Programs",
   },
@@ -54,7 +54,7 @@ const courses = [
     ],
     leftImage: "/home/course/school-of-finance-left.webp",
     rightImage: "/home/course/slides/school-of-finance.webp",
-    mobileImage: "/home/course/slides/school-of-finance.webp",
+    mobileImage: "/home/course/school.png",
     browseAllLink: "/finance-commerce-school",
     buttonText: "Browse Finance Programs",
   },
@@ -88,7 +88,7 @@ const courses = [
     ],
     leftImage: "/home/course/school-of-hospitality-left.webp",
     rightImage: "/home/course/slides/school-of-hospitality.webp",
-    mobileImage: "/home/course/slides/school-of-hospitality.webp",
+    mobileImage: "/home/course/slides/hospitality.webp",
     browseAllLink: "/hospitality-tourism-school",
     buttonText: "Browse Hospitality Programs",
   },
@@ -111,7 +111,7 @@ const courses = [
     ],
     leftImage: "/home/course/school-of-information-left.webp",
     rightImage: "/home/course/slides/school-of-information.webp",
-    mobileImage: "/home/course/slides/school-of-information.webp",
+    mobileImage: "/home/course/slides/information.webp",
     browseAllLink: "/information-technology-school",
     buttonText: "Browse IT Programs",
   },
@@ -135,7 +135,7 @@ const courses = [
     ],
     leftImage: "/home/course/puc-left.webp",
     rightImage: "/home/course/slides/puc.webp",
-    mobileImage: "/home/course/slides/puc.webp",
+    mobileImage: "/home/course/slides/puc02.webp",
     browseAllLink: "/pre-university-college",
     buttonText: "Browse PUC Programs",
   },
@@ -185,8 +185,8 @@ export default function ExactSwapCarousel() {
         </div>
 
         <div className="md:flex gap-6 md:gap-12 items-center relative">
-          {/* LEFT ARROW - Desktop only */}
-          <div className="hidden lg:block absolute right-44 top-1/2 -translate-y-1/2 z-20">
+          {/* LEFT ARROW - Desktop and Tablet Landscape only */}
+          <div className="hidden xl:block absolute right-44 top-1/2 -translate-y-1/2 z-20">
             <button
               onClick={prev}
               aria-label="Previous"
@@ -210,8 +210,8 @@ export default function ExactSwapCarousel() {
             </button>
           </div>
 
-          {/* RIGHT ARROW - Desktop only */}
-          <div className="hidden lg:block absolute right-32 top-1/2 -translate-y-1/2 z-20">
+          {/* RIGHT ARROW - Desktop and Tablet Landscape only */}
+          <div className="hidden xl:block absolute right-32 top-1/2 -translate-y-1/2 z-20">
             <button
               onClick={next}
               aria-label="Next"
@@ -235,9 +235,9 @@ export default function ExactSwapCarousel() {
           </div>
 
           {/* CENTERED CAROUSEL CONTENT */}
-          <div className="mx-0 lg:mx-16 flex flex-col lg:flex-row gap-6 lg:gap-12 items-center w-full lg:items-start lg:text-left">
-            {/* LEFT - Big Image (Desktop only) */}
-            <div className="hidden lg:flex justify-center items-center">
+          <div className="mx-0 xl:mx-16 flex flex-col xl:flex-row gap-6 xl:gap-12 items-center w-full xl:items-start xl:text-left">
+            {/* LEFT - Big Image (Desktop and Tablet Landscape only) */}
+            <div className="hidden xl:flex justify-center items-center">
               <div className="w-full max-w-[520px] relative">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -272,9 +272,9 @@ export default function ExactSwapCarousel() {
             </div>
 
             {/* RIGHT - Text and Mobile/Tablet Image */}
-            <div className="flex flex-col w-full items-center lg:items-start">
+            <div className="flex flex-col w-full items-center xl:items-start">
               {/* Mobile/Tablet: Show current image at top */}
-              <div className="lg:hidden flex justify-center w-full">
+              <div className="xl:hidden flex justify-center w-full">
                 <div className="w-full max-w-[400px] relative">
                   <Image
                     width={400}
@@ -289,7 +289,7 @@ export default function ExactSwapCarousel() {
                 </div>
               </div>
               {/* Mobile/Tablet arrows (centered) */}
-              <div className="lg:hidden flex justify-center gap-4 py-5">
+              <div className="xl:hidden flex justify-center gap-4 py-5">
                 <button
                   onClick={prev}
                   aria-label="Previous"
@@ -333,7 +333,7 @@ export default function ExactSwapCarousel() {
                 </button>
               </div>
               {/* Text (left aligned always) */}
-              <div className="lg:h-[450px] lg:flex lg:flex-col lg:justify-start justify-center w-full">
+              <div className="xl:h-[450px] xl:flex xl:flex-col xl:justify-start justify-center w-full">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={`text-${courses[current].id}`}
@@ -415,8 +415,8 @@ export default function ExactSwapCarousel() {
 
               
 
-              {/* Thumbnails (desktop only) */}
-              <div className="hidden md:block relative">
+              {/* Thumbnails (desktop and tablet landscape only) */}
+              <div className="hidden xl:block relative">
                 <motion.div
                   ref={thumbsContainerRef}
                   className="flex gap-4 overflow-x-auto pb-2 mt-10 md:mt-6 items-center justify-center"

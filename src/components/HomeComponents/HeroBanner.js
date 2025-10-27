@@ -36,6 +36,43 @@ const HeroBannerSoB = ({ announcements, pageType = "engineering" }) => {
         autoPlay={true}
         autoPlaySpeed={5000}
         arrows={true}
+        customLeftArrow={
+          <div className="z-auto absolute left-10 top-1/2 -translate-y-1/2 bg-white hover:bg-[#A22877] hover:text-white text-black p-3 rounded-full shadow">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 17"
+              fill="none"
+              className="rotate-180"
+            >
+              <path
+                d="M0.125 8.5H18.875M18.875 8.5L11.375 1M18.875 8.5L11.375 16"
+                stroke="currentColor"
+                strokeWidth="0.5"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+        }
+        customRightArrow={
+          <div className="z-auto absolute right-10 top-1/2 -translate-y-1/2 bg-white hover:bg-[#A22877] hover:text-white text-black p-3 rounded-full shadow">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 17"
+              fill="none"
+            >
+              <path
+                d="M0.125 8.5H18.875M18.875 8.5L11.375 1M18.875 8.5L11.375 16"
+                stroke="currentColor"
+                strokeWidth="0.5"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+        }
         showDots={false}
         pauseOnHover={false}
         swipeable={true}

@@ -64,8 +64,8 @@ export default function AlumniCarousel() {
       <div className="relative">
         {/* ✅ Mobile: only one testimonial */}
 
-        {/* ✅ Mobile: only one testimonial */}
-        <div className="flex items-center justify-center lg:hidden">
+        {/* ✅ Mobile and Tablet Portrait: only one testimonial */}
+        <div className="flex items-center justify-center xl:hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={testimonials[index].id}
@@ -73,9 +73,9 @@ export default function AlumniCarousel() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="rounded-2xl overflow-hidden shadow-lg bg-white w-full max-w-xs sm:max-w-sm"
+              className="rounded-2xl overflow-hidden shadow-lg bg-white w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
             >
-              <div className="relative w-full h-64 sm:h-72 md:h-80">
+              <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-96">
                 <Image
                   src={testimonials[index].image}
                   alt={testimonials[index].name}
@@ -93,14 +93,15 @@ export default function AlumniCarousel() {
                         alt="star"
                         width={20}
                         height={20}
+                        className="sm:w-5 sm:h-5 md:w-6 md:h-6"
                       />
                     )
                   )}
                 </div>
-                <h5 className="font-semibold text-base sm:text-lg mb-2">
+                <h5 className="font-semibold text-base sm:text-lg md:text-xl lg:text-2xl mb-2">
                   {testimonials[index].name}
                 </h5>
-                <p className="text-gray-600 text-sm sm:text-base line-clamp-7">
+                <p className="text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl line-clamp-7">
                   {testimonials[index].text}
                 </p>
               </div>
@@ -108,8 +109,8 @@ export default function AlumniCarousel() {
           </AnimatePresence>
         </div>
 
-        {/* ✅ Desktop: keep 2 testimonials */}
-        <div className="hidden lg:flex md:hidden items-center gap-6 lg:gap-10 h-[700px] w-[600px]">
+        {/* ✅ Desktop and Tablet Landscape: keep 2 testimonials */}
+        <div className="hidden xl:flex items-center gap-6 lg:gap-10 h-[700px] w-[600px]">
           {[0, 1].map((offset) => {
             const t = testimonials[(index + offset) % testimonials.length];
             const isFirstCard = offset === 0;
@@ -200,7 +201,7 @@ export default function AlumniCarousel() {
         </div>
 
         {/* Arrows - made stable */}
-        <div className="absolute lg:bottom-[23%] bottom-0 lg:right-30 md:right-72 right-30 -translate-x-1/2 translate-y-16 flex gap-4">
+        <div className="absolute lg:bottom-[23%] bottom-0 lg:right-30 md:right-72 xl:right-30 right-22 -translate-x-1/2 xl:translate-y-16 lg:translate-y-52 md:translate-y-16 translate-y-16 flex gap-4">
           {/* PREV */}
           <button
             onClick={prev}
