@@ -36,8 +36,8 @@ const ProgramHighlight = () => {
         <div className="container mx-auto px-4 md:px-0 lg:px-0">
           <div className="flex lg:justify-end md:justify-center">
             <div className="w-full md:max-w-xl lg:pl-20 pl-0">
-              <h3
-                className="text-white text-lg md:text-3xl lg:text-3xl playfair-300 leading-tight mb-3 md:mb-6 tracking-wider text-center md:text-center lg:text-left"
+              <h5
+                className="text-white text-3xl md:text-5xl lg:text-6xl playfair-300 leading-tight mb-3 md:mb-6 tracking-wider text-center md:text-center lg:text-left"
                 dangerouslySetInnerHTML={{
                   __html: "Where Our <br/> Graduates Fly",
                 }}

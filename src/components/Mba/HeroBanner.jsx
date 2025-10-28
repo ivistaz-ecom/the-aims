@@ -5,12 +5,12 @@ import React from "react"
 const HeroBanner = ({ announcements, pageType = "mba" }) => {
   return (
     <>
-      <div className="relative w-full h-[83vh] md:h-[76vh] lg:h-[76vh] overflow-hidden">
+      <div className="relative w-full h-[83vh] md:h-[100vh] lg:h-[76vh] overflow-hidden">
         {/* Background Image - Desktop */}
         <div className="hidden lg:block w-full h-full bg-cover bg-center bg-no-repeat bg-[url('/MBA/mba-herobanner.webp')]" />
 
         {/* Background Image - Tablet */}
-        <div className="hidden md:block lg:hidden w-full h-full bg-cover bg-center bg-no-repeat bg-[url('/MBA/mobile-banner.svg')]" />
+        <div className="hidden md:block lg:hidden w-full h-full bg-cover bg-bottom bg-no-repeat bg-[url('/MBA/mobile-banner.svg')]" />
 
         {/* Background Image - Mobile */}
         <div className="md:hidden w-full h-full bg-cover bg-top bg-no-repeat bg-[url('/MBA/mobile-banner.svg')]" />

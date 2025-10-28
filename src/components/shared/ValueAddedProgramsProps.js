@@ -128,7 +128,7 @@ const ValueAddedPrograms = ({
                                     {item.subItems.map((subItem, subIndex) => (
                                       <li
                                         key={subIndex}
-                                        className="text-[18px]"
+                                        className="text-[18px] pb-3"
                                       >
                                         {subItem}
                                       </li>

@@ -35,58 +35,52 @@ const WhyChoose = () => {
             </div>
 
             <div className="space-y-4">
-              {/* Box 1 - Dark Purple */}
-              <div className="bg-[#A22877] text-white p-4 rounded-xl">
-                <p className="text-sm monser-500 px-2">
-                  2-year, full-time program with AICTE, IACBE, NBA
-                  accreditations
-                </p>
-              </div>
-
-              {/* Box 2 - Dark Purple */}
-              <div className="bg-[#B4408B] text-white p-4 rounded-xl">
-                <p className="text-sm monser-500 px-2">
-                  Dual specialisation options: Marketing, Finance, HR,
-                  Analytics, etc.
-                </p>
-              </div>
-
-              {/* Box 3 - Orange */}
-              <div className="bg-[#FF6C02] text-white p-4 rounded-xl">
-                <p className="text-sm monser-500 px-2">
-                  Live business projects, internships, case studies
-                </p>
-              </div>
-
-              {/* Box 4 - Light Pink */}
-              <div className="bg-[#F5BBBC] p-4 rounded-xl">
-                <p className="text-sm monser-500 px-2">
-                  Career-focused modules in leadership, innovation, and global
-                  business
-                </p>
-              </div>
-
-              {/* Box 5 - Dark Purple */}
-              <div className="bg-[#D264AB] text-white p-4 rounded-xl">
-                <p className="text-sm monser-500 px-2">
-                  Guest lectures & mentorship from industry leaders
-                </p>
-              </div>
-
-              {/* Box 6 - Light Pink */}
-              <div className="bg-[#F0A2B8]  p-4 rounded-xl">
-                <p className="text-sm monser-500 px-2">
-                  Placement support with 100+ recruiters (incl. Deloitte, EY,
-                  ICICI)
-                </p>
-              </div>
+              {[
+                {
+                  text: "Approved by AICTE and accredited with NAAC 'A' Grade, assuring nationally trusted quality.",
+                  bgColor: "bg-[#A22877]",
+                  textColor: "text-white",
+                },
+                {
+                  text: "Globally accredited by IACBE (USA), adding international recognition to your MBA.",
+                  bgColor: "bg-[#B4408B]",
+                  textColor: "text-white",
+                },
+                {
+                  text: "Dual specialisations in Marketing, Finance, HR, Business Analytics, and Logistics for wider career choices.",
+                  bgColor: "bg-[#FF6C02]",
+                  textColor: "text-white",
+                },
+                {
+                  text: "Integrates live simulations and mentorship projects for practical, real-world learning.",
+                  bgColor: "bg-[#F5BBBC]",
+                  textColor: "text-black",
+                },
+                {
+                  text: "Backed by 300+ corporate tie-ups and 100+ recruiters including Deloitte, Accenture, Infosys & more",
+                  bgColor: "bg-[#D264AB]",
+                  textColor: "text-white",
+                },
+                {
+                  text: "Includes Value Added Programs each semester to enhance employability and industry readiness.",
+                  bgColor: "bg-[#F0A2B8]",
+                  textColor: "text-black",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className={`${item.bgColor} ${item.textColor} p-4 rounded-xl`}
+                >
+                  <p className="text-sm monser-500 px-2">{item.text}</p>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Desktop Image */}
           <div className="hidden md:block">
             <Image
-              src="/MBA/why-choose.svg"
+              src="/MBA/Why-choose-AIMS-MBA.svg"
               alt="Why Choose Us"
               width={1200}
               height={1200}

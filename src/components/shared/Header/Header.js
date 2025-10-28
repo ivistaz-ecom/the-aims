@@ -20,7 +20,14 @@ export default function Header() {
   const [showSearchResults, setShowSearchResults] = useState(false)
   const [isSearching, setIsSearching] = useState(false)
   const [showMobileSearch, setShowMobileSearch] = useState(false)
+  const [isWindows, setIsWindows] = useState(false)
   const pathname = usePathname()
+
+  // Detect Windows OS
+  useEffect(() => {
+    const userAgent = navigator.userAgent.toLowerCase()
+    setIsWindows(userAgent.includes("windows"))
+  }, [])
 
   // Close mobile search on scroll
   useEffect(() => {
@@ -43,6 +50,25 @@ export default function Header() {
     setMobileOpen(false)
     setActive(null)
     setMobileActive(null)
+    // Dispatch event to notify other components
+    window.dispatchEvent(
+      new CustomEvent("mobileMenuToggle", {
+        detail: { isOpen: false },
+      })
+    )
+  }
+
+  // Function to open mobile menu
+  const openMobileMenu = () => {
+    setMobileOpen(true)
+    // Close mobile search when opening mobile menu
+    setShowMobileSearch(false)
+    // Dispatch event to notify other components
+    window.dispatchEvent(
+      new CustomEvent("mobileMenuToggle", {
+        detail: { isOpen: true },
+      })
+    )
   }
 
   // Search functionality
@@ -448,7 +474,11 @@ export default function Header() {
         <div className="h-full flex flex-col">
           {/* TOP BAR */}
           <div className="px-4 lg:px-8">
-            <div className="container mx-auto flex items-center justify-between py-3 w-full h-[10vh] z-50 bg-white">
+            <div
+              className={`container mx-auto flex items-center justify-between py-3 w-full z-50 bg-white ${
+                isWindows ? "h-[12vh] md:h-[12vh]" : "h-[12vh] md:h-[10vh]"
+              }`}
+            >
               {/* Desktop Logo */}
               <div className="hidden lg:flex items-center">
                 <Link href="/" scroll={false} onClick={handleLogoClick}>
@@ -459,11 +489,28 @@ export default function Header() {
                     height={120}
                     priority
                     quality={100}
-                    className="h-8 w-auto md:h-20 lg:h-24 xl:h-28"
+                    className={`h-10 w-auto lg:h-12 ${
+                      isWindows ? "xl:h-14" : "xl:h-18"
+                    } 2xl:h-16`}
+                  />
+                </Link>
+              </div>
+
+              {/* Tablet Logo */}
+              <div className="hidden md:flex lg:hidden items-center">
+                <Link href="/" scroll={false} onClick={handleLogoClick}>
+                  <Image
+                    src="/AIMS-logo.svg"
+                    alt="AIMS Logo"
+                    width={400}
+                    height={100}
+                    priority
+                    quality={100}
+                    className="h-12 w-auto"
                     style={{
                       width: "auto",
                       height: "auto",
-                      maxWidth: "240px",
+                      maxWidth: "230px",
                       maxHeight: "75px",
                     }}
                   />
@@ -471,7 +518,7 @@ export default function Header() {
               </div>
 
               {/* Mobile Logo */}
-              <div className="lg:hidden flex items-center">
+              <div className="md:hidden flex items-center">
                 <Link href="/" scroll={false} onClick={handleLogoClick}>
                   <Image
                     src="/AIMS-logo.svg"
@@ -480,7 +527,7 @@ export default function Header() {
                     height={94}
                     priority
                     quality={100}
-                    className="h-6 w-auto sm:h-7 md:h-8"
+                    className="h-6 w-auto sm:h-7"
                     style={{
                       width: "auto",
                       height: "auto",
@@ -491,99 +538,119 @@ export default function Header() {
                 </Link>
               </div>
 
-              {/* Mobile Search Input */}
-              {showMobileSearch && (
-                <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-40">
-                  <div className="p-3">
-                    <div className="relative">
-                      <input
-                        type="text"
-                        placeholder="Search programs..."
-                        value={searchQuery}
-                        onChange={handleSearchChange}
-                        className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#6E3299]/30 focus:border-[#6E3299]"
-                        autoFocus
+              {/* Mobile Search Input - Smooth Transition */}
+              <div
+                className={`md:hidden absolute inset-0 bg-white z-[9999] flex items-center px-4 transition-all duration-300 ease-in-out ${
+                  showMobileSearch
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-full pointer-events-none"
+                }`}
+              >
+                <div className="flex-1 relative">
+                  <input
+                    type="text"
+                    placeholder="Search programs..."
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                    className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#6E3299]/30 focus:border-[#6E3299]"
+                    autoFocus={showMobileSearch}
+                  />
+                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                    <svg
+                      className="w-4 h-4 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                       />
-                      <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                        <svg
-                          className="w-4 h-4 text-gray-400"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                          />
-                        </svg>
+                    </svg>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setShowMobileSearch(false)}
+                  className="ml-3 p-2 hover:bg-gray-100 rounded-lg transition-all duration-200"
+                >
+                  <svg
+                    className="w-5 h-5 text-gray-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Mobile Search Results - Fixed Position */}
+              {showMobileSearch && showSearchResults && (
+                <div className="md:hidden fixed top-[10vh] left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-[9998] max-h-[60vh] overflow-y-auto">
+                  {isSearching ? (
+                    <div className="p-4 text-center">
+                      <div className="inline-flex items-center space-x-2">
+                        <div className="animate-spin rounded-full h-5 w-5 border-2 border-[#6E3299] border-t-transparent"></div>
+                        <p className="text-gray-600 font-medium text-sm">
+                          Searching...
+                        </p>
                       </div>
                     </div>
-
-                    {/* Mobile Search Results */}
-                    {showSearchResults && (
-                      <div className="mt-2 bg-white border border-gray-200 rounded-lg shadow-lg max-h-[250px] overflow-y-auto">
-                        {isSearching ? (
-                          <div className="p-4 text-center">
-                            <div className="inline-flex items-center space-x-2">
-                              <div className="animate-spin rounded-full h-5 w-5 border-2 border-[#6E3299] border-t-transparent"></div>
-                              <p className="text-gray-600 font-medium text-sm">
-                                Searching...
+                  ) : searchResults.length > 0 ? (
+                    <div className="py-2">
+                      {searchResults.map((result) => (
+                        <Link
+                          key={result.id}
+                          href={result.url}
+                          onClick={() => {
+                            handleSearchResultClick(result)
+                            setShowMobileSearch(false)
+                          }}
+                          className="block px-4 py-3 hover:bg-gray-50 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
+                        >
+                          <div className="flex items-center justify-between">
+                            <div className="flex-1">
+                              <p className="font-semibold text-gray-900 text-sm">
+                                {result.title}
+                              </p>
+                              <p className="text-xs text-gray-500 capitalize">
+                                {result.type}
                               </p>
                             </div>
+                            <svg
+                              className="w-4 h-4 text-gray-400"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 5l7 7-7 7"
+                              />
+                            </svg>
                           </div>
-                        ) : searchResults.length > 0 ? (
-                          <div className="py-2">
-                            {searchResults.map((result) => (
-                              <Link
-                                key={result.id}
-                                href={result.url}
-                                onClick={() => {
-                                  handleSearchResultClick(result)
-                                  setShowMobileSearch(false)
-                                }}
-                                className="block px-4 py-3 hover:bg-gray-50 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
-                              >
-                                <div className="flex items-center justify-between">
-                                  <div className="flex-1">
-                                    <p className="font-semibold text-gray-900 text-sm">
-                                      {result.title}
-                                    </p>
-                                    <p className="text-xs text-gray-500 capitalize">
-                                      {result.type}
-                                    </p>
-                                  </div>
-                                  <svg
-                                    className="w-4 h-4 text-gray-400"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                  >
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      strokeWidth={2}
-                                      d="M9 5l7 7-7 7"
-                                    />
-                                  </svg>
-                                </div>
-                              </Link>
-                            ))}
-                          </div>
-                        ) : searchQuery ? (
-                          <div className="p-4 text-center">
-                            <p className="text-gray-600 font-medium text-sm">
-                              No results found
-                            </p>
-                            <p className="text-xs text-gray-500">
-                              Try different keywords
-                            </p>
-                          </div>
-                        ) : null}
-                      </div>
-                    )}
-                  </div>
+                        </Link>
+                      ))}
+                    </div>
+                  ) : searchQuery ? (
+                    <div className="p-4 text-center">
+                      <p className="text-gray-600 font-medium text-sm">
+                        No results found
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        Try different keywords
+                      </p>
+                    </div>
+                  ) : null}
                 </div>
               )}
 
@@ -708,10 +775,119 @@ export default function Header() {
                 </Button>
               </div>
 
+              {/* Tablet Right Section */}
+              <div className="hidden md:flex lg:hidden items-center space-x-4 justify-between  w-1/2">
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                    onBlur={handleSearchBlur}
+                    onFocus={() => searchQuery && setShowSearchResults(true)}
+                    className="border rounded-full px-4 py-2 w-48 focus:outline-none transition-all duration-200 ease-out focus:ring-2 focus:ring-[#6E3299]/20 focus:border-[#6E3299] text-sm"
+                  />
+
+                  {/* Search Results Dropdown for Tablet */}
+                  {showSearchResults && (
+                    <div className="absolute top-full left-0 right-0 mt-3 bg-white border border-gray-200 rounded-2xl shadow-2xl z-100 max-h-[400px] w-[350px] overflow-y-auto backdrop-blur-sm">
+                      {isSearching ? (
+                        <div className="p-6 text-center">
+                          <div className="inline-flex items-center space-x-3">
+                            <div className="animate-spin rounded-full h-6 w-6 border-2 border-[#6E3299] border-t-transparent"></div>
+                            <p className="text-gray-600 font-medium">
+                              Searching programs...
+                            </p>
+                          </div>
+                        </div>
+                      ) : searchResults.length > 0 ? (
+                        <div className="py-2">
+                          <div className="px-4 py-3 border-b border-gray-100">
+                            <p className="text-sm font-semibold text-gray-700">
+                              {searchResults.length} result
+                              {searchResults.length !== 1 ? "s" : ""} found
+                            </p>
+                          </div>
+                          {searchResults.map((result, index) => (
+                            <Link
+                              key={result.id}
+                              href={result.url}
+                              onClick={() => handleSearchResultClick(result)}
+                              className="block px-6 py-4 hover:bg-gradient-to-r hover:from-[#6E3299]/5 hover:to-[#6E3299]/10 transition-all duration-200 border-b border-gray-50 last:border-b-0 group"
+                            >
+                              <div className="flex items-center justify-between">
+                                <div className="flex-1">
+                                  <div>
+                                    <p className="font-semibold text-gray-900 group-hover:text-[#6E3299] transition-colors duration-200">
+                                      {result.title}
+                                    </p>
+                                    <p className="text-sm text-gray-500 capitalize font-medium">
+                                      {result.type}
+                                    </p>
+                                  </div>
+                                </div>
+                                <div className="text-gray-400 group-hover:text-[#6E3299] transition-colors duration-200">
+                                  <svg
+                                    className="w-5 h-5"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth={2}
+                                      d="M9 5l7 7-7 7"
+                                    />
+                                  </svg>
+                                </div>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      ) : searchQuery ? (
+                        <div className="p-6 text-center">
+                          <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
+                            <svg
+                              className="w-8 h-8 text-gray-400"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.29-1.009-5.824-2.591"
+                              />
+                            </svg>
+                          </div>
+                          <p className="text-gray-600 font-medium mb-2">
+                            No results found
+                          </p>
+                          <p className="text-sm text-gray-500">
+                            Try searching for &quot;MBA&quot;, &quot;BCA&quot;,
+                            &quot;BHM&quot;, or &quot;PUC&quot;
+                          </p>
+                        </div>
+                      ) : null}
+                    </div>
+                  )}
+                </div>
+                <Button
+                  showReadMore={false}
+                  variant="placement"
+                  href="/contact-us"
+                  className="text-sm px-4 py-2"
+                >
+                  Contact Us
+                </Button>
+              </div>
+
               {/* Mobile Search Icon */}
               <button
                 onClick={() => setShowMobileSearch(!showMobileSearch)}
-                className="lg:hidden text-2xl z-50 bg-white rounded-lg p-3 hover:bg-gray-50 transition-all duration-200 ease-out -mr-8"
+                className="md:hidden text-2xl z-50 bg-white rounded-lg p-3 hover:bg-gray-50 transition-all duration-200 ease-out"
               >
                 <svg
                   className="w-6 h-6 text-gray-600"
@@ -728,10 +904,26 @@ export default function Header() {
                 </svg>
               </button>
 
+              {/* Tablet Hamburger */}
+              <button
+                onClick={() =>
+                  mobileOpen ? closeMobileMenu() : openMobileMenu()
+                }
+                className="hidden md:flex lg:hidden text-3xl z-50 bg-white rounded-lg p-4 hover:bg-gray-50 transition-all duration-200 ease-out"
+              >
+                {mobileOpen ? (
+                  <FiX className="w-10 h-10" />
+                ) : (
+                  <FiMenu className="w-10 h-10" />
+                )}
+              </button>
+
               {/* Mobile Hamburger */}
               <button
-                onClick={() => setMobileOpen(!mobileOpen)}
-                className="lg:hidden text-3xl z-50 bg-white rounded-lg p-3 hover:bg-gray-50 transition-all duration-200 ease-out"
+                onClick={() =>
+                  mobileOpen ? closeMobileMenu() : openMobileMenu()
+                }
+                className="md:hidden text-3xl z-50 bg-white rounded-lg p-3 hover:bg-gray-50 transition-all duration-200 ease-out"
               >
                 {mobileOpen ? <FiX /> : <FiMenu />}
               </button>
@@ -786,17 +978,17 @@ export default function Header() {
 
               {/* Mobile menu content */}
               <motion.div
-                className="lg:hidden shadow-md h-screen bg-white z-50 fixed top-0 left-0 right-0 flex flex-col"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
+                className="lg:hidden shadow-md h-screen bg-white z-[9999] fixed top-0 left-0 right-0 flex flex-col"
+                initial={{ opacity: 0, x: "100%" }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: "100%" }}
                 transition={{
-                  duration: 0.4,
-                  ease: [0.25, 0.46, 0.45, 0.94],
+                  duration: 0.6,
+                  ease: [0.4, 0.0, 0.2, 1],
                 }}
               >
                 {/* Mobile Menu Header with Logo and Close Button */}
-                <div className="flex justify-between items-center p-4 bg-white border-b border-gray-200 flex-shrink-0">
+                <div className="flex justify-between items-center p-4 bg-white border-b border-gray-200 flex-shrink-0 h-[10vh]">
                   <Link href="/" scroll={false} onClick={handleLogoClick}>
                     <Image
                       src="/AIMS-logo.svg"
@@ -805,7 +997,7 @@ export default function Header() {
                       height={94}
                       priority
                       quality={100}
-                      className="h-6 w-auto sm:h-7 md:h-8"
+                      className="h-6 w-auto sm:h-7"
                       style={{
                         width: "auto",
                         height: "auto",
@@ -819,7 +1011,7 @@ export default function Header() {
                     className="p-2 hover:bg-gray-100 rounded-lg transition-all duration-200 ease-out"
                     aria-label="Close mobile menu"
                   >
-                    <FiX className="w-6 h-6 text-gray-600" />
+                    <FiX className="w-6 h-6 md:w-8 md:h-8 text-gray-600" />
                   </button>
                 </div>
 
@@ -932,7 +1124,15 @@ export default function Header() {
       <Breadcrumbs />
 
       {/* Content spacer that smoothly adjusts when header becomes sticky */}
-      <div className={`w-full ${isSticky ? "h-[10vh] md:h-[17vh]" : "h-0"}`} />
+      <div
+        className={`w-full ${
+          isSticky
+            ? isWindows
+              ? "h-[12vh] md:h-[12vh]"
+              : "h-[12vh] md:h-[10vh]"
+            : "h-0"
+        }`}
+      />
     </>
   )
 }

@@ -42,24 +42,86 @@ const ValueAddedPrograms = ({ programKey = "mba" }) => {
           id: "certifications-2026-2027",
           title: "2026-2027",
           content: [
-            "Personal Finance Literacy",
-            "Gig Economy",
-            "Public Speaking, Communication & Critical Skills",
-            "Interview Preparation",
-            "Advanced Readiness & Industry Integration",
-            "MS Office & Analytics",
+            {
+              title: "Personal Financial Literacy",
+              subItems: [
+                "Gain practical skills to manage money, savings, and investments wisely.",
+              ],
+            },
+            {
+              title: "The Gig Economy & Future of Work",
+              subItems: [
+                "Understand flexible careers and the evolving freelance landscape.",
+              ],
+            },
+            {
+              title:
+                "Public Speaking, Communication & Critical Thinking Skills",
+              subItems: [
+                "Develop confidence, clarity, and analytical thinking for any audience.",
+              ],
+            },
+            {
+              title: "Interview Preparation & Readiness",
+              subItems: [
+                "Learn to present yourself effectively and succeed in real interviews.",
+              ],
+            },
+            {
+              title: "Advanced Career Readiness & Industry Integration",
+              subItems: [
+                "Bridge classroom learning with real-world corporate expectations.",
+              ],
+            },
+            {
+              title: "MS Office Applications & Data Analytics",
+              subItems: [
+                "Build essential digital and analytical skills for the modern workplace.",
+              ],
+            },
           ],
         },
         {
           id: "certifications-2025-2026",
           title: "2025-2026",
           content: [
-            "Personal Finance Literacy",
-            "Gig Economy",
-            "Public Speaking, Communication & Critical Skills",
-            "Interview Preparation",
-            "Advanced Readiness & Industry Integration",
-            "MS Office & Analytics",
+            {
+              title: "Personal Financial Literacy",
+              subItems: [
+                "Gain practical skills to manage money, savings, and investments wisely.",
+              ],
+            },
+            {
+              title: "The Gig Economy & Future of Work",
+              subItems: [
+                "Understand flexible careers and the evolving freelance landscape.",
+              ],
+            },
+            {
+              title:
+                "Public Speaking, Communication & Critical Thinking Skills",
+              subItems: [
+                "Develop confidence, clarity, and analytical thinking for any audience.",
+              ],
+            },
+            {
+              title: "Interview Preparation & Readiness",
+              subItems: [
+                "Learn to present yourself effectively and succeed in real interviews.",
+              ],
+            },
+            {
+              title: "Advanced Career Readiness & Industry Integration",
+              subItems: [
+                "Bridge classroom learning with real-world corporate expectations.",
+              ],
+            },
+            {
+              title: "MS Office Applications & Data Analytics",
+              subItems: [
+                "Build essential digital and analytical skills for the modern workplace.",
+              ],
+            },
           ],
         },
       ],

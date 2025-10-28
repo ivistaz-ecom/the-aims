@@ -3,7 +3,7 @@ import Image from "next/image"
 
 const ProgramHighlight = () => {
   return (
-    <div className="relative w-full h-[90vh] md:h-[80vh] lg:h-[75vh] overflow-hidden">
+    <div className="relative w-full h-[90vh] md:h-[100vh] lg:h-[75vh] overflow-hidden">
       {/* Desktop Background Image */}
       <Image
         src="/bba/one-degree-new.webp"
@@ -15,10 +15,10 @@ const ProgramHighlight = () => {
 
       {/* Tablet Background Image */}
       <Image
-        src="/bba/mobile-one-degree-new.webp"
+        src="/bba/mobile-one-degree-new1.webp"
         alt="BBA Program Highlight"
         fill
-        className="hidden md:block lg:hidden object-cover object-top"
+        className="hidden md:block lg:hidden object-cover  object-top"
         priority
       />
 
@@ -33,11 +33,11 @@ const ProgramHighlight = () => {
 
       {/* Content Container */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center mt-30 md:mt-80 lg:mt-0 ml-0  md:ml-0 lg:ml-20">
-        <div className="container mx-auto px-4 md:px-0 lg:px-0">
-          <div className="flex lg:justify-end  justify-end mt-42 md:mt-0 lg:mt-0">
-            <div className="w-full md:max-w-xl lg:pl-20 pl-0">
-              <h3
-                className="text-white text-lg md:text-3xl lg:text-3xl playfair-300 leading-tight mb-3 md:mb-6 tracking-wider text-center md:text-center lg:text-left"
+        <div className="container mx-auto px-4 md:px-0 lg:px-0 ">
+          <div className="flex md:justify-center lg:justify-end  justify-end mt-42 md:mt-50 lg:mt-0">
+            <div className="w-full md:max-w-xl lg:pl-20 pl-0 ">
+              <h5
+                className="text-white text-3xl md:text-5xl lg:text-6xl playfair-300 leading-tight mb-3 md:mb-6 tracking-wider text-center md:text-center lg:text-left"
                 dangerouslySetInnerHTML={{
                   __html: "One Degree. <br/> Multiple Targets.",
                 }}
