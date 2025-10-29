@@ -1,9 +1,10 @@
-import MBA from "@/components/MbaLandingPage"
-
-export default function MBACourseAdmissions() {
+import MBALandingPage from "@/components/MbaLandingPage"
+const page = () => {
   return (
     <div>
-      <MBA />
+      <MBALandingPage />
     </div>
   )
 }
+
+export default page

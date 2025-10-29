@@ -6,25 +6,25 @@ const PlacementHighlights = () => {
     {
       id: 1,
       icon: "/mba-landing/runner.svg", // Runner icon
-      text: "Consistent 85%+ placement record across MBA streams",
+      text: "Consistent 85%+ placement record across BHM streams",
       highlightWords: ["85%+", "placement record"],
     },
     {
       id: 2,
       icon: "/mba-landing/company.svg", // Company buildings icon
-      text: "Top recruiters include Deloitte, Infosys, EY, Accenture, TCS, and more",
-      highlightWords: ["Deloitte, Infosys, EY, Accenture, TCS,"],
+      text: "Top recruiters include Marriott, Taj, ITC, Oberoi, and more",
+      highlightWords: ["Marriott, Taj, ITC, Oberoi,"],
     },
     {
       id: 3,
       icon: "/mba-landing/money.svg", // Money icon
-      text: "Average package:<br/> ₹8 LPA | Highest: ₹23 LPA",
-      highlightWords: ["₹8 LPA ", "₹23 LPA"],
+      text: "Average package:<br/> ₹6 LPA | Highest: ₹18 LPA",
+      highlightWords: ["₹6 LPA ", "₹18 LPA"],
     },
     {
       id: 4,
       icon: "/mba-landing/percent.svg", // Percentage icon
-      text: "Dedicated career mentorship and live corporate projects",
+      text: "Dedicated career mentorship and live hospitality projects",
       highlightWords: ["career mentorship"],
     },
   ]
@@ -63,8 +63,8 @@ const PlacementHighlights = () => {
           </h5>
           <p className="text-lg md:text-xl lg:monser-500 monser-400 leading-relaxed max-w-4xl mx-auto">
             At AIMS Institutes, every student is guided toward measurable
-            success. Our strong corporate network ensures you’re not just
-            placed, you’re prepared to perform from day one.
+            success. Our strong hospitality network ensures you're not just
+            placed, you're prepared to perform from day one.
           </p>
         </div>
 
@@ -101,7 +101,7 @@ const PlacementHighlights = () => {
                   dangerouslySetInnerHTML={{
                     __html: highlight.highlightWords.reduce((text, word) => {
                       // Special case for company names - keep them black
-                      if (word === "Deloitte, Infosys, EY, Accenture, TCS,") {
+                      if (word === "Marriott, Taj, ITC, Oberoi,") {
                         return text.replace(
                           word,
                           `<span class="monser-600 text-black">${word}</span>`
