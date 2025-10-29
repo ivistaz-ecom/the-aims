@@ -42,11 +42,12 @@ const FloatingButton = () => {
 
           {/* Enquire Now Button */}
           <Link
-            href="/contact-us"
+            href="/enquiry-now"
+            target="_blank"
             className="bg-[#9c2474] text-white font-semibold text-sm md:text-2xl px-3 md:px-4 py-1 rounded-tl-lg rounded-tr-lg shadow-lg transform  origin-right hover:bg-[#FF7F02] transition-all duration-300 group flex items-center justify-center"
           >
             <span className="flex items-center justify-center gap-1 md:gap-2">
-              Contact Us
+              Enquire Now
               <GoArrowDownRight className="w-4 h-4 md:w-5 md:h-5 transition-all duration-300 ease-in-out group-hover:-rotate-90" />
             </span>
           </Link>
