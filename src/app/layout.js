@@ -81,46 +81,60 @@ const RootLayout = ({ children }) => {
         className={`${montserrat.variable} ${playfairDisplay.variable} font-montserrat antialiased`}
         suppressHydrationWarning={true}
       >
-        {/* Google Tag Manager */}
+        {/* Google Tag Manager - Only load on production domain */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
-          (function(w,d,s,l,i){
-            w[l]=w[l]||[];
-            w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-            var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),
-            dl=l!='dataLayer'?'&l='+l:'';
-            j.async=true;
-            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-            f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-MC5D9RZ8');
+          if (window.location.hostname === 'www.theaims.ac.in') {
+            (function(w,d,s,l,i){
+              w[l]=w[l]||[];
+              w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+              var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),
+              dl=l!='dataLayer'?'&l='+l:'';
+              j.async=true;
+              j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+              f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-MC5D9RZ8');
+          }
         `}
         </Script>
         {/* End Google Tag Manager */}
 
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-MC5D9RZ8"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
+        {/* Google Tag Manager (noscript) - Only load on production domain */}
+        <Script id="gtm-noscript-check" strategy="afterInteractive">
+          {`
+          if (window.location.hostname === 'www.theaims.ac.in') {
+            const noscriptIframe = document.createElement('noscript');
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://www.googletagmanager.com/ns.html?id=GTM-MC5D9RZ8';
+            iframe.height = '0';
+            iframe.width = '0';
+            iframe.style.display = 'none';
+            iframe.style.visibility = 'hidden';
+            noscriptIframe.appendChild(iframe);
+            document.body.appendChild(noscriptIframe);
+          }
+          `}
+        </Script>
         {/* End Google Tag Manager (noscript) */}
 
-        {/* Google Analytics (GA4) */}
-        <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-3LMQCDEQJH"
-        />
+        {/* Google Analytics (GA4) - Only load on production domain */}
         <Script id="google-analytics" strategy="afterInteractive">
           {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('set', 'developer_id.dZjQwMz', true);
-          gtag('config', 'G-3LMQCDEQJH');
+          if (window.location.hostname === 'www.theaims.ac.in') {
+            // Load GA4 script dynamically
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-3LMQCDEQJH';
+            document.head.appendChild(script);
+            
+            // Initialize GA4
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('set', 'developer_id.dZjQwMz', true);
+            gtag('config', 'G-3LMQCDEQJH');
+          }
         `}
         </Script>
         {/* End Google Analytics */}
