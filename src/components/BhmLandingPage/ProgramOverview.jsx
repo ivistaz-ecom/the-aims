@@ -6,31 +6,31 @@ const ProgramOverview = () => {
     {
       id: 1,
       icon: "/mba-landing/building.svg",
-      text: "Recognised among India's best private business schools (Business Today 2024)",
-      boldWords: ["best private business schools"],
+      text: "Recognised among India's best private hospitality schools (Business Today 2024)",
+      boldWords: ["best private hospitality schools"],
     },
     {
       id: 2,
       icon: "/mba-landing/cap.svg",
-      text: "Dual specialisations across Marketing, Finance, HR, Business Analytics, and Logistics",
+      text: "Dual specialisations across Hotel Management, Tourism, Event Management, and Culinary Arts",
       boldWords: ["Dual specialisations"],
     },
     {
       id: 3,
       icon: "/mba-landing/book.svg",
-      text: "Industry-driven curriculum co-designed with leading corporates",
+      text: "Industry-driven curriculum co-designed with leading hospitality corporates",
       boldWords: ["Industry-driven curriculum"],
     },
     {
       id: 4,
       icon: "/mba-landing/people.svg",
-      text: "Strong alumni network across the country",
+      text: "Strong alumni network across the hospitality industry",
       boldWords: ["Strong alumni network"],
     },
     {
       id: 5,
       icon: "/mba-landing/calender.svg",
-      text: "Duration:<br/>2 years (4 semesters)",
+      text: "Duration:<br/>3 years (6 semesters)",
       boldWords: ["Duration:"],
     },
   ]
@@ -44,23 +44,23 @@ const ProgramOverview = () => {
             Program Overview
           </h5>
           <p className="text-lg md:text-xl lg:monser-500 monser-400 leading-relaxed max-w-6xl">
-            At AIMS Institutes, one of the best Colleges for MBA in Bangalore,
-            our MBA is built for career outcomes. We blend classroom learning
+            At AIMS Institutes, one of the best Colleges for BHM in Bangalore,
+            our BHM is built for career outcomes. We blend classroom learning
             with live industry projects, corporate mentorship, and the freedom
             to choose your specialisation path.
           </p>
         </div>
 
         {/* Features Section */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 lg:gap-12 gap-6 ">
           {features.map((feature, index) => (
             <div key={feature.id} className="relative">
               {/* Vertical Separator Line */}
               {index < features.length - 1 && (
-                <div className="hidden md:block absolute top-0 right-[-1rem] lg:right-[-1.5rem] w-px h-full bg-[#D7D7D7]"></div>
+                <div className="hidden md:block absolute top-0 right-0 w-px h-full bg-[#D7D7D7]"></div>
               )}
 
-              <div className="text-left px-2 md:px-4">
+              <div className="text-left px-2">
                 {/* Icon */}
                 <div className="mb-4">
                   <Image
