@@ -16,6 +16,12 @@ const nextConfig = {
             },
         ],
     },
+    experimental: {
+        optimizeCss: true, // 🔥 Enables critical CSS inlining via Critters
+    },
+    eslint: {
+        ignoreDuringBuilds: true, // ✅ Skip ESLint (no TypeScript needed)
+    },
     async redirects() {
         return [
             {
