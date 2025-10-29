@@ -20,14 +20,7 @@ export default function Header() {
   const [showSearchResults, setShowSearchResults] = useState(false)
   const [isSearching, setIsSearching] = useState(false)
   const [showMobileSearch, setShowMobileSearch] = useState(false)
-  const [isWindows, setIsWindows] = useState(false)
   const pathname = usePathname()
-
-  // Detect Windows OS
-  useEffect(() => {
-    const userAgent = navigator.userAgent.toLowerCase()
-    setIsWindows(userAgent.includes("windows"))
-  }, [])
 
   // Close mobile search on scroll
   useEffect(() => {
@@ -474,8 +467,7 @@ export default function Header() {
           {/* TOP BAR */}
           <div className="px-4 lg:px-8">
             <div
-              className={`container mx-auto flex items-center justify-between py-3 w-full z-50 bg-white ${isWindows ? "h-[12vh] md:h-[12vh]" : "h-[12vh] md:h-[10vh]"
-                }`}
+              className="container mx-auto flex items-center justify-between py-3 w-full z-50 bg-white h-[12vh] md:h-[10vh]"
             >
               {/* Desktop Logo */}
               <div className="hidden lg:flex items-center">
@@ -487,8 +479,7 @@ export default function Header() {
                     height={120}
                     priority
                     quality={100}
-                    className={`h-10 w-auto lg:h-12 ${isWindows ? "xl:h-14" : "xl:h-18"
-                      } 2xl:h-16`}
+                    className="h-10 w-auto lg:h-12 xl:h-14 2xl:h-16"
                   />
                 </Link>
               </div>
@@ -1121,9 +1112,7 @@ export default function Header() {
       {/* Content spacer that smoothly adjusts when header becomes sticky */}
       <div
         className={`w-full ${isSticky
-          ? isWindows
-            ? "h-[12vh] md:h-[12vh] lg:h-[19vh]"
-            : "h-[12vh] md:h-[10vh] lg:h-[17vh]"
+          ? "h-[12vh] md:h-[10vh] lg:h-[17vh]"
           : "h-0"
           }`}
       />
