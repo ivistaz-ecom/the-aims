@@ -40,7 +40,7 @@ const EventsandReunions = () => {
                 </ul>
               </div>
               <div className="mt-4">
-                <Button variant="placement">Register Now</Button>
+                <Button variant="placement" href="https://docs.google.com/forms/d/e/1FAIpQLSdvpoig1zb37eq9jVRuBSUu22hQdXEBVc8vsYWK7039QhtO-g/viewform" target="_blank" className="w-[200px]">Register Now</Button>
               </div>
             </div>
 
