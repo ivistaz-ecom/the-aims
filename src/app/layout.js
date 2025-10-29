@@ -19,33 +19,33 @@ const playfairDisplay = Playfair_Display({
 })
 
 export const metadata = {
-  robots: {
-    index: false,
-    follow: false,
-    nocache: true,
-    googleBot: {
-      index: false,
-      follow: false,
-      noimageindex: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  other: {
-    googlebot: "noindex, nofollow, noimageindex, noarchive, nosnippet",
-    robots: "noindex, nofollow, noarchive, nosnippet",
-    google: "noindex, nofollow",
-    bingbot: "noindex, nofollow, noarchive, nosnippet",
-    slurp: "noindex, nofollow, noarchive, nosnippet",
-    duckduckbot: "noindex, nofollow, noarchive, nosnippet",
-    baiduspider: "noindex, nofollow, noarchive, nosnippet",
-    yandexbot: "noindex, nofollow, noarchive, nosnippet",
-    facebookexternalhit: "noindex, nofollow, noarchive, nosnippet",
-    twitterbot: "noindex, nofollow, noarchive, nosnippet",
-    linkedinbot: "noindex, nofollow, noarchive, nosnippet",
-    whatsapp: "noindex, nofollow, noarchive, nosnippet",
-  },
+  // robots: {
+  //   index: false,
+  //   follow: false,
+  //   nocache: true,
+  //   googleBot: {
+  //     index: false,
+  //     follow: false,
+  //     noimageindex: true,
+  //     "max-video-preview": -1,
+  //     "max-image-preview": "large",
+  //     "max-snippet": -1,
+  //   },
+  // },
+  // other: {
+  //   googlebot: "noindex, nofollow, noimageindex, noarchive, nosnippet",
+  //   robots: "noindex, nofollow, noarchive, nosnippet",
+  //   google: "noindex, nofollow",
+  //   bingbot: "noindex, nofollow, noarchive, nosnippet",
+  //   slurp: "noindex, nofollow, noarchive, nosnippet",
+  //   duckduckbot: "noindex, nofollow, noarchive, nosnippet",
+  //   baiduspider: "noindex, nofollow, noarchive, nosnippet",
+  //   yandexbot: "noindex, nofollow, noarchive, nosnippet",
+  //   facebookexternalhit: "noindex, nofollow, noarchive, nosnippet",
+  //   twitterbot: "noindex, nofollow, noarchive, nosnippet",
+  //   linkedinbot: "noindex, nofollow, noarchive, nosnippet",
+  //   whatsapp: "noindex, nofollow, noarchive, nosnippet",
+  // },
   icons: {
     icon: [
       {

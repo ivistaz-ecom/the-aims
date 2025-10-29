@@ -16,6 +16,21 @@ const nextConfig = {
             },
         ],
     },
+    async redirects() {
+        return [
+            {
+                source: '/:path*',
+                has: [
+                    {
+                        type: 'host',
+                        value: 'theaims.ac.in',
+                    },
+                ],
+                destination: 'https://www.theaims.ac.in/:path*',
+                permanent: true,
+            },
+        ];
+    },
 };
 
 export default nextConfig;
