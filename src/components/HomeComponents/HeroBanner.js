@@ -1,9 +1,78 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ApplicationMarquee from "../../shared/ApplicationMarquee";
 import Image from "next/image";
-import Carousel from "react-multi-carousel";
-import { useEffect } from "react";
+import dynamic from "next/dynamic";
+import "react-multi-carousel/lib/styles.css";
+
+// Fallback component to show first banner while Carousel loads
+const BannerFallback = () => {
+  const banner = {
+    desktop: "/home/banner-003.webp",
+    tablet: "/home/home-banner-tab-02.webp",
+    mobile: "/home/mobile-latest.webp",
+    logo: "/white-empower.svg",
+  };
+
+  return (
+    <div className="relative w-full h-[83vh] md:h-[100vh] overflow-hidden">
+      {/* Desktop Image */}
+      <Image
+        src={banner.desktop}
+        alt="Hero Banner"
+        fill
+        priority
+        fetchPriority="high"
+        quality={90}
+        className="hidden lg:block object-cover object-top"
+        sizes="100vw"
+      />
+      {/* Tablet Image */}
+      <Image
+        src={banner.tablet}
+        alt="Hero Banner"
+        fill
+        priority
+        fetchPriority="high"
+        quality={90}
+        className="hidden md:block lg:hidden object-cover object-top"
+        sizes="100vw"
+      />
+      {/* Mobile Image */}
+      <Image
+        src={banner.mobile}
+        alt="Hero Banner"
+        fill
+        priority
+        fetchPriority="high"
+        quality={90}
+        className="md:hidden object-cover object-top"
+        sizes="100vw"
+      />
+      {/* Logo */}
+      <div className="absolute lg:top-10 top-0 lg:right-0 -right-5 z-10">
+        <div className="container mx-auto py-4 px-6 lg:px-8">
+          <div className="flex items-center">
+            <Image
+              src={banner.logo}
+              alt="Empower Logo"
+              width={150}
+              height={150}
+              priority
+              fetchPriority="high"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Dynamically import Carousel with SSR disabled to avoid hydration mismatch
+const Carousel = dynamic(() => import("react-multi-carousel"), {
+  ssr: false,
+  loading: () => <BannerFallback />,
+});
 
 const HeroBannerSoB = ({ announcements, pageType = "engineering" }) => {
   // You can add as many banner slides as you want here
@@ -27,11 +96,6 @@ const HeroBannerSoB = ({ announcements, pageType = "engineering" }) => {
     tablet: { breakpoint: { max: 1024, min: 464 }, items: 1 },
     mobile: { breakpoint: { max: 464, min: 0 }, items: 1 },
   };
-
-  useEffect(() => {
-    // Load react-multi-carousel CSS after initial render to avoid blocking
-    import("react-multi-carousel/lib/styles.css");
-  }, []);
 
   return (
     <>
