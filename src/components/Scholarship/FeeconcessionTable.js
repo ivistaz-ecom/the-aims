@@ -4,7 +4,7 @@ import React from "react"
 const scholarships = [
   {
     slno: 1,
-    category: "Smt. Nagarathnamma Scholarship (Max 2 Candidates per Programme)",
+    category: "Smt. Nagarathnamma Scholarship (Max 2 Candidates per Program)",
     eligibility:
       "90% or above in 12th / A Level (for UG) or Graduation (for PG)",
     documents: [
@@ -20,7 +20,7 @@ const scholarships = [
   },
   {
     slno: 2,
-    category: "AIMS Merit Scholarship (Max 2 Candidates per Programme)",
+    category: "AIMS Merit Scholarship (Max 2 Candidates per Program)",
     eligibility:
       "90% or above in 12th / A Level (for UG) or Graduation (for PG)",
     documents: [
@@ -36,7 +36,7 @@ const scholarships = [
   },
   {
     slno: 3,
-    category: "AIMS Scholarship for Sports (Max 2 Candidates per Programme)",
+    category: "AIMS Scholarship for Sports (Max 2 Candidates per Program)",
     eligibility:
       "Recognized District/Zonal /State/National level performer + 60% marks in 12th / A Level (for UG) or Graduation (for PG)",
     documents: [
@@ -130,18 +130,55 @@ const scholarships = [
 const FeeconcessionTable = () => {
   return (
     <>
-      <div className="bg-[#E6F8F6]  text-center py-5">
+      {/* <div className="bg-[#E6F8F6]  text-center py-5">
         <h1 className="text-2xl md:text-3xl playfair-300 text-[#9B2564] -mt-2">
           AIMS Commitment to Affordability
         </h1>
         <h5 className="text-lg md:text-4xl playfair-300 text-[#3B2A7B] -mt-6">
           Fee Concession for Eligible Students
         </h5>
-      </div>
+      </div> */}
+         <section className="">
+        {/* Top Paragraph */}
+        <div className="max-w-5xl mx-auto text-center text-[#1A2A5B] text-sm md:text-base leading-relaxed py-10 px-4">
+          <p className="mb-4">
+            At AIMS Institutes, we recognise that ambition needs the right
+            foundation and support. Our scholarships and fee concession programs
+            are designed to break down financial barriers and help deserving
+            students take confident steps toward their goals, no matter where
+            they start from.
+          </p>
+          <p>
+            Whether you&apos;re an academic achiever, a future entrepreneur, a
+            sportsperson, or a creative thinker, there&apos;s a pathway here to
+            make your education more accessible and rewarding.
+          </p>
+        </div>
+
+        {/* Note Section */}
+        <div className="bg-[#FFF5F2] py-4 px-4 text-center text-xs md:text-sm text-gray-700 lg:py-10 mb-10 ">
+          <p className="max-w-5xl mx-auto ">
+            <strong>Note:</strong> All scholarships and concessions are awarded
+            subject to eligibility, documentation, and availability of slots.
+            Meeting the criteria does not automatically guarantee selection.
+            Final decisions are made by the AIMS Scholarships Committee.
+          </p>
+        </div>
+
+        {/* Heading Section */}
+        <div className="bg-[#E6F8F6]  text-center py-5">
+          <h1 className="text-xl md:text-3xl playfair-300 text-[#9B2564] -mt-2">
+            Empowering Excellence
+          </h1>
+          <h5 className="text-lg md:text-4xl playfair-300 text-[#3B2A7B] -mt-6">
+            Scholarships at AIMS Institutes
+          </h5>
+        </div>
+      </section>
       <div className="lg:px-8">
         <div className="container mx-auto p-6 mb-5">
           <h2 className="text-center text-xl md:text-2xl font-bold mb-6 monser-500 ">
-            Fee Concession Table
+          Your Dreams, Our Support: AIMS Scholarship Program
           </h2>
           <div className="overflow-x-auto">
             <table className="min-w-full border border-gray-300">
