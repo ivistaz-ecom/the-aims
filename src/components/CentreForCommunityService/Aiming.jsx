@@ -20,9 +20,12 @@ const Aiming = () => {
             <div className="flex flex-col gap-4 w-full  lg:w-4/5">
               <p className="text-sm md:text-base  monser-400">
                 For collaborations and support, write to us at{" "}
-                <span className="text-[#A22877] monser-600 underline">
+                <a
+                  href="mailto:accs@theaims.ac.in"
+                  className="text-[#A22877] monser-600 underline"
+                >
                   accs@theaims.ac.in
-                </span>
+                </a>
               </p>
               <p className="text-sm md:text-base  monser-400">
                 Founded in 2009, the AIMS Centre for Community Service (ACCS)
