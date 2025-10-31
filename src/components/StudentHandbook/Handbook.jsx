@@ -34,7 +34,10 @@ const Handbook = () => {
             </div>
 
             <div className="mt-4 md:mt-0 flex justify-center md:justify-start">
-              <Button href="/student-handbook/Student-Handbook/Student-Handbook-2021.pdf">
+              <Button
+                variant="placement"
+                href="/student-handbook/Student-Handbook/Student-Handbook-2021.pdf"
+              >
                 Download Student Handbook
               </Button>
             </div>

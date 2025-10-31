@@ -23,9 +23,12 @@ const Aiming = () => {
                 </h2>
                 <p className="text-base md:text-base lg:text-base monser-400">
                   For queries and support, write to us at{" "}
-                  <span className="text-[#A22877] monser-600 underline">
+                  <a
+                    href="mailto:acsd@theaims.ac.in"
+                    className="text-[#A22877] monser-600 underline"
+                  >
                     acsd@theaims.ac.in
-                  </span>
+                  </a>
                 </p>
                 <p className="text-base  md:text-base lg:text-base monser-400">
                   Founded in 2007, the AIMS Centre for Student Development

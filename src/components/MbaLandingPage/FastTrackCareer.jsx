@@ -61,7 +61,7 @@ const FastTrackCareer = () => {
             admission@theaims.ac.in
           </a>
           <span className="mx-2">|</span>
-          <span className="text-lg monser-600">Call / WhatsApp:</span>
+          <span className="text-lg monser-600">Call/WhatsApp:</span>
           <a
             href="tel:+918150001994"
             className="text-black hover:text-[#6E3299] transition-colors text-base ml-2"
@@ -87,7 +87,7 @@ const FastTrackCareer = () => {
             </a>
           </div>
           <div>
-            <span className="text-lg monser-600">Call / WhatsApp:</span>
+            <span className="text-lg monser-600">Call/WhatsApp:</span>
             <a
               href="tel:+918150001994"
               className="text-black hover:text-[#6E3299] transition-colors text-base ml-2"
