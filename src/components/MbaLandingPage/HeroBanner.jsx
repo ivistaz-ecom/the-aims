@@ -44,9 +44,9 @@ const HeroBanner = () => {
                 <Button
                   showReadMore={false}
                   variant="placement"
-                  href="https://apply.theaims.ac.in/login"
+                  href="/mba-enquiry-now"
                 >
-                  Start Your Application Today
+                  Enquire Now
                 </Button>
               </div>
             </div>
