@@ -51,12 +51,12 @@ const NotFound = () => {
                         >
                             Programs
                         </Link> */}
-                        <Link
+                        {/* <Link
                             href="/admissions"
                             className="text-[#6e3299] hover:text-[#ff853a] transition-colors duration-200 text-sm font-medium"
                         >
                             Admissions
-                        </Link>
+                        </Link> */}
                         <Link
                             href="/about-aims"
                             className="text-[#6e3299] hover:text-[#ff853a] transition-colors duration-200 text-sm font-medium"
