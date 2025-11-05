@@ -31,7 +31,8 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer hover:opacity-[0.9] text-white flex items-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl group"
+        className="cursor-pointer hover:opacity-[0.9] text-white flex items-center text-[14px] group"
+        style={{ fontSize: '14px' }}
         onClick={handleClick}
       >
         {item} <GoArrowDownRight className={`transition-transform duration-200 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 ${active === item ? '-rotate-90' : 'group-hover:-rotate-90'}`} />
@@ -137,7 +138,7 @@ export const HoveredLink = ({
   if (submenu) {
     return (
       <div className="group relative">
-        <div className="text-[16px] transition-all duration-200 px-3 py-2 w-full block m-0 p-0 border-0 text-gray-700 hover:bg-[#0C2165] hover:text-white">
+        <div className="text-[14px] transition-all duration-200 px-3 py-2 w-full block m-0 p-0 border-0 text-gray-700 hover:bg-[#0C2165] hover:text-white" style={{ fontSize: '14px' }}>
           {children}
           <span className="ml-2 text-xs">▶</span>
         </div>
@@ -149,7 +150,8 @@ export const HoveredLink = ({
               <Link
                 key={index}
                 href={subItem.href}
-                className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#0C2165] hover:text-white transition-all duration-200"
+                className="block px-4 py-2 text-[14px] text-gray-700 hover:bg-[#0C2165] hover:text-white transition-all duration-200"
+                style={{ fontSize: '14px' }}
               >
                 {subItem.name}
               </Link>
@@ -164,7 +166,8 @@ export const HoveredLink = ({
     <Link
       href={href}
       {...rest}
-      className={`text-[16px] transition-all duration-200 px-3 py-2 w-full block m-0 p-0 border-0 ${isActive
+      style={{ fontSize: '14px' }}
+      className={`text-[14px] transition-all duration-200 px-3 py-2 w-full block m-0 p-0 border-0 ${isActive
         ? "bg-[#6e3299] text-white"
         : "text-gray-700 hover:bg-[#0C2165] hover:text-white"
         }`}>

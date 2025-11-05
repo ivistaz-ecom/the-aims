@@ -1,11 +1,13 @@
 import React from 'react'
 import Header from './Header'
+import HeaderNov2025 from './Header-Nov-2025'
 // import { NavbarMenu } from '@/components/ui/navbar-menu'
 
 const index = () => {
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
+            <HeaderNov2025 />
             {/* <NavbarMenu /> */}
         </div>
     )
