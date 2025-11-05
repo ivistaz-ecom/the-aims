@@ -35,7 +35,7 @@ export const MenuItem = ({
         style={{ fontSize: '14px' }}
         onClick={handleClick}
       >
-        {item} <GoArrowDownRight className={`transition-transform duration-200 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 ${active === item ? '-rotate-90' : 'group-hover:-rotate-90'}`} />
+        {item} <GoArrowDownRight className={`transition-transform duration-200 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ${active === item ? '-rotate-90' : 'group-hover:-rotate-90'}`} />
       </motion.p>
       {active !== null && (
         <motion.div

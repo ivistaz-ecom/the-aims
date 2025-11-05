@@ -45,12 +45,12 @@ const NotFound = () => {
                 <div className="mt-12 pt-8 border-t border-gray-200">
                     <p className="text-sm text-gray-500 mb-4">Popular Pages:</p>
                     <div className="flex flex-wrap justify-center gap-4">
-                        <Link
+                        {/* <Link
                             href="/programs"
                             className="text-[#6e3299] hover:text-[#ff853a] transition-colors duration-200 text-sm font-medium"
                         >
                             Programs
-                        </Link>
+                        </Link> */}
                         <Link
                             href="/admissions"
                             className="text-[#6e3299] hover:text-[#ff853a] transition-colors duration-200 text-sm font-medium"
