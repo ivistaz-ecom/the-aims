@@ -783,14 +783,15 @@ export default function Header() {
               >
                 Resources
               </Link> */}
-
-                                <Button
-                                    showReadMore={false}
-                                    variant="placement"
-                                    href="/contact-us"
-                                >
-                                    Contact Us
-                                </Button>
+                                <div className="py-1">
+                                    <Button
+                                        showReadMore={false}
+                                        variant="placement"
+                                        href="/contact-us"
+                                    >
+                                        Contact Us
+                                    </Button>
+                                </div>
                             </div>
 
                             {/* Tablet Right Section */}

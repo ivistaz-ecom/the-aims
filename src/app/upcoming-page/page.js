@@ -16,8 +16,8 @@ const Page = () => {
                 </h1>
 
                 {/* Message */}
-                <p className="text-lg text-gray-600 mb-8 max-w-md mx-auto">
-                    We're working hard to bring something awesome for you. Stay tuned!
+                <p className="text-lg text-gray-600 mb-8 max-w-xl mx-auto">
+                    Our website is currently being updated. <br /> Thank you for your understanding.
                 </p>
 
                 {/* Action Button */}
