@@ -22,19 +22,19 @@ const HeroBannerSoH = ({ announcements, pageType = "engineering" }) => {
         ></div>
 
         {/* ✅ Top Content Container */}
-        <div className="absolute top-2 left-0 right-0 px-4 lg:px-8">
-          <div className="container mx-auto py-4 ">
-            <div>
-              <h6 className="tracking-[0.25em] !font-[500] text-[13px] text-[#ffffff]">
-                EMPOWERING MINDS
-              </h6>
-
-              <h5
-                className="text-lg sm:text-xl lg:text-2xl font-black text-white"
-                style={{ fontWeight: "900" }}
-              >
-                SINCE 1994
-              </h5>
+        <div className="absolute top-5 md:right-20 left-0">
+          <div className="">
+            <div className="container mx-auto py-4 px-4 lg:px-8">
+              <div className="flex lg:flex-row flex-col items-start justify-between md:gap-10 gap-4">
+                <div className="flex items-center">
+                  <Image
+                    src="/white-empower.svg"
+                    alt="Recruiters"
+                    width={200}
+                    height={200}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

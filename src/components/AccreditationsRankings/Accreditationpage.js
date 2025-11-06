@@ -6,6 +6,7 @@ import Link from "next/link"
 const PatentsTimeline = () => {
   const [selectedYear, setSelectedYear] = useState(2025)
 
+
   const patentsData = {
     2025: [
       {
@@ -1545,7 +1546,7 @@ const PatentsTimeline = () => {
                 <ul className="list-disc pl-5 space-y-1">
                   <li>
                     <Link href="/accreditations/NAAC.pdf" target='_blank' className="underline underline-offset-2 text-[#A22877]" noopener noreferrer>
-                      Cycle
+                      Cycle 2
                     </Link>
                   </li>
                   <li>

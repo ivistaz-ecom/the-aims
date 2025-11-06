@@ -1,8 +1,19 @@
-import React from "react"
+"use client"
+import React, { useState, useEffect } from "react"
 import Image from "next/image"
 import ApplicationMarquee from "../../shared/ApplicationMarquee"
 
 const Banner = ({ announcements, pageType = "engineering" }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768); // Tailwind md breakpoint
+
+    handleResize(); // run once on mount
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <>
       <div className="relative w-full h-[83vh] md:h-[76vh] overflow-hidden">
@@ -20,18 +31,26 @@ const Banner = ({ announcements, pageType = "engineering" }) => {
           }}
         ></div>
 
-        <div className="absolute top-2 left-0 right-0 px-4 lg:px-8">
-          <div className="container mx-auto py-4 ">
-            <div>
-              <h6 className="tracking-[0.25em] !font-[500] text-[13px] text-black">
-                EMPOWERING MINDS
-              </h6>
-              <h5
-                className="text-lg sm:text-xl lg:text-2xl font-black text-black"
-                style={{ fontWeight: "900" }}
-              >
-                SINCE 1994
-              </h5>
+        <div className="absolute top-5 left-0 right-0 ">
+          <div className="px-4 lg:px-8">
+            <div className="container mx-auto">
+              <div className="flex lg:flex-row flex-col items-start justify-between md:gap-10 gap-4">
+                <div className="flex items-center">
+                  <Image
+                    src={
+                      isMobile
+                        ? "/pre-university-college/empowering_minds_since1994_black.webp"
+                        : "/pre-university-college/empowering_minds_since1994_black.webp"
+                    }
+                    alt="Pre-University College Logo"
+                    width={200}
+                    height={200}
+                    unoptimized
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
