@@ -1,12 +1,15 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
 /* Third-party carousel styles are now loaded lazily in components to avoid render-blocking */
 
 @custom-variant dark (&:is(.dark *));
 
 /* Fonts are loaded via next/font; removed self-hosted TTFs to avoid blocking */
+
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   /* AIMS Brand Colors - 5 Core Colors */
@@ -324,8 +327,6 @@ h4 {
     @apply bg-background text-foreground;
   }
 }
-
-
 
 /* WordPress styles */
 /* p .wp-paragraph {

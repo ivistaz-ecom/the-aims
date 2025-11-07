@@ -6,7 +6,7 @@ import Button from "@/shared/Button"
 
 export default function Header() {
   return (
-    <header className="bg-white w-full shadow-sm">
+    <header id="hero-header" className="bg-white w-full shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4 h-[12vh]">
           {/* Logo */}

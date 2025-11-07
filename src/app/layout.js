@@ -77,6 +77,9 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en" className="">
+      <head>
+        <meta name="msvalidate.01" content="A827D56A91561DA21E2E94273F4D52D5" />
+      </head>
       <body
         className={`${montserrat.variable} ${playfairDisplay.variable} font-montserrat antialiased`}
         suppressHydrationWarning={true}

@@ -1,5 +1,6 @@
 import React from "react"
 import Image from "next/image"
+import Button from "@/shared/Button"
 
 const ValueAddedPrograms = () => {
   const programs = [
@@ -38,6 +39,11 @@ const ValueAddedPrograms = () => {
   return (
     <section className="py-10 px-4 bg-white">
       <div className="container mx-auto max-w-6xl">
+        <div className="flex justify-center mb-6">
+          <Button showReadMore={false} variant="placement" href="#hero-header">
+            Enquire Now
+          </Button>
+        </div>
         {/* Header Section */}
         <div className="text-center mb-12">
           <h5 className="text-4xl md:text-5xl lg:text-6xl playfair-500 text-[#002561] mb-6">
