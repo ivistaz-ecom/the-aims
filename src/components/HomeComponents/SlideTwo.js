@@ -190,7 +190,7 @@ export default function ExactSwapCarousel() {
             <button
               onClick={prev}
               aria-label="Previous"
-              className="bg-white hover:bg-[#A22877] hover:text-white text-black p-2 rounded-full shadow"
+              className="bg-white cursor-pointer hover:bg-[#A22877] hover:text-white text-black p-2 rounded-full shadow"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -215,7 +215,7 @@ export default function ExactSwapCarousel() {
             <button
               onClick={next}
               aria-label="Next"
-              className="bg-white text-black p-2 rounded-full shadow hover:bg-[#A22877] hover:text-white"
+              className="bg-white cursor-pointer text-black p-2 rounded-full shadow hover:bg-[#A22877] hover:text-white"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -293,7 +293,7 @@ export default function ExactSwapCarousel() {
                 <button
                   onClick={prev}
                   aria-label="Previous"
-                  className="bg-white hover:bg-[#A22877] hover:text-white text-black p-3 rounded-full shadow"
+                  className="bg-white cursor-pointer hover:bg-[#A22877] hover:text-white text-black p-3 rounded-full shadow"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -314,7 +314,7 @@ export default function ExactSwapCarousel() {
                 <button
                   onClick={next}
                   aria-label="Next"
-                  className="bg-white text-black p-3 rounded-full shadow hover:bg-[#A22877] hover:text-white"
+                  className="bg-white cursor-pointer text-black p-3 rounded-full shadow hover:bg-[#A22877] hover:text-white"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -404,7 +404,7 @@ export default function ExactSwapCarousel() {
                     <Link href={courses[current].browseAllLink}>
                       <Button variant="placement"
                         showReadMore={false}
-                        className="hover:text-white hover:border-white text-xl"
+                        className="hover:text-white hover:border-white text-xl cursor-pointer"
                       >
                         {courses[current].buttonText}
                       </Button>
@@ -446,7 +446,7 @@ export default function ExactSwapCarousel() {
                         <motion.img
                           src={c.rightImage}
                           alt={c.title}
-                          className="w-full h-full object-cover block"
+                          className="w-full h-full object-cover block cursor-pointer"
                           initial={false}
                           animate={isActive ? { y: -16 } : { y: 0 }}
                           transition={{

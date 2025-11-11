@@ -37,7 +37,7 @@ const ReadyToDraw = ({
                   <Button
                     variant="secondary"
                     className="whitespace-nowrap "
-                    href="https://apply.theaims.ac.in/login"
+                    href="/enquiry-now"
                     target="_blank"
                   >
                     {primaryButtonText}

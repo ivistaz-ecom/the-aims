@@ -72,11 +72,11 @@ const JournalTabs = ({ tabsData }) => {
             {tabsData[activeTab].showButtons && (
               <div className="flex flex-col lg:flex-row md:flex-row xl:flex-row gap-4 py-5">
                 <Link href="/pdf/aims-journal-of-research/Submission+Guidelines.pdf" target="_blank">
-                <Button>
+                <Button variant="placement">
                   Download Submission Guidelines
                 </Button>
                 </Link>
-                <Button link="https://aimsjournal.in/aims-journal-of-research/submit-your-paper">
+                <Button variant="placement">
                   Download Undertaking Form
                 </Button>
               </div>

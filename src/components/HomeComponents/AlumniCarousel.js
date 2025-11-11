@@ -56,7 +56,7 @@ export default function AlumniCarousel() {
               <span className="italic text-[#A22877] playfair-400">Action</span>
             </h2>
             <div className="flex justify-left pt-5">
-              <Button variant="placement" href="/aims-alumni-association">
+              <Button variant="placement" href="/aims-alumni-association" className="cursor-pointer">
                 <span className="text-xl">Read Their Journeys</span>
               </Button>
             </div>
@@ -210,7 +210,7 @@ export default function AlumniCarousel() {
                 type="button"
                 aria-label="Previous testimonial"
                 title="Previous testimonial"
-                className="h-10 w-10 rounded-full bg-white text-black shadow-md ring-1 ring-black/10 flex items-center justify-center hover:bg-[#A22877] hover:text-white"
+                className="h-10 w-10 cursor-pointer rounded-full bg-white text-black shadow-md ring-1 ring-black/10 flex items-center justify-center hover:bg-[#A22877] hover:text-white"
               >
                 <span className="sr-only">Previous testimonial</span>
                 <svg
@@ -237,7 +237,7 @@ export default function AlumniCarousel() {
                 type="button"
                 aria-label="Next testimonial"
                 title="Next testimonial"
-                className="h-10 w-10 rounded-full bg-white text-black shadow-md ring-1 ring-black/10 flex items-center justify-center hover:bg-[#A22877] hover:text-white"
+                className="h-10 w-10 cursor-pointer rounded-full bg-white text-black shadow-md ring-1 ring-black/10 flex items-center justify-center hover:bg-[#A22877] hover:text-white"
               >
                 <span className="sr-only">Next testimonial</span>
                 <svg

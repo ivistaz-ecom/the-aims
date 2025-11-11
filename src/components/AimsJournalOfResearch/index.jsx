@@ -20,7 +20,7 @@ const index = () => {
             <p className="flex items-center gap-2">
               <TfiEmail className="inline-block text-2xl" />
               Email:{" "}
-              <strong className="monser-600">library@theaims.ac.in</strong>
+              <strong className="monser-600"><a href="mailto:library@theaims.ac.in" className="monser-600">library@theaims.ac.in</a></strong>
             </p>
             <p className="flex items-center gap-2 pt-2">
               <LuPhone className="inline-block text-2xl" />

@@ -214,7 +214,7 @@ const AdmissionTabsSection = () => {
       //   "Submit required certificates and documents",
       //   "Complete admission formalities and start classes",
       // ],
-      conclusion: "Rates (₹):`",
+      conclusion: "Rates (₹):",
       showPricingTable: true,
     },
   ];

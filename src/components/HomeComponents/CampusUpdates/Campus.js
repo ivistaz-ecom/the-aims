@@ -211,7 +211,7 @@ export default function AimsCarousel() {
             <button
               onClick={prev}
               aria-label="Previous"
-              className="h-12 w-12 rounded-full bg-white text-black shadow-md ring-1 ring-black/10 grid place-items-center hover:bg-[#A22877] hover:text-white"
+              className="h-12 w-12 cursor-pointer rounded-full bg-white text-black shadow-md ring-1 ring-black/10 grid place-items-center hover:bg-[#A22877] hover:text-white"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -234,7 +234,7 @@ export default function AimsCarousel() {
             <button
               onClick={next}
               aria-label="Next"
-              className="h-12 w-12 rounded-full bg-white text-black shadow-md ring-1 ring-black/10 grid place-items-center hover:bg-[#A22877] hover:text-white"
+              className="h-12 w-12 cursor-pointer rounded-full bg-white text-black shadow-md ring-1 ring-black/10 grid place-items-center hover:bg-[#A22877] hover:text-white"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

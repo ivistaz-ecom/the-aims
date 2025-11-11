@@ -106,7 +106,7 @@ const HeroBannerSoB = ({ announcements, pageType = "engineering" }) => {
         autoPlaySpeed={5000}
         arrows={true}
         customLeftArrow={
-          <div className="z-auto absolute left-10 top-1/2 -translate-y-1/2 bg-white hover:bg-[#A22877] hover:text-white text-black p-3 rounded-full shadow">
+          <div className="z-auto absolute left-10 cursor-pointer top-1/2 -translate-y-1/2 bg-white hover:bg-[#A22877] hover:text-white text-black p-3 rounded-full shadow">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -125,7 +125,7 @@ const HeroBannerSoB = ({ announcements, pageType = "engineering" }) => {
           </div>
         }
         customRightArrow={
-          <div className="z-auto absolute right-10 top-1/2 -translate-y-1/2 bg-white hover:bg-[#A22877] hover:text-white text-black p-3 rounded-full shadow">
+          <div className="z-auto absolute right-10 cursor-pointer top-1/2 -translate-y-1/2 bg-white hover:bg-[#A22877] hover:text-white text-black p-3 rounded-full shadow">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
