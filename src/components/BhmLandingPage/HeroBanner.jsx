@@ -69,7 +69,7 @@ const HeroBanner = () => {
         className="relative w-full h-[88vh] lg:h-[88vh] overflow-hidden"
       >
         {/* Background Image - Desktop */}
-        <div className="hidden md:block w-full h-full bg-cover bg-top bg-no-repeat bg-[url('/bhm-landing/desktop-banner.webp')]" />
+        <div className="hidden md:block w-full h-full bg-cover bg-top bg-no-repeat bg-[url('/bhm-landing/Bhm_Banner_Desktop.webp')]" />
 
         {/* Background Image - Mobile */}
         <div className="md:hidden w-full h-full bg-cover bg-top bg-no-repeat bg-[url('/bhm-landing/mobile-banner.webp')]" />
@@ -85,8 +85,8 @@ const HeroBanner = () => {
 
         <div className="absolute inset-0 px-4 lg:px-10">
           <div className="relative flex h-full w-full flex-col justify-end gap-10 pb-12 pt-16 lg:block lg:pb-0 lg:pt-0">
-            <div className="order-1 max-w-[640px] text-center text-white lg:absolute lg:bottom-12 lg:left-10 lg:text-left lg:order-none">
-              <h5 className="text-white text-3xl md:text-5xl lg:text-5xl playfair-500 mb-6 tracking-wide">
+            <div className="order-1 lg:max-w-[635px] text-center text-white lg:absolute lg:bottom-12 lg:left-10 lg:text-left lg:order-none">
+              <h5 className="text-white text-3xl md:text-5xl lg:text-5xl playfair-500 mb-3 tracking-wide">
                 Craft Your Global Hospitality Career <br /> with AIMS Institutes
               </h5>
               <p className="text-white text-lg md:text-xl lg:text-2xl monser-400 mb-8 leading-relaxed max-w-4xl mx-auto lg:mx-0">
@@ -111,20 +111,19 @@ const HeroBanner = () => {
           </div>
         </div>
 
-        {/* Empower Image - Top Left */}
-        {/* <div className="absolute -top-5 lg:-top-12 left-0 right-0 lg:mx-10 mx-2">
-          <div className="container mx-auto md:py-4 py-0">
-            <div className="flex items-end justify-end pb-10 md:pb-0 lg:pb-0">
-              <Image
-                src="/white-empower.svg"
-                alt="Empowering Minds"
-                width={200}
-                height={200}
-                className="w-32 h-24 lg:w-52 lg:h-52 object-contain"
-              />
-            </div>
+        {/* Empowering Minds Since 1994 Logo */}
+        <div className="absolute top-7 left-0 right-0 px-4 lg:px-20">
+          <div className="flex justify-start">
+            <Image
+              src="/white-empower.svg"
+              alt="Empowering Minds Since 1994"
+              width={208}
+              height={120}
+              className="w-32 h-auto lg:w-52 lg:h-auto object-contain"
+              priority
+            />
           </div>
-        </div> */}
+        </div>
       </div>
     </>
   )

@@ -150,7 +150,7 @@ const ExclusiveAccess = () => {
         </div>
 
         {/* Real Industry Learning Section */}
-        <div className="">
+        <div className=" mb-4">
           <h5 className="text-4xl md:text-5xl lg:text-6xl playfair-500 text-[#002561] mb-6 text-center">
             Real Industry Learning
           </h5>
@@ -201,14 +201,7 @@ const ExclusiveAccess = () => {
               </div>
             </div>
           </div>
-          <Button
-            showReadMore={false}
-            variant="placement"
-            href="#hero-header"
-            className="w-fit mx-auto"
-          >
-            Enquire Now
-          </Button>
+       
         </div>
       </div>
     </section>

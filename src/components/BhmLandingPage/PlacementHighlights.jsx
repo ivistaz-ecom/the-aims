@@ -23,7 +23,7 @@ const PlacementHighlights = () => {
     },
     {
       id: 4,
-      icon: "/mba-landing/percent.svg", // Percentage icon
+      icon: "/mba-landing/percent.svg", 
       text: "Alumni working in luxury hospitality, QSR management, and international service chains",
       highlightWords: ["Alumni"],
     },
@@ -32,25 +32,12 @@ const PlacementHighlights = () => {
   return (
     <section className="relative py-10 px-4">
       {/* Full Background Cover */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
-        {/* Full pink background including curve */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-          className="absolute top-0 left-0 w-full h-[200px] md:h-[400px]"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="#FFEDF2"
-            d="M0,128 C480,0 960,0 1440,128 L1440,320 L0,320 Z"
-          ></path>
-        </svg>
-
-        {/* Bottom fill to cover rest area */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden bg-[#471365]">
+     
         <div
           className="absolute bottom-0 left-0 w-full h-[calc(100%-200px)] md:h-[calc(100%-400px)]"
           style={{
-            background: "#FFEDF2",
+            background: "",
           }}
         />
       </div>
@@ -58,19 +45,19 @@ const PlacementHighlights = () => {
       <div className="relative z-10 container mx-auto max-w-6xl">
         {/* Header Section */}
         <div className="text-center lg:py-16 py-10 md:py-16">
-          <h5 className="text-4xl md:text-5xl lg:text-6xl playfair-500 text-[#002561] mb-6 ">
+          <h5 className="text-4xl md:text-5xl lg:text-6xl playfair-500 text-[#ffffff] mb-6 ">
             Placement Highlights
           </h5>
-          <p className="text-lg md:text-xl lg:monser-500 monser-400 leading-relaxed max-w-4xl mx-auto  ">
+          <p className="text-lg md:text-xl lg:monser-500 monser-400 leading-relaxed max-w-4xl mx-auto text-[#ffffff] ">
             Every graduate from AIMS Institutes enters the job market backed by
             internationally benchmarked credentials and real-world experience.
           </p>
-          <p className=" py-4 text-lg md:text-xl lg:monser-500 monser-400 leading-relaxed max-w-4xl mx-auto  ">
+          <p className=" py-4 text-lg md:text-xl lg:monser-500 monser-400 leading-relaxed max-w-4xl mx-auto  text-[#ffffff]">
             Through our AIMSENRICH partnerships and VET by EHL training modules,
             you graduate placement-ready from day one.
           </p>
 
-          <h5 className="text-3xl md:text-4xl lg:text-[40px] playfair-500 text-[#002561]  ">
+          <h5 className="text-3xl md:text-4xl lg:text-[40px] playfair-500 text-[#ffffff]  ">
             Key Highlights
           </h5>
         </div>
