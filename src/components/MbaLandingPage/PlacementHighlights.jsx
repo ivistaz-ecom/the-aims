@@ -30,30 +30,23 @@ const PlacementHighlights = () => {
   ]
 
   return (
-    <section className="relative py-16 px-4">
-      {/* Full Background Cover */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
-        {/* Full pink background including curve */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-          className="absolute top-0 left-0 w-full h-[200px] md:h-[400px]"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="#FFEDF2"
-            d="M0,128 C480,0 960,0 1440,128 L1440,320 L0,320 Z"
-          ></path>
-        </svg>
-
-        {/* Bottom fill to cover rest area */}
-        <div
-          className="absolute bottom-0 left-0 w-full h-[calc(100%-200px)] md:h-[calc(100%-400px)]"
-          style={{
-            background: "#FFEDF2",
-          }}
-        />
-      </div>
+    <section className="relative py-16 px-4 bg-[#FFEDF2] overflow-hidden border">
+      <Image
+        src="/mba-landing/left-triangle.svg"
+        alt=""
+        width={150}
+        height={384}
+        className="pointer-events-none select-none absolute -top-33 -left-13 w-42 md:w-40 lg:w-52 xl:w-60"
+        aria-hidden="true"
+      />
+      <Image
+        src="/mba-landing/right-triangle.svg"
+        alt=""
+        width={206}
+        height={510}
+        className="pointer-events-none select-none absolute -bottom-38  lg:-right-26 -right-20 w-50 md:w-56 lg:w-64 xl:w-72"
+        aria-hidden="true"
+      />
 
       <div className="relative z-10 container mx-auto max-w-6xl">
         {/* Header Section */}

@@ -1,4 +1,5 @@
 import React from "react"
+import Button from "@/shared/Button"
 
 const ExclusiveAccess = () => {
   const swissDiplomas = [
@@ -150,62 +151,65 @@ const ExclusiveAccess = () => {
 
         {/* Real Industry Learning Section */}
         <div className="">
-  <h5 className="text-4xl md:text-5xl lg:text-6xl playfair-500 text-[#002561] mb-6 text-center">
-    Real Industry Learning
-  </h5>
-  <p
-    className="text-black text-center lg:mb-8 mb-4 monser-400"
-    style={{ fontSize: "18px" }}
-  >
-    Your classroom extends far beyond campus:
-  </p>
+          <h5 className="text-4xl md:text-5xl lg:text-6xl playfair-500 text-[#002561] mb-6 text-center">
+            Real Industry Learning
+          </h5>
+          <p
+            className="text-black text-center lg:mb-8 mb-4 monser-400"
+            style={{ fontSize: "18px" }}
+          >
+            Your classroom extends far beyond campus:
+          </p>
 
-  <div className="flex flex-col md:flex-row gap-4 md:gap-0">
-    {/* Column 1 */}
-    <div className="md:w-1/3 px-6 lg:py-4 py-2 text-center md:text-left">
-      <div
-        className="h-full md:border-r border-gray-300 md:pr-6 border-b md:border-b-0 pb-4 md:pb-0"
-      >
-        <p
-          className="text-black monser-400"
-          style={{ fontSize: "18px" }}
-        >
-          State-of-the-art training kitchens, mock front office, and
-          restaurant simulation labs
-        </p>
-      </div>
-    </div>
+          <div className="flex flex-col md:flex-row gap-4 md:gap-0">
+            {/* Column 1 */}
+            <div className="md:w-1/3 px-6 lg:py-4 py-2 text-center md:text-left">
+              <div className="h-full md:border-r border-gray-300 md:pr-6 border-b md:border-b-0 pb-4 md:pb-0">
+                <p
+                  className="text-black monser-400"
+                  style={{ fontSize: "18px" }}
+                >
+                  State-of-the-art training kitchens, mock front office, and
+                  restaurant simulation labs
+                </p>
+              </div>
+            </div>
 
-    {/* Column 2 */}
-    <div className="md:w-1/3 px-6 lg:py-4 py-2 text-center md:text-left">
-      <div
-        className="h-full md:border-r border-gray-300 md:pr-6 border-b md:border-b-0 pb-4 md:pb-0"
-      >
-        <p
-          className="text-black monser-400"
-          style={{ fontSize: "18px" }}
-        >
-          Direct mentorship from industry professionals and visiting
-          experts
-        </p>
-      </div>
-    </div>
+            {/* Column 2 */}
+            <div className="md:w-1/3 px-6 lg:py-4 py-2 text-center md:text-left">
+              <div className="h-full md:border-r border-gray-300 md:pr-6 border-b md:border-b-0 pb-4 md:pb-0">
+                <p
+                  className="text-black monser-400"
+                  style={{ fontSize: "18px" }}
+                >
+                  Direct mentorship from industry professionals and visiting
+                  experts
+                </p>
+              </div>
+            </div>
 
-    {/* Column 3 */}
-    <div className="md:w-1/3 px-6 lg:py-4 py-2 text-center md:text-left">
-      <div className="h-full border-gray-300 pb-0">
-        <p
-          className="text-black monser-400"
-          style={{ fontSize: "18px" }}
-        >
-          Soft skills, financial literacy, and entrepreneurial modules
-          that prepare you to lead, not just serve
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
+            {/* Column 3 */}
+            <div className="md:w-1/3 px-6 lg:py-4 py-2 text-center md:text-left">
+              <div className="h-full border-gray-300 pb-0">
+                <p
+                  className="text-black monser-400"
+                  style={{ fontSize: "18px" }}
+                >
+                  Soft skills, financial literacy, and entrepreneurial modules
+                  that prepare you to lead, not just serve
+                </p>
+              </div>
+            </div>
+          </div>
+          <Button
+            showReadMore={false}
+            variant="placement"
+            href="#hero-header"
+            className="w-fit mx-auto"
+          >
+            Enquire Now
+          </Button>
+        </div>
       </div>
     </section>
   )

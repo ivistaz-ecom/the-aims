@@ -52,12 +52,12 @@ const ProgramOverview = () => {
         </div>
 
         {/* Features Section */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 lg:gap-12">
           {features.map((feature, index) => (
             <div key={feature.id} className="relative">
               {/* Vertical Separator Line */}
               {index < features.length - 1 && (
-                <div className="hidden md:block absolute top-0 right-[-1rem] lg:right-[-1.5rem] w-px h-full bg-[#D7D7D7]"></div>
+                <div className="hidden lg:block absolute top-0 right-[-1rem] xl:right-[-1.5rem] w-px h-full bg-[#D7D7D7]"></div>
               )}
 
               <div className="text-left px-2 md:px-4">
@@ -89,7 +89,7 @@ const ProgramOverview = () => {
 
                 {/* Mobile Horizontal Line */}
                 {index < features.length - 1 && (
-                  <div className="md:hidden border-b border-[#D7D7D7] mt-4"></div>
+                  <div className="lg:hidden border-b border-[#D7D7D7] mt-4"></div>
                 )}
               </div>
             </div>

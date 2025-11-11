@@ -86,7 +86,7 @@ const HeroBanner = () => {
         <div className="absolute inset-0 px-4 lg:px-10">
           <div className="relative flex h-full w-full flex-col justify-end gap-10 pb-12 pt-16 lg:block lg:pb-0 lg:pt-0">
             <div className="order-1 max-w-[640px] text-center text-white lg:absolute lg:bottom-12 lg:left-10 lg:text-left lg:order-none">
-              <h5 className="text-white text-3xl md:text-5xl lg:text-6xl playfair-500 mb-6 tracking-wide">
+              <h5 className="text-white text-3xl md:text-5xl lg:text-5xl playfair-500 mb-6 tracking-wide">
                 Craft Your Global Hospitality Career <br /> with AIMS Institutes
               </h5>
               <p className="text-white text-lg md:text-xl lg:text-2xl monser-400 mb-8 leading-relaxed max-w-4xl mx-auto lg:mx-0">

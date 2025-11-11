@@ -14,7 +14,8 @@ const FastTrackCareer = () => {
 
         {/* Description */}
         <p className="text-lg md:text-xl monser-500 mb-12 mx-auto max-w-4xl">
-          Join our School of Hospitality & Tourism at <span className="monser-600 text-black">AIMS Institutes</span>, and
+          Join our School of Hospitality & Tourism at{" "}
+          <span className="monser-600 text-black">AIMS Institutes</span>, and
           embark on a global pathway to service excellence and professional
           growth.
         </p>
@@ -22,21 +23,8 @@ const FastTrackCareer = () => {
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           {/* Apply Now Button */}
-          <Button
-            showReadMore={false}
-            variant="placement"
-            href="https://apply.theaims.ac.in/login"
-          >
-            Apply Now
-          </Button>
-
-          {/* Contact Us Button */}
-          <Button
-            showReadMore={false}
-            variant="placement"
-            href="https://staging.theaims.ac.in/contact-us"
-          >
-            Contact Us
+          <Button showReadMore={false} variant="placement" href="#hero-header">
+            Enquire Now
           </Button>
         </div>
       </div>

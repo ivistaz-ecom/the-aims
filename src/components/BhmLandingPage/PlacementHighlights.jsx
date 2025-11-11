@@ -62,14 +62,16 @@ const PlacementHighlights = () => {
             Placement Highlights
           </h5>
           <p className="text-lg md:text-xl lg:monser-500 monser-400 leading-relaxed max-w-4xl mx-auto  ">
-          Every graduate from AIMS Institutes enters the job market backed by internationally benchmarked credentials and real-world experience.
+            Every graduate from AIMS Institutes enters the job market backed by
+            internationally benchmarked credentials and real-world experience.
           </p>
           <p className=" py-4 text-lg md:text-xl lg:monser-500 monser-400 leading-relaxed max-w-4xl mx-auto  ">
-          Through our AIMSENRICH partnerships and VET by EHL training modules, you graduate placement-ready from day one.
+            Through our AIMSENRICH partnerships and VET by EHL training modules,
+            you graduate placement-ready from day one.
           </p>
 
           <h5 className="text-3xl md:text-4xl lg:text-[40px] playfair-500 text-[#002561]  ">
-          Key Highlights
+            Key Highlights
           </h5>
         </div>
 
@@ -124,8 +126,6 @@ const PlacementHighlights = () => {
             ))}
           </div>
         </div>
-
-      
       </div>
     </section>
   )
