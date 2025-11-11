@@ -18,7 +18,7 @@ export const MenuItems = [
         title: "Administration",
         links: [
             { name: "Leadership", href: "/leadership" },
-            { name: "Principal", href: "/upcoming-page" },
+            // { name: "Principal", href: "/upcoming-page" },
             { name: "Governing Council Members", href: "/upcoming-page" },
             { name: "Management Council Members", href: "/upcoming-page" },
             { name: "Finance Committee", href: "/upcoming-page" },
@@ -30,10 +30,10 @@ export const MenuItems = [
     {
         title: "Academics",
         links: [
-            { name: "Program details", href: "/upcoming-page" },
+            { name: "Academic Program Details", href: "/upcoming-page" },
             { name: "Academic Calendar", href: "/aims-academic-calendar" },
             { name: "Examinations", href: "/upcoming-page" },
-            { name: "Schools & Departments", href: "/upcoming-page" },
+            // { name: "Schools & Departments", href: "/upcoming-page" },
             { name: "Faculty Details", href: "/upcoming-page" },
             { name: "Swayam NPTEL", href: "/upcoming-page" },
             { name: "Internal Quality Assurance Cell (IQAC)", href: "/upcoming-page" },
