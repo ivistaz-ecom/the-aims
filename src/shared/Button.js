@@ -13,7 +13,7 @@ const Button = ({
   ...props
 }) => {
   const baseClasses =
-    "px-4 py-2.5 rounded-[20px] font-light transition-all duration-300 ease-in-out border-2 flex items-center justify-center gap-1 group relative overflow-hidden min-h-[44px] min-w-[44px]"
+    "px-4 py-2.5 rounded-[20px] font-light transition-all duration-300 ease-in-out border-2 flex items-center justify-center gap-1 group relative overflow-hidden min-h-[44px] min-w-[44px] cursor-pointer"
 
   const variants = {
     primary:
@@ -33,10 +33,11 @@ const Button = ({
     <>
       {/* Original content */}
       <span
-        className={`transition-all duration-300 ease-in-out ${showReadMore
-          ? "group-hover:opacity-0 group-hover:-translate-y-2 cursor-pointer"
-          : ""
-          }`}
+        className={`transition-all duration-300 ease-in-out ${
+          showReadMore
+            ? "group-hover:opacity-0 group-hover:-translate-y-2 cursor-pointer"
+            : ""
+        }`}
       >
         {children}
       </span>

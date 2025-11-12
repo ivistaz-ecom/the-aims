@@ -1,13 +1,102 @@
 "use client"
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import ExaminationsContent from "./ExaminationsContent"
 import AcademicCalendarContent from "./AcademicCalendarContent"
 import CodeOfConductContent from "./CodeOfConductContent"
 
+const TAB_KEY_MAP = {
+  examinations: 0,
+  "academic-calendar": 1,
+  "code-of-conduct": 2,
+}
+
+const resolveTabKeyFromLocation = (loc) => {
+  if (!loc) return null
+
+  const hash = (loc.hash || "").replace("#", "").toLowerCase()
+  if (hash && Object.prototype.hasOwnProperty.call(TAB_KEY_MAP, hash)) {
+    if (hash === "code-of-conduct") return hash
+    return null
+  }
+
+  const params = new URLSearchParams(loc.search || "")
+  const tabParam = params.get("tab")?.toLowerCase()
+  if (tabParam && Object.prototype.hasOwnProperty.call(TAB_KEY_MAP, tabParam)) {
+    if (tabParam === "code-of-conduct") return tabParam
+    return null
+  }
+
+  return null
+}
+
+const getInitialTabIndex = () => {
+  if (typeof window === "undefined") return 0
+  const key = resolveTabKeyFromLocation(window.location)
+  return typeof key === "string" ? TAB_KEY_MAP[key] ?? 0 : 0
+}
+
 const StudentHandbookMain = () => {
-  const [activeTab, setActiveTab] = useState(0)
+  const [activeTab, setActiveTab] = useState(getInitialTabIndex)
+  const [isInitialized, setIsInitialized] = useState(false)
+  const containerRef = useRef(null)
+
+  useEffect(() => {
+    if (typeof window === "undefined") return
+
+    const applyTabFromLocation = () => {
+      const key = resolveTabKeyFromLocation(window.location)
+
+      if (!key) {
+        setIsInitialized(true)
+        return
+      }
+
+      setActiveTab((prev) => {
+        const next = TAB_KEY_MAP[key]
+        setIsInitialized(true)
+        return typeof next === "number" ? next : prev
+      })
+    }
+
+    applyTabFromLocation()
+    window.addEventListener("hashchange", applyTabFromLocation)
+    window.addEventListener("popstate", applyTabFromLocation)
+
+    return () => {
+      window.removeEventListener("hashchange", applyTabFromLocation)
+      window.removeEventListener("popstate", applyTabFromLocation)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !isInitialized) return
+
+    const hashEntries = Object.entries(TAB_KEY_MAP)
+    const currentKey =
+      hashEntries.find(([, index]) => index === activeTab)?.[0] || ""
+
+    if (!currentKey || currentKey !== "code-of-conduct") return
+
+    const url = new URL(window.location.href)
+    let shouldUpdate = false
+
+    const newHash = `#${currentKey}`
+    if (url.hash !== newHash) {
+      url.hash = newHash
+      shouldUpdate = true
+    }
+
+    if (url.searchParams.get("tab") !== currentKey) {
+      url.searchParams.set("tab", currentKey)
+      shouldUpdate = true
+    }
+
+    if (shouldUpdate) {
+      history.replaceState(null, "", url.toString())
+    }
+  }, [activeTab, isInitialized])
 
   const tabs = [
     { title: "Examinations", index: 0 },
@@ -29,7 +118,25 @@ const StudentHandbookMain = () => {
   }
 
   return (
-    <div className="py-6 md:py-10 bg-[#E1F9F4] px-4 md:px-6 lg:px-10">
+    <div
+      ref={containerRef}
+      className="relative py-6 md:py-10 bg-[#E1F9F4] px-4 md:px-6 lg:px-10"
+    >
+      <span
+        id="examinations"
+        aria-hidden
+        className="pointer-events-none absolute -top-24 h-0 w-0 opacity-0"
+      />
+      <span
+        id="academic-calendar"
+        aria-hidden
+        className="pointer-events-none absolute -top-24 h-0 w-0 opacity-0"
+      />
+      <span
+        id="code-of-conduct"
+        aria-hidden
+        className="pointer-events-none absolute -top-24 h-0 w-0 opacity-0"
+      />
       <div className="container mx-auto ">
         <div className="max-w-8xl">
           {/* Buttons Row */}

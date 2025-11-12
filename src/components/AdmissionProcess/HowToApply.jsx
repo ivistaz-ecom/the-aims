@@ -41,7 +41,15 @@ const HowToApply = () => {
               </h2>
 
               <p className="text-base md:text-xl  monser-400">
-                You can apply for admission online by clicking the "Apply Now"
+                You can apply for admission online by clicking the{" "}
+                <a
+                  href="https://apply.theaims.ac.in/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#A22877] underline monser-600 hover:text-[#8b1f5f]"
+                >
+                  Apply Now
+                </a>{" "}
                 button at the top-right of this website. The application is
                 straightforward and designed to support students at every stage.
               </p>
