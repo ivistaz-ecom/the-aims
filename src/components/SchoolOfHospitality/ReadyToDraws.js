@@ -44,7 +44,7 @@ const ReadyToDraw = ({
                   </Button>
                 )}
 
-                {secondaryButtonText && (
+                {/* {secondaryButtonText && (
                   <Button
                     variant="placement"
                     className="whitespace-nowrap text-xs sm:text-sm md:text-base"
@@ -53,7 +53,7 @@ const ReadyToDraw = ({
                   >
                     {secondaryButtonText}
                   </Button>
-                )}
+                )} */}
               </div>
             </div>
 
