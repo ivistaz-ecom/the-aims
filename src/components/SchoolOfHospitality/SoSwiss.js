@@ -65,7 +65,11 @@ const SoSwiss = () => {
                         __html: course.description,
                       }}
                     />
-                    <Link href={course.link}>
+                    <Link
+                      href={course.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Button variant="placement">Explore Now</Button>
                     </Link>
                   </div>

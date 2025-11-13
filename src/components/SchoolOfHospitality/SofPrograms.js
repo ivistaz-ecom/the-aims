@@ -48,7 +48,6 @@ const SofPrograms = () => {
                   width={1620}
                   height={1620}
                   className="object-cover h-full w-full rounded-2xl"
-                
                 />
               </div>
 
@@ -76,7 +75,7 @@ const SofPrograms = () => {
           <section className="mb-10">
             <div className="flex flex-col lg:flex-row-reverse items-center gap-0">
               {/* Image */}
-                   <div className="w-full h-full  overflow-hidden p-1 flex items-center justify-center">
+              <div className="w-full h-full  overflow-hidden p-1 flex items-center justify-center">
                 <Image
                   src={undergraduateProgram.image}
                   alt={undergraduateProgram.title}
@@ -97,7 +96,12 @@ const SofPrograms = () => {
                     __html: undergraduateProgram.description,
                   }}
                 />
-                <Link href={undergraduateProgram.link} scroll={true}>
+                <Link
+                  href={undergraduateProgram.link}
+                  scroll={true}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button variant="placement" className="text-left">
                     Explore Now
                   </Button>

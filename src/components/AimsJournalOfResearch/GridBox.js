@@ -6,7 +6,7 @@ const GridBox = () => {
     <div className="lg:px-8 px-4">
       <div className="container mx-auto lg:py-10 md:py-6 py-10 xl:py-10  flex lg:flex-row flex-col gap-10">
       <div className="lg:w-1/2  mx-auto">
-        <div className="bg-[#FAE5E6] sm:h-full sm:w-[750px] xl:w-full w-full md:w-[750px] lg:h-[540px] rounded-lg border border-[#A22877] p-8 relative">
+        <div className="bg-[#FAE5E6] sm:h-full sm:w-[750px] xl:w-full w-full md:w-[750px] lg:h-[400px] rounded-lg border border-[#A22877] p-8 relative">
           {/* Arrow icon positioned in top right */}
           <div className="absolute top-4 right-4">
             <Image
@@ -42,7 +42,7 @@ const GridBox = () => {
         </div>
       </div>
       <div className="lg:w-1/2">
-        <div className="bg-[#E0F8F3] sm:h-full sm:w-[750px] xl:w-full md:w-[750px] lg:h-[540px] rounded-lg border border-[#88BBB1] p-8 relative">
+        <div className="bg-[#E0F8F3] sm:h-full sm:w-[750px] xl:w-full md:w-[750px] lg:h-[400px] rounded-lg border border-[#88BBB1] p-8 relative">
           {/* Arrow icon positioned in top right */}
           <div className="absolute top-4 right-4">
             <Image

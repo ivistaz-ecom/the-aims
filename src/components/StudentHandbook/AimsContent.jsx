@@ -7,7 +7,7 @@ const RcContent = () => {
       <div className="relative px-4 md:px-8 lg:px-8 py-6 md:py-10">
         <div className="container mx-auto">
           <div className="justify-center items-start  flex flex-col overflow-hidden ">
-            <div className="md:max-w-4xl text-[20px] space-y-2">
+            <div className="md:max-w-5xl text-[20px] space-y-2">
               <p>
                 Everything you need as a student - from handbooks, exams,
                 calendars, formalities - is housed right here.
