@@ -10,7 +10,7 @@ const Since = () => {
     <div className="container mx-auto lg:py-16 py-5 flex flex-col items-center justify-center gap-5 lg:gap-8">
         <div className="flex items-center justify-center">
           <Image
-            src="/home/iacbe-naac-latest.webp"
+            src="/home/iacbe-new.webp"
             alt="Since"
             width={800}
             height={800}
