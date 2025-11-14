@@ -2,7 +2,7 @@ import React from "react"
 import Image from "next/image"
 import ApplicationMarquee from "../../shared/ApplicationMarquee"
 
-const CommerceCeba = ({ announcements, pageType = 'phd' }) => {
+const CommerceCeba = ({ announcements, pageType = 'admissions' }) => {
     return (
         <>
             <div className="relative w-full h-[83vh] md:h-[76vh] overflow-hidden">

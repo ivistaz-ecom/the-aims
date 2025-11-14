@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import ApplicationMarquee from '@/shared/ApplicationMarquee'
 
-const HeroBannerBcom = ({ announcements, pageType = 'finance' }) => {
+const HeroBannerBcom = ({ announcements, pageType = 'admissions' }) => {
     return (
         <>
            

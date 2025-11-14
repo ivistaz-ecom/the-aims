@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 import Image from "next/image"
 import ApplicationMarquee from "../../shared/ApplicationMarquee"
 
-const CentreForResearchBanner = ({ announcements, pageType = "engineering" }) => {
+const CentreForResearchBanner = ({ announcements, pageType = "admissions" }) => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {

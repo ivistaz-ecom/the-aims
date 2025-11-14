@@ -74,7 +74,7 @@ const Carousel = dynamic(() => import("react-multi-carousel"), {
   loading: () => <BannerFallback />,
 });
 
-const HeroBannerSoB = ({ announcements, pageType = "engineering" }) => {
+const HeroBannerSoB = ({ announcements, pageType = "admissions" }) => {
   // You can add as many banner slides as you want here
   const banners = [
     {

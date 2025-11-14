@@ -44,7 +44,7 @@ export const MenuItems = [
         href: "/iqac-internal-quality-assurance-cell",
       },
       {
-        name: "Library & Information Centre",
+        name: "Library ",
         href: "/library-and-information-centre",
       },
       { name: "Academic Collaborations", href: "/upcoming-page" },

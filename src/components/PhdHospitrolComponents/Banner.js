@@ -3,7 +3,7 @@ import React from "react"
 import Image from 'next/image'
 import ApplicationMarquee from '@/shared/ApplicationMarquee'
 
-const PhdBanner = ({ announcements, pageType = 'phd' }) => {
+const PhdBanner = ({ announcements, pageType = 'admissions' }) => {
   return (
     <>
       <div className="relative w-full h-[83vh] md:h-[76vh] overflow-hidden">

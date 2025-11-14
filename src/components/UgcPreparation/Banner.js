@@ -1,8 +1,11 @@
-import React from 'react'
-import Image from 'next/image'
-import ApplicationMarquee from '@/shared/ApplicationMarquee'
+import React from "react"
+import Image from "next/image"
+import ApplicationMarquee from "@/shared/ApplicationMarquee"
 
-const CentreForResearchBanner = ({ announcements, pageType = 'phd' }) => {
+const CentreForResearchBanner = ({
+  announcements,
+  pageType = "admissions",
+}) => {
   return (
     <>
       <div className="relative w-full h-[83vh] md:h-[76vh] overflow-hidden">
@@ -16,7 +19,7 @@ const CentreForResearchBanner = ({ announcements, pageType = 'phd' }) => {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(179deg, rgba(12, 33, 101, 0.00) 11%, #08101D 99%)'
+              "linear-gradient(179deg, rgba(12, 33, 101, 0.00) 11%, #08101D 99%)",
           }}
         ></div>
 
@@ -26,7 +29,8 @@ const CentreForResearchBanner = ({ announcements, pageType = 'phd' }) => {
             <div className="flex lg:flex-row flex-col items-center justify-between md:gap-4 gap-4">
               <div className="flex items-center">
                 <h1 className="text-white text-2xl lg:text-[60px] playfair-300 lg:leading-16 md:text-start text-center">
-                Previous Year <br />Question Papers
+                  Previous Year <br />
+                  Question Papers
                 </h1>
               </div>
             </div>
@@ -46,12 +50,12 @@ const CentreForResearchBanner = ({ announcements, pageType = 'phd' }) => {
             </div>
           </div>
         </div>
-        </div>
+      </div>
 
-        {/* Application Announcements Marquee */}
-        <ApplicationMarquee announcements={announcements} pageType={pageType} />
-      </>
-      )
+      {/* Application Announcements Marquee */}
+      <ApplicationMarquee announcements={announcements} pageType={pageType} />
+    </>
+  )
 }
 
-      export default CentreForResearchBanner
+export default CentreForResearchBanner
