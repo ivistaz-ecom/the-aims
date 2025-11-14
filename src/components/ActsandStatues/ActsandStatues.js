@@ -38,7 +38,10 @@ const STATUTES_AND_POLICIES = [
     title: "Code of Ethics",
     href: "/acts-and-statutes-moa/Code of Ethics.pdf",
   },
-  { title: "Environment & Sustainability Policy", href: null },
+  {
+    title: "Environment & Sustainability Policy",
+    href: "/environment-sustainability-policy-report",
+  },
   { title: "IT Policy", href: "/acts-and-statutes-moa/IT Policy.pdf" },
   { title: "HR Policy", href: "/acts-and-statutes-moa/HR Policy_merged.pdf" },
   { title: "ER Policy", href: null },
@@ -46,12 +49,12 @@ const STATUTES_AND_POLICIES = [
     title: "Admission Policy",
     href: "/acts-and-statutes-moa/Admission policy.pdf",
   },
-  { title: "Research Policy", href: null },
+  { title: "Research Policy", href: "/ACR - Policy (1).pdf" },
   {
     title: "Library Policies and Procedures",
     href: "/acts-and-statutes-moa/Library Policy and Procedures.pdf",
   },
-  { title: "Student Exit Policy", href: null },
+  { title: "Student Exit Policy", href: "/student-information-zone" },
 ]
 
 const ActsandStatues = () => {
