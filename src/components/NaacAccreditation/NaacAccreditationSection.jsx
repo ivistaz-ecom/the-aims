@@ -34,12 +34,12 @@ const NaacAccreditationSection = () => {
               <span className="monser-400 text-base md:text-[20px]">
                 AIMS NAAC Visit 16 & 17 March 2022 -{" "}
                 <a
-                  href="https://www.youtube.com/embed/17UP0CqEtPE"
+                  href="https://www.youtube.com/watch?v=17UP0CqEtPE&source_ve_path=MTc4NDI0"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline cursor-pointer"
+                  className="inline-flex items-center text-[#0C2165] underline hover:text-[#091843] transition-colors"
                 >
-                  Play Video
+               play video
                 </a>
               </span>
             </div>

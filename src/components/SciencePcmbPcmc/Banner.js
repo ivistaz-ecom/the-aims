@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 import Image from "next/image"
 import ApplicationMarquee from "../../shared/ApplicationMarquee"
 
-const SciencePcmbPcmc = ({ announcements, pageType = "engineering" }) => {
+const SciencePcmbPcmc = ({ announcements, pageType = "admissions" }) => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {

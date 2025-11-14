@@ -2,7 +2,7 @@ import React from "react";
 import ApplicationMarquee from "../../shared/ApplicationMarquee";
 import Image from "next/image";
 
-const HeroBanner = ({ announcements, pageType = "engineering" }) => {
+const HeroBanner = ({ announcements, pageType = "admissions" }) => {
   return (
     <>
       <div className="relative w-full h-[83vh] md:h-[76vh] overflow-hidden">

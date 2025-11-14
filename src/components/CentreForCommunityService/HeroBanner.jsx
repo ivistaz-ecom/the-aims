@@ -4,7 +4,7 @@ import ApplicationMarquee from "@/shared/ApplicationMarquee"
 
 const HeroBanner = ({
   announcements,
-  pageType = "centreForInternationalLiaison",
+  pageType = "admissions",
 }) => {
   return (
     <>

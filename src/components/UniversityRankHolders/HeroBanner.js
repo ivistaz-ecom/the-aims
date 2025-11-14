@@ -2,7 +2,7 @@
 // import Image from "next/image";
 // import ApplicationMarquee from "../../shared/ApplicationMarquee";
 
-// const HeroBanner = ({ announcements, pageType = "business" }) => {
+// const HeroBanner = ({ announcements, pageType = "admissions" }) => {
 //   return (
 //     <>
 //       <div className="relative w-full h-[100vh] overflow-hidden">
@@ -67,7 +67,7 @@ import React from "react";
 import ApplicationMarquee from "../../shared/ApplicationMarquee";
 import Image from "next/image";
 
-const HeroBannerSoB = ({ announcements, pageType = "engineering" }) => {
+const HeroBannerSoB = ({ announcements, pageType = "admissions" }) => {
   return (
     <>
       <div className="relative w-full h-[83vh] md:h-[76vh] overflow-hidden">

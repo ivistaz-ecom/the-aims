@@ -1,9 +1,20 @@
 "use client"
 import React from "react"
 
-const ApplicationMarquee = ({ announcements, pageType = "business" }) => {
+const ApplicationMarquee = ({ announcements, pageType = "admissions" }) => {
   // Page-specific announcements with links
   const pageAnnouncements = {
+    admissions: [
+      {
+        text: "DEADLINE FOR MBA ADMISSIONS DECEMBER 31, 2025",
+        link: "/business-school/master-business-administration",
+      },
+      {
+        text: "APPLY NOW FOR MBA SELECTION PROCESS 2026-27",
+        link: "/business-school/master-business-administration",
+      },
+    ],
+
     business: [
       {
         text: "APPLY NOW FOR MBA SELECTION PROCESS 2025-26",
@@ -35,7 +46,7 @@ const ApplicationMarquee = ({ announcements, pageType = "business" }) => {
     engineering: [
       {
         text: "APPLY NOW FOR BBA ADMISSION 2025-26",
-        link: "https://apply.theaims.ac.in/login"
+        link: "https://apply.theaims.ac.in/login",
       },
       {
         text: "APPLY NOW FOR MBA SELECTION PROCESS 2025-26",
@@ -144,7 +155,7 @@ const ApplicationMarquee = ({ announcements, pageType = "business" }) => {
   const displayAnnouncements =
     formatAnnouncements(announcements) ||
     pageAnnouncements[pageType] ||
-    pageAnnouncements.business
+    pageAnnouncements.admissions
 
   return (
     <div
