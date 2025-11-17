@@ -1,6 +1,6 @@
-"use client";
-import React, { useState } from "react";
-import Image from "next/image";
+"use client"
+import React, { useState } from "react"
+import Image from "next/image"
 
 const accordionData = [
   {
@@ -31,9 +31,11 @@ const accordionData = [
     content: `
       <p>Call us at the C&PR to connect with any of us or if you are unsure on who to contact at AIMS Institutes.</p>
       <p>
+      
         Call: <a href="tel:+917026191114" class="text-[#A22977] underline">+91-702-619-1114</a> or 
         <a href="tel:+918028390433" class="text-[#A22977] underline">(080)-28390433</a> /
-        <a href="tel:+918028390434" class="text-[#A22977] underline">28390434</a>
+        <a href="tel:+918028390434" class="text-[#A22977] underline">28390434</a><br />
+         Email id: <a href="mailto:placements@theaims.ac.in" class="text-[#A22977] underline">placements@theaims.ac.in</a>
       </p>
     `,
   },
@@ -69,14 +71,14 @@ const accordionData = [
       </p>
     `,
   },
-];
+]
 
 const ContactAccordion = () => {
-  const [expandedSection, setExpandedSection] = useState(accordionData[0].title);
+  const [expandedSection, setExpandedSection] = useState(accordionData[0].title)
 
   const handleItemClick = (title) => {
-    setExpandedSection(expandedSection === title ? null : title);
-  };
+    setExpandedSection(expandedSection === title ? null : title)
+  }
 
   return (
     <section className="md:pb-10 bg-white px-6 lg:px-10">
@@ -120,7 +122,7 @@ const ContactAccordion = () => {
         </p> */}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ContactAccordion;
+export default ContactAccordion

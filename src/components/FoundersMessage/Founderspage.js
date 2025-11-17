@@ -9,7 +9,7 @@ const foundersData = [
     titles: ["About  Founder", " Founder’s Message"],
     name: "Dr Kerron G Reddy",
     names: "Founder, AIMS Institutes",
-    email: "aimsedu@gmail.com",
+    email: "founder@theaims.ac.in",
     image: "/founders-message/leader-img1.webp",
     about: `Dr Kerron G Reddy is the Founder of AIMS Institutes, Peenya, Bangalore, Karnataka, India which she established in 1994. She is an accomplished educationist with demonstrated ability to lead, teach, motivate, and direct students while maintaining high interest and achievement in research, projects and consultancy services. A multifaceted social entrepreneur, administrator and academician, she has over 30 years’ rich experience in institution building, teaching, research and running the operations of premier institutions of higher education in India and overseas.
   
@@ -60,7 +60,7 @@ He is a member of “Chaîne des Rôtisseurs,” an International Association of
     name: "Dr Rama Murthy",
     names: "Principal, AIMS Institutes",
     email: "principal@theaims.ac.in",
-    image: "/founders-message/leader-img4.webp",
+    image: "/founders-message/leader-img04.webp",
     about: `As the Principal of AIMS Institutes, Dr Ramamurthy focuses on strengthening academic programs, promoting research, and enhancing industry collaborations. He has held several leadership roles, including Associate Professor, Program Director, and Registrar, before becoming Principal.
 
 He holds a PhD in Management from Dravidian University, an MPhil, and an MBA in Finance. His prolific research includes 24 published papers, 27 international presentations, and co-authoring a patent titled “Monetary Incentives and Employee Performance.”

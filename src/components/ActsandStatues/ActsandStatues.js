@@ -1,5 +1,5 @@
-import Link from "next/link";
-import React from "react";
+import Link from "next/link"
+import React from "react"
 
 const STATUTES_AND_POLICIES = [
   {
@@ -49,13 +49,27 @@ const STATUTES_AND_POLICIES = [
     title: "Admission Policy",
     href: "/acts-and-statutes-moa/Admission policy.pdf",
   },
-  { title: "Research Policy", href: "/acts-and-statutes-moa/Research-Policy.pdf" },
+  {
+    title: "Research Policy",
+    href: "/acts-and-statutes-moa/Research-Policy.pdf",
+  },
   {
     title: "Library Policies and Procedures",
     href: "/acts-and-statutes-moa/Library Policy and Procedures.pdf",
   },
-  { title: "Student Exit Policy", href: "/acts-and-statutes-moa/Student-Exit-Policy.pdf"},
-];
+  {
+    title: "Student Exit Policy",
+    href: "/acts-and-statutes-moa/Student-Exit-Policy.pdf",
+  },
+  {
+    title: "Placement Policy",
+    href: "/acts-and-statutes-moa/placement-policy.pdf",
+  },
+  {
+    title: "E-Governance Policy",
+    href: "/acts-and-statutes-moa/e-goverance-policy.pdf",
+  },
+]
 
 const ActsandStatues = () => {
   return (
@@ -98,7 +112,7 @@ const ActsandStatues = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ActsandStatues;
+export default ActsandStatues
