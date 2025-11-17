@@ -1,6 +1,6 @@
-"use client";
-import React, { useEffect } from "react";
-import Image from "next/image";
+"use client"
+import React, { useEffect } from "react"
+import Image from "next/image"
 
 // Generic Carousel Component
 const PlacementGalleryCarousel = ({ title, description }) => {
@@ -17,11 +17,22 @@ const PlacementGalleryCarousel = ({ title, description }) => {
                   .map((paragraph, idx) => <p key={idx}>{paragraph.trim()}</p>)
               : description}
           </div>
+          <div className="text-gray-600 lg:mt-4 mt-3">
+            <p>
+              Contact us:{" "}
+              <a
+                href="mailto:placements@theaims.ac.in"
+                className="text-[#8A1D64] hover:text-[#A22977] underline"
+              >
+                placements@theaims.ac.in
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 // Page Component
 const PlacementGallery = () => {
@@ -41,7 +52,7 @@ const PlacementGallery = () => {
         category="Placement"
       />
     </>
-  );
-};
+  )
+}
 
-export default PlacementGallery;
+export default PlacementGallery
