@@ -61,11 +61,29 @@ He is a member of “Chaîne des Rôtisseurs,” an International Association of
     names: "Principal, AIMS Institutes",
     email: "principal@theaims.ac.in",
     image: "/founders-message/leader-img04.webp",
-    about: `As the Principal of AIMS Institutes, Dr Ramamurthy focuses on strengthening academic programs, promoting research, and enhancing industry collaborations. He has held several leadership roles, including Associate Professor, Program Director, and Registrar, before becoming Principal.
+    about: `Dr B M Rama Murthy brings with him a wealth of experience, spanning over two and a half decades in the fields of teaching, research, academic administration, and leadership. 
 
-He holds a PhD in Management from Dravidian University, an MPhil, and an MBA in Finance. His prolific research includes 24 published papers, 27 international presentations, and co-authoring a patent titled “Monetary Incentives and Employee Performance.”
+Dr B M Rama Murthy has an impressive academic background. He earned his PhD in Management from Dravidian University in 2016 and has also completed an MPhil and an MBA in Finance. A lifelong learner, he has further enhanced his expertise through professional certifications, including a Wharton Certificate in Entrepreneurship Strategy and a course on FinTech and the Transformation in Financial Services from Copenhagen Business School.
 
-Dr Ramamurthy has authored books like “Advanced Financial Accounting,” “Business Finance,” and “Corporate Accounting,” and has been honoured with the “Dr Radhakrishna Shikshana Ratna National Award.”`,
+Academic and Professional Achievements:
+
+Author of Seven Books: Dr B M Rama Murthy has authored key textbooks in the fields of Accounting and Finance, including "Advanced Financial Accounting," "Business Finance," and "Corporate Accounting," which are widely used by students and professionals alike.
+
+Prolific Researcher: With 24 published research papers and 27 presentations at international conferences, Dr B M Rama Murthy has significantly contributed to the academic community. His research covers a broad spectrum of topics, including fintech, financial inclusion, sustainability in HRM, and innovations in management education.
+
+Patents: He has co-authored a patent titled "Monetary Incentives and Employee Performance," reflecting his commitment to innovative research in business management.
+
+Awards and Recognition: Among his many accolades, Dr B M Rama Murthy was honored with the "Dr. Radhakrishna Shikshana Ratna National Award" for his distinguished contributions to teaching, training, research, and administration.
+
+Leadership in Academia: Over the years, Dr B M Rama Murthy has held several key leadership roles, including serving as Associate Professor and Program Director at AIMS, where he played a pivotal role in curriculum development, faculty training, and student mentoring. He has also guided PhD students in Management under the University of Mysore.
+
+Contributions to Professional Development:
+
+Dr B M Rama Murthy has been actively involved in organising and participating in numerous workshops, faculty development programs, and webinars. Notable among these are his participation in the two-day conclave on "MBA Pedagogy for the 21st Century Business School" at IIM Bangalore and his role as a resource person in various workshops on syllabus revision and curriculum design.
+
+Commitment to Innovation and Excellence:
+
+Dr B M Rama Murthy's passion for exploring new pedagogical tools and methods has been evident throughout his career. He has consistently advocated for integrating technology in teaching and fostering a research-driven learning environment. His strategic vision, combined with his dedication to student welfare, positions him as an inspiring leader who will further elevate the standards of AIMS.`,
     message: `Dear Students, Welcome to AIMS Institutes — where your future begins! At AIMS, we provide a dynamic environment supported by world-class infrastructure — smart classrooms, innovation labs, a vibrant library, and centres for research and entrepreneurship. Here, learning goes beyond academics, preparing you to be leaders in a globalized world. "Great things never come from comfort zones." Guided by expert faculty and a diverse student community, your journey here will be full of opportunities for growth, discovery, and success. Dream big, work hard, and make the most of every opportunity. We are proud to have you with us — and excited to see the amazing things you will achieve!`,
   },
 ]
@@ -86,6 +104,184 @@ const FoundersMessage = () => {
     const updated = [...showFullAbout]
     updated[index] = !updated[index]
     setShowFullAbout(updated)
+  }
+
+  const renderAboutContent = (text, index) => {
+    const lines = text.split("\n")
+    const result = []
+    let currentParagraph = []
+    let inList = false
+    let listItems = []
+    let listStartIndex = -1
+
+    // Headings that should start list sections
+    const listSectionHeadings = [
+      "Academic and Professional Achievements:",
+      "Contributions to Professional Development:",
+      "Commitment to Innovation and Excellence:",
+    ]
+
+    const isListSectionHeading = (line) => {
+      return listSectionHeadings.some((heading) => line === heading)
+    }
+
+    lines.forEach((line, lineIndex) => {
+      const trimmedLine = line.trim()
+
+      // Check if this line starts a list section
+      if (isListSectionHeading(trimmedLine)) {
+        // Close any previous list
+        if (inList && listItems.length > 0) {
+          result.push(
+            <ul
+              key={`list-${listStartIndex}`}
+              className="list-disc mb-4 space-y-3 ml-6 text-[18px]"
+              style={{ listStyleType: "disc" }}
+            >
+              {listItems.map((item, idx) => {
+                const colonIndex = item.indexOf(":")
+                if (colonIndex > 0) {
+                  const title = item.substring(0, colonIndex + 1)
+                  const description = item.substring(colonIndex + 1).trim()
+                  return (
+                    <li key={idx} className="mb-2">
+                      <span className="font-semibold">{title}</span>
+                      {description && <span> {description}</span>}
+                    </li>
+                  )
+                }
+                return <li key={idx}>{item}</li>
+              })}
+            </ul>
+          )
+          listItems = []
+        }
+
+        // Close any previous paragraph
+        if (currentParagraph.length > 0) {
+          result.push(
+            <p key={`para-${lineIndex}`} className="mb-4">
+              {currentParagraph.join("\n")}
+            </p>
+          )
+          currentParagraph = []
+        }
+
+        // Add the heading
+        result.push(
+          <div
+            key={`heading-${lineIndex}`}
+            className=" !font-semibold mb-3 text-[20px] text-black"
+          >
+            {trimmedLine}
+          </div>
+        )
+        inList = true
+        listStartIndex = lineIndex
+        return
+      }
+
+      // Check if we're in the list section and the line looks like a list item
+      // List items start with a capital letter and contain a colon (e.g., "Author of Seven Books:")
+      if (inList) {
+        if (trimmedLine === "") {
+          // Empty line - if we have list items, continue; might be spacing between items
+          return
+        } else if (trimmedLine.match(/^[A-Z][^:]*:/)) {
+          // This is a new list item - save previous item if exists, then start new one
+          if (listItems.length > 0) {
+            // Process the last item to add it properly
+          }
+          listItems.push(trimmedLine)
+          return
+        } else {
+          // Non-list item line - render the list and exit list mode
+          if (listItems.length > 0) {
+            result.push(
+              <ul
+                key={`list-${listStartIndex}`}
+                className="list-disc mb-4 space-y-3 ml-6 text-[18px]"
+                style={{ listStyleType: "disc" }}
+              >
+                {listItems.map((item, idx) => {
+                  // Split item into title (before colon) and description (after colon)
+                  const colonIndex = item.indexOf(":")
+                  if (colonIndex > 0) {
+                    const title = item.substring(0, colonIndex + 1)
+                    const description = item.substring(colonIndex + 1).trim()
+                    return (
+                      <li key={idx} className="mb-2">
+                        <span className="font-semibold">{title}</span>
+                        {description && <span> {description}</span>}
+                      </li>
+                    )
+                  }
+                  return <li key={idx}>{item}</li>
+                })}
+              </ul>
+            )
+            listItems = []
+          }
+          inList = false
+          // Add this line to current paragraph
+          if (trimmedLine) {
+            currentParagraph.push(trimmedLine)
+          }
+        }
+      } else {
+        // Regular paragraph content
+        if (trimmedLine === "") {
+          if (currentParagraph.length > 0) {
+            result.push(
+              <p key={`para-${lineIndex}`} className="mb-4">
+                {currentParagraph.join("\n")}
+              </p>
+            )
+            currentParagraph = []
+          }
+        } else {
+          currentParagraph.push(trimmedLine)
+        }
+      }
+    })
+
+    // Handle remaining list items
+    if (listItems.length > 0) {
+      result.push(
+        <ul
+          key={`list-final`}
+          className="list-disc mb-4 space-y-3 ml-6 text-base"
+          style={{ listStyleType: "disc" }}
+        >
+          {listItems.map((item, idx) => {
+            // Split item into title (before colon) and description (after colon)
+            const colonIndex = item.indexOf(":")
+            if (colonIndex > 0) {
+              const title = item.substring(0, colonIndex + 1)
+              const description = item.substring(colonIndex + 1).trim()
+              return (
+                <li key={idx} className="mb-2">
+                  <span className="font-semibold">{title}</span>
+                  {description && <span> {description}</span>}
+                </li>
+              )
+            }
+            return <li key={idx}>{item}</li>
+          })}
+        </ul>
+      )
+    }
+
+    // Handle remaining paragraph
+    if (currentParagraph.length > 0) {
+      result.push(
+        <p key={`para-final`} className="mb-4">
+          {currentParagraph.join("\n")}
+        </p>
+      )
+    }
+
+    return result.length > 0 ? result : <p>{text}</p>
   }
 
   return (
@@ -123,8 +319,14 @@ const FoundersMessage = () => {
               <div className="-mt-2 text-[20px] md:text-[20px] lg:text-[28px] text-black !font-semibold whitespace-pre-line">
                 {item.names}
               </div>
-              <div className="-mt-2 text-[20px] md:text-[20px] lg:text-[28px] text-black !font-semibold whitespace-pre-line"> 
-                <a href={`mailto:${item.email}`} className="text-[#A12876] underline"> {item.email}</a>
+              <div className="-mt-2 text-[20px] md:text-[20px] lg:text-[28px] text-black !font-semibold whitespace-pre-line">
+                <a
+                  href={`mailto:${item.email}`}
+                  className="text-[#A12876] underline"
+                >
+                  {" "}
+                  {item.email}
+                </a>
               </div>
             </div>
 
@@ -151,19 +353,18 @@ const FoundersMessage = () => {
             <div className="mt-4 text-left">
               {activeTabs[index] === 0 ? (
                 <>
-                  <p
-                    className={`leading-relaxed text-base  whitespace-pre-line text-black  ${
+                  <div
+                    className={`leading-relaxed text-base text-black ${
                       !showFullAbout[index] ? "line-clamp-3" : ""
                     }`}
                   >
-                    {item.about}
-                  </p>
+                    {renderAboutContent(item.about, index)}
+                  </div>
                   <button
                     className="text-black !font-semibold hover:text-[#A12876] mt-2 transition text-[18px]"
                     onClick={() => toggleReadMore(index)}
                   >
                     {showFullAbout[index] ? "Read Less" : "Read More"}
-                    
                   </button>
                 </>
               ) : (

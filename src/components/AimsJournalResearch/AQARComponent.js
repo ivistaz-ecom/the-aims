@@ -27,7 +27,14 @@ const AQARComponent = () => {
       content: {
         heading: "Minutes Of Meeting",
         documents: [
-          { year: "2023-24", link: "#" },
+          {
+            year: "2024-25",
+            link: "/iqac/minutes-of-meeting/IQAC+Minutes+2024-2025.pdf",
+          },
+          {
+            year: "2023-24",
+            link: "/iqac/minutes-of-meeting/IQAC+Minutes+2023-2024.pdf",
+          },
           {
             year: "2022-23",
             link: "/iqac/minutes-of-meeting/IQAC+Minutes+2022-2023.pdf",
