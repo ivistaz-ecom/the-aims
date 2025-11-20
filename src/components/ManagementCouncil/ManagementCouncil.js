@@ -1,5 +1,5 @@
-import Link from "next/link";
-import React from "react";
+import Link from "next/link"
+import React from "react"
 
 const ManagementCouncil = () => {
   return (
@@ -27,7 +27,7 @@ const ManagementCouncil = () => {
           </div>
           <div>
             {/* <h4 className="text-2xl text-bold">Governing Council Members</h4> */}
-            <ul className="list-disc list-inside space-y-2">
+            <ul className="list-disc list-outside space-y-2 pl-6">
               <li className="text-[18px] text-[#A22877]">
                 <Link
                   href="/pdf/management-council/Management-Council-Members.pdf"
@@ -44,7 +44,7 @@ const ManagementCouncil = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ManagementCouncil;
+export default ManagementCouncil

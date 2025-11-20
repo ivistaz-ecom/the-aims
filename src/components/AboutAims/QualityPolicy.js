@@ -6,7 +6,7 @@ const QualityPolicy = () => {
     <section
       className={`
         relative w-full mb-10 bg-cover bg-center flex items-center 
-        h-[800px] md:h-[90vh] lg:h-[600px] lg:mt-10 
+        h-[800px] md:h-[90vh] lg:h-[600px]  
       `}
     >
       {/* Background Images */}

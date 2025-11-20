@@ -124,15 +124,15 @@ export const MenuItems = [
       },
       {
         name: "Anti-Ragging Cell",
-        href: "/cells-committees-antiragging-sexual-harassment-grievances-equal-opportunity",
+        href: "/cells-committees-antiragging-sexual-harassment-grievances-equal-opportunity#ragging",
       },
       {
         name: "Anti-Sexual Harassment Committee",
-        href: "/cells-committees-antiragging-sexual-harassment-grievances-equal-opportunity",
+        href: "/cells-committees-antiragging-sexual-harassment-grievances-equal-opportunity#harassment",
       },
       {
         name: "Equal Opportunity Cell",
-        href: "/cells-committees-antiragging-sexual-harassment-grievances-equal-opportunity",
+        href: "/cells-committees-antiragging-sexual-harassment-grievances-equal-opportunity#opportunity",
       },
       {
         name: "Facilities for differently-abled",
