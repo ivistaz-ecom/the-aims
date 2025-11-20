@@ -343,9 +343,9 @@ export default function ExactSwapCarousel() {
                     transition={{ duration: 0.4, delay: 0.1 }}
                     className="mb-4 w-full md:w-2/3 md:overflow-y-auto text-left"
                   >
-                    <h3 className="text-2xl md:text-3xl font-bold mb-3">
+                    <h5 className="text-2xl md:text-3xl monser-600 mb-3">
                       {courses[current].title}
-                    </h3>
+                    </h5>
                     {courses[current].programs &&
                       courses[current].programs.length > 0 && (
                         <ul className="mb-4 space-y-1">
