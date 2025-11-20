@@ -1,9 +1,9 @@
-"use client";
-import React, { useState, useRef, useEffect } from "react";
-import { motion } from "motion/react";
-import { GoArrowDownRight } from "react-icons/go";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+"use client"
+import React, { useState, useRef, useEffect } from "react"
+import { motion } from "motion/react"
+import { GoArrowDownRight } from "react-icons/go"
+import { usePathname } from "next/navigation"
+import Link from "next/link"
 
 const transition = {
   type: "spring",
@@ -12,49 +12,46 @@ const transition = {
   stiffness: 100,
   restDelta: 0.001,
   restSpeed: 0.001,
-};
+}
 
-export const MenuItem = ({
-  setActive,
-  active,
-  item,
-  children
-}) => {
+export const MenuItem = ({ setActive, active, item, children }) => {
   const handleClick = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+    e.preventDefault()
+    e.stopPropagation()
     // Toggle the submenu on click
-    setActive(active === item ? null : item);
-  };
+    setActive(active === item ? null : item)
+  }
 
   return (
     <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.3 }}
         className="cursor-pointer hover:opacity-[0.9] text-white flex items-center text-[14px] group"
-        style={{ fontSize: '14px' }}
+        style={{ fontSize: "14px" }}
         onClick={handleClick}
       >
-        {item} <GoArrowDownRight className={`transition-transform duration-200 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ${active === item ? '-rotate-90' : 'group-hover:-rotate-90'}`} />
+        {item}{" "}
+        <GoArrowDownRight
+          className={`transition-transform duration-200 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ${
+            active === item ? "-rotate-90" : "group-hover:-rotate-90"
+          }`}
+        />
       </motion.p>
       {active !== null && (
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={transition}>
+          transition={transition}
+        >
           {active === item && (
-            <div
-              className="absolute top-[calc(100%_+_1.2rem)] transform -mt-1">
+            <div className="absolute top-[calc(100%_+_1.2rem)] transform -mt-1">
               <motion.div
                 transition={transition}
                 layoutId="active"
-                className="bg-white backdrop-blur-sm rounded-b-lg overflow-hidden shadow-xl">
-                <motion.div
-                  layout
-                  className="w-max h-full p-0">
-                  <div className="flex flex-col">
-                    {children}
-                  </div>
+                className="bg-white backdrop-blur-sm rounded-b-lg overflow-hidden shadow-xl"
+              >
+                <motion.div layout className="w-max h-full p-0">
+                  <div className="flex flex-col">{children}</div>
                 </motion.div>
               </motion.div>
             </div>
@@ -62,50 +59,43 @@ export const MenuItem = ({
         </motion.div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export const Menu = ({
-  setActive,
-  children
-}) => {
-  const menuRef = useRef(null);
+export const Menu = ({ setActive, children }) => {
+  const menuRef = useRef(null)
 
   const handleMouseLeave = () => {
-    setActive(null);
-  };
+    setActive(null)
+  }
 
   // Handle clicks outside the menu to close submenus
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setActive(null);
+        setActive(null)
       }
-    };
+    }
 
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener("click", handleClickOutside)
 
     return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, [setActive]);
+      document.removeEventListener("click", handleClickOutside)
+    }
+  }, [setActive])
 
   return (
     <nav
       ref={menuRef}
       onMouseLeave={handleMouseLeave}
-      className="relative shadow-input flex justify-center space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-10 py-2 md:py-2 lg:py-3 xl:py-4 2xl:py-6 text-white">
+      className="relative shadow-input flex justify-center space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-10 py-2 md:py-2 lg:py-3 xl:py-4 2xl:py-6 text-white"
+    >
       {children}
     </nav>
-  );
-};
+  )
+}
 
-export const ProductItem = ({
-  title,
-  description,
-  href,
-  src
-}) => {
+export const ProductItem = ({ title, description, href, src }) => {
   return (
     <a href={href} className="flex space-x-2">
       <img
@@ -113,7 +103,8 @@ export const ProductItem = ({
         width={140}
         height={70}
         alt={title}
-        className="shrink-0 rounded-md shadow-2xl" />
+        className="shrink-0 rounded-md shadow-2xl"
+      />
       <div>
         <h4 className="text-xl font-bold text-black dark:text-white">
           {title}
@@ -123,22 +114,81 @@ export const ProductItem = ({
         </p>
       </div>
     </a>
-  );
-};
+  )
+}
 
-export const HoveredLink = ({
-  children,
-  href,
-  submenu,
-  ...rest
-}) => {
-  const pathname = usePathname();
-  const isActive = pathname === href;
+export const HoveredLink = ({ children, href, submenu, ...rest }) => {
+  const pathname = usePathname()
+  const [currentHash, setCurrentHash] = useState("")
+
+  // Get hash from href
+  const hrefParts = href.split("#")
+  const hrefWithoutHash = hrefParts[0]
+  const hrefHash = hrefParts[1] || ""
+
+  // Update hash when pathname or window location changes
+  useEffect(() => {
+    const updateHash = () => {
+      if (typeof window !== "undefined") {
+        setCurrentHash(window.location.hash.replace("#", ""))
+      }
+    }
+
+    // Update on mount and pathname change
+    updateHash()
+
+    // Listen for hash changes
+    window.addEventListener("hashchange", updateHash)
+
+    // Also check periodically in case hash changes without hashchange event
+    const interval = setInterval(updateHash, 200)
+
+    return () => {
+      window.removeEventListener("hashchange", updateHash)
+      clearInterval(interval)
+    }
+  }, [pathname])
+
+  // Check if active: pathname matches AND (no hash in href OR hash matches)
+  const isActive =
+    pathname === hrefWithoutHash &&
+    (hrefHash === "" || currentHash === hrefHash)
+
+  // Handle click for same-page hash navigation
+  const handleClick = (e) => {
+    // Normalize paths for comparison (remove trailing slashes)
+    const normalizedPathname = pathname.replace(/\/$/, "")
+    const normalizedHref = hrefWithoutHash.replace(/\/$/, "")
+
+    // If we're on the same page and href has a hash, manually trigger hash change
+    if (normalizedPathname === normalizedHref && hrefHash) {
+      // Prevent default navigation since we're handling it manually
+      e.preventDefault()
+      e.stopPropagation()
+
+      // Dispatch the custom event FIRST to ensure TabSection updates immediately
+      window.dispatchEvent(
+        new CustomEvent("hashlinkclick", {
+          detail: { hash: hrefHash },
+          bubbles: true,
+        })
+      )
+
+      // Then update the hash in the URL (this will also trigger hashchange event)
+      // Use a small delay to ensure the custom event is processed first
+      setTimeout(() => {
+        window.location.hash = hrefHash
+      }, 10)
+    }
+  }
 
   if (submenu) {
     return (
       <div className="group relative">
-        <div className="text-[14px] transition-all duration-200 px-3 py-2 w-full block m-0 p-0 border-0 text-gray-700 hover:bg-[#0C2165] hover:text-white" style={{ fontSize: '14px' }}>
+        <div
+          className="text-[14px] transition-all duration-200 px-3 py-2 w-full block m-0 p-0 border-0 text-gray-700 hover:bg-[#0C2165] hover:text-white"
+          style={{ fontSize: "14px" }}
+        >
           {children}
           <span className="ml-2 text-xs">▶</span>
         </div>
@@ -151,7 +201,7 @@ export const HoveredLink = ({
                 key={index}
                 href={subItem.href}
                 className="block px-4 py-2 text-[14px] text-gray-700 hover:bg-[#0C2165] hover:text-white transition-all duration-200"
-                style={{ fontSize: '14px' }}
+                style={{ fontSize: "14px" }}
               >
                 {subItem.name}
               </Link>
@@ -159,19 +209,22 @@ export const HoveredLink = ({
           </div>
         </div>
       </div>
-    );
+    )
   }
 
   return (
     <Link
       href={href}
+      onClick={handleClick}
       {...rest}
-      style={{ fontSize: '14px' }}
-      className={`text-[14px] transition-all duration-200 px-3 py-2 w-full block m-0 p-0 border-0 ${isActive
-        ? "bg-[#6e3299] text-white"
-        : "text-gray-700 hover:bg-[#0C2165] hover:text-white"
-        }`}>
+      style={{ fontSize: "14px" }}
+      className={`text-[14px] transition-all duration-200 px-3 py-2 w-full block m-0 p-0 border-0 ${
+        isActive
+          ? "bg-[#6e3299] text-white"
+          : "text-gray-700 hover:bg-[#0C2165] hover:text-white"
+      }`}
+    >
       {children}
     </Link>
-  );
-};
+  )
+}

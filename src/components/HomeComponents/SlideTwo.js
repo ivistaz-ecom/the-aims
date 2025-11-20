@@ -247,14 +247,14 @@ export default function ExactSwapCarousel() {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 120, opacity: 0 }}
                     transition={{ type: "spring", stiffness: 320, damping: 24 }}
-                    className="rounded-lg overflow-hidden mt-20"
+                    className="rounded-lg overflow-hidden mt-2"
                   >
                     <Image
                       width={320}
                       height={320}
                       src={courses[current].leftImage}
                       alt={courses[current].title}
-                      className="h-[320px] lg:h-full object-cover block"
+                      className="h-[320px] lg:h-[630px] object-cover block"
                       draggable={true}
                     />
                   </motion.div>

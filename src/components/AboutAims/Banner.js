@@ -52,7 +52,7 @@ const HeroBannerSoH = ({ announcements, pageType = "admissions" }) => {
                     Your Top Business School
                   </span>
                   <span className="playfair-400 text-[#D7FCF4] block lg:-mt-3 px-1">
-                    in Bangalore
+                    in Bengaluru
                   </span>
                 </h1>
               </div>

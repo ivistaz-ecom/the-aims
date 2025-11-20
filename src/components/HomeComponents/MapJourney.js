@@ -1,21 +1,21 @@
-"use client";
+"use client"
 
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import { FaInstagram } from "react-icons/fa6";
-import { CiFacebook } from "react-icons/ci";
-import { RiTwitterXFill } from "react-icons/ri";
-import { SlSocialYoutube } from "react-icons/sl";
-import Link from "next/link";
+import React, { useEffect, useState } from "react"
+import Image from "next/image"
+import { FaInstagram } from "react-icons/fa6"
+import { CiFacebook } from "react-icons/ci"
+import { RiTwitterXFill } from "react-icons/ri"
+import { SlSocialYoutube } from "react-icons/sl"
+import Link from "next/link"
 
 // LazyIframe component for loading embeds
 const LazyIframe = ({ src, title, style, onLoad }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false)
 
   const handleLoad = () => {
-    setIsLoaded(true);
-    if (onLoad) onLoad();
-  };
+    setIsLoaded(true)
+    if (onLoad) onLoad()
+  }
 
   return (
     <div style={style} className="relative">
@@ -43,8 +43,8 @@ const LazyIframe = ({ src, title, style, onLoad }) => {
         onLoad={handleLoad}
       />
     </div>
-  );
-};
+  )
+}
 
 const MapJourney = () => {
   return (
@@ -115,17 +115,16 @@ const MapJourney = () => {
           </div>
         </div>
 
-        <div className="container mx-auto pt-10 flex gap-5 items-center lg:px-0 px-4">
-          <div>
-            <h4 className="text-2xl monser-700">Follow Us</h4>
-          </div>
-          <div className="flex gap-4">
+        <div className="container mx-auto pt-5 flex flex-row gap-5 items-center lg:px-0 px-4">
+          <h4 className="text-2xl monser-700 pt-5">Follow Us</h4>
+          <div className="flex gap-4 items-center justify-center ">
             <Link
               href="https://www.instagram.com/aimsinstitutes1994/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="AIMS Institutes on Instagram"
               title="AIMS Institutes on Instagram"
+              className="flex items-center"
             >
               <FaInstagram size={30} aria-hidden="true" />
             </Link>
@@ -135,6 +134,7 @@ const MapJourney = () => {
               rel="noopener noreferrer"
               aria-label="AIMS Institutes on Facebook"
               title="AIMS Institutes on Facebook"
+              className="flex items-center"
             >
               <CiFacebook size={30} aria-hidden="true" />
             </Link>
@@ -144,6 +144,7 @@ const MapJourney = () => {
               rel="noopener noreferrer"
               aria-label="AIMS Institutes on X (Twitter)"
               title="AIMS Institutes on X (Twitter)"
+              className="flex items-center"
             >
               <RiTwitterXFill size={30} aria-hidden="true" />
             </Link>
@@ -153,6 +154,7 @@ const MapJourney = () => {
               rel="noopener noreferrer"
               aria-label="AIMS Institutes on YouTube"
               title="AIMS Institutes on YouTube"
+              className="flex items-center"
             >
               <SlSocialYoutube size={30} aria-hidden="true" />
             </Link>
@@ -160,7 +162,7 @@ const MapJourney = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default MapJourney;
+export default MapJourney
