@@ -23,22 +23,6 @@ export default function Header() {
   const [showMobileSearch, setShowMobileSearch] = useState(false)
   const pathname = usePathname()
 
-  // Close mobile search on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      if (showMobileSearch) {
-        setShowMobileSearch(false)
-        setShowSearchResults(false)
-        setSearchQuery("")
-      }
-    }
-
-    if (showMobileSearch) {
-      window.addEventListener("scroll", handleScroll)
-      return () => window.removeEventListener("scroll", handleScroll)
-    }
-  }, [showMobileSearch])
-
   // Prevent background scroll when mobile menu is open
   useEffect(() => {
     if (mobileOpen) {
@@ -212,13 +196,26 @@ export default function Header() {
     })
   }, [scrollY])
 
+  // Ensure header is fixed when mobile search opens
+  useEffect(() => {
+    if (showMobileSearch) {
+      // Force header to be sticky when mobile search is open
+      setIsSticky(true)
+    }
+  }, [showMobileSearch])
+
+  // Determine if header should be fixed
+  // On mobile: always fixed when search is open, otherwise based on scroll
+  // On desktop/tablet: based on scroll position
+  const shouldBeFixed = showMobileSearch ? true : isSticky
+
   // Removed all transforms to prevent mobile header enlarging
 
   return (
     <>
       <header
         className={`z-50 bg-white backdrop-blur-md w-full ${
-          isSticky
+          shouldBeFixed
             ? "fixed top-0 left-0 right-0 md:shadow-none shadow-sm"
             : "relative"
         }`}
@@ -299,6 +296,12 @@ export default function Header() {
                     placeholder="Search programs..."
                     value={searchQuery}
                     onChange={handleSearchChange}
+                    onFocus={() => {
+                      // Ensure header stays fixed when input is focused (keyboard opens)
+                      if (!isSticky) {
+                        setIsSticky(true)
+                      }
+                    }}
                     className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#6E3299]/30 focus:border-[#6E3299]"
                     autoFocus={showMobileSearch}
                   />
@@ -340,7 +343,7 @@ export default function Header() {
 
               {/* Mobile Search Results - Fixed Position */}
               {showMobileSearch && showSearchResults && (
-                <div className="md:hidden fixed top-[10vh] left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-[9998] max-h-[60vh] overflow-y-auto">
+                <div className="md:hidden fixed top-[12vh] left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-[9998] max-h-[60vh] overflow-y-auto">
                   {isSearching ? (
                     <div className="p-4 text-center">
                       <div className="inline-flex items-center space-x-2">
@@ -835,7 +838,7 @@ export default function Header() {
       {/* Content spacer that smoothly adjusts when header becomes sticky */}
       <div
         className={`w-full ${
-          isSticky ? "h-[12vh] md:h-[10vh] lg:h-[17vh]" : "h-0"
+          shouldBeFixed ? "h-[12vh] md:h-[10vh] lg:h-[17vh]" : "h-0"
         }`}
       />
     </>
