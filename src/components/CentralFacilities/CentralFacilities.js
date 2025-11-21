@@ -6,7 +6,7 @@ const facilitySections = [
   {
     title: "Laboratory & Instrumentation Space",
     description:
-      "The Research Centre houses well-equipped   laboratories that provide the infrastructure for experimental and analytical research.",
+      "The Research Centre houses well-equipped laboratories that provide the infrastructure for experimental and analytical research.",
     labs: [
       {
         src: "/central-facilities/mac-lab.png",

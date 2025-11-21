@@ -169,7 +169,7 @@ const SportsFacilitiesGallery = () => {
         title="Sports Facilities"
         description={`The AIMS campus offers well-maintained sports facilities to promote physical fitness, teamwork, and overall well-being among students and staff. The sports complex includes indoor and outdoor spaces for games such as badminton, basketball, football, cricket, and table tennis. 
             
-        Regular sports events, inter-departmental tournaments, and fitness activities are organized to encourage participation and healthy competition. The institute also provides access to gym equipment and training areas to support daily exercise routines. These facilities foster a balanced lifestyle and help build a strong sense of community within the campus.`}
+        Regular sports events, inter-departmental tournaments, and fitness activities are organised to encourage participation and healthy competition. The institute also provides access to gym equipment and training areas to support daily exercise routines. These facilities foster a balanced lifestyle and help build a strong sense of community within the campus.`}
         category="Sports Facilities"
       />
     </>

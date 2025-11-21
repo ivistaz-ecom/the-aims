@@ -113,7 +113,7 @@ export const MenuItems = [
       { name: "NCC/NSS", href: "/pdf/nss/About-NSS.pdf" },
       { name: "Hostel Details", href: "/hostel-details" },
       { name: "Placement Cell", href: "/placement" },
-      { name: "Health facilities", href: "/health-facilities" },
+      { name: "Health Facilities", href: "/health-facilities" },
       {
         name: "Internal Complaint Committee",
         href: "/pdf/icc/ICC-website.pdf",

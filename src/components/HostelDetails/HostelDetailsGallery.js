@@ -171,7 +171,7 @@ const HostelDetailsGallery = () => {
             
         The Boys’ Hostel comprises 89 rooms accommodating 54 students, while the Girls’ Hostel includes 35 rooms housing 44 students. Each hostel is equipped with essential amenities such as Wi-Fi, study areas, common rooms, and round-the-clock security. 
         
-        The hostels offer a conducive environment for study and recreation, promoting a sense of community and well-being among residents.”`}
+        The hostels offer a conducive environment for study and recreation, promoting a sense of community, and well-being among residents.`}
         category="Hostel Details"
       />
     </>

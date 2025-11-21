@@ -98,7 +98,7 @@ const ActsandStatues = () => {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline underline-offset-2"
+                      className="transition-colors duration-300 hover:text-[#FF7F02]"
                     >
                       {title}
                     </Link>
