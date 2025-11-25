@@ -9,6 +9,25 @@ export const ugcPreparationData = {
                     title: "1st Semester",
                     years: [
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                                { name: "BUSINESS ENVIRONMENTS", url: "/pdf/bba/semester1/2025/Business_ENvironments.pdf" },
+                                { name: "EVENT MANAGEMENT", url: "/pdf/bba/semester1/2025/Event_Management.pdf" },
+                                { name: "FUNDAMENTALS OF ACCOUNTANCY", url: "/pdf/bba/semester1/2025/Fundamentals_of_accountancy.pdf" },
+                                { name: "FUNDAMENTALS OF ACCOUNTING", url: "/pdf/bba/semester1/2025/Fundamentals_of_accounting.pdf" },
+                                { name: "GENERIC ENGLISH", url: "/pdf/bba/semester1/2025/Generic_English.pdf" },
+                                { name: "HINDI", url: "/pdf/bba/semester1/2025/Hindi.pdf" },
+                                { name: "MANAGEMENT DYNAMICS", url: "/pdf/bba/semester1/2025/Management_dynamics.pdf" },
+                                { name: "MANAGEMENT INNOVATION", url: "/pdf/bba/semester1/2025/Management_Innovation.pdf" },
+                                { name: "MARKETING MANAGEMENT", url: "/pdf/bba/semester1/2025/Marketing_Managament.pdf" },
+                                { name: "QUANTITATIVE ANALYSIS FOR BUSINESS", url: "/pdf/bba/semester1/2025/Quantitative_Analysis_for_Business.pdf" },
+                              
+
+                              
+                            ]
+                        },
+                        {
                             id: "2024",
                             title: "2024",
                             pdfs: [
@@ -58,6 +77,22 @@ export const ugcPreparationData = {
                     title: "2nd Semester",
                     years: [
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                          
+                                { name: "BUSINESS ENVIRONMENT", url: "/pdf/bba/semester2/2025/Business_environment.pdf" },
+                                { name: "DATA ANALYSIS FOR BUSINESS DECISIONS", url: "/pdf/bba/semester2/2025/Data_analysis_for_business_decisions.pdf" },
+                                { name: "GENERAL ENGLISH", url: "/pdf/bba/semester2/2025/General_english.pdf" },
+                                { name: "HINDI 2", url: "/pdf/bba/semester2/2025/Hindi_2.pdf" },
+                                { name: "HINDI", url: "/pdf/bba/semester2/2025/Hindi.pdf" },
+                                { name: "HUMAN RESOURCE MANAGEMENT", url: "/pdf/bba/semester2/2025/Human_resource_management.pdf" },
+                                { name: "KANNADA", url: "/pdf/bba/semester2/2025/Kannada.pdf" },
+                                { name: "MARKETING DYNAMICS", url: "/pdf/bba/semester2/2025/Marketing_dynamics.pdf" },
+                                { name: "ORGANISATIONAL BEHAVIOUR", url: "/pdf/bba/semester2/2025/Organisational_behaviour.pdf" },
+                            ]
+                        },
+                        {
                             id: "2024",
                             title: "2024",
                             pdfs: [
@@ -101,6 +136,20 @@ export const ugcPreparationData = {
                     title: "3rd Semester",
                     years: [
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                             
+                                { name: "AIRLINE ACCOUNTING", url: "/pdf/bba/semester3/2025/Airline_accounting.pdf" },
+                                { name: "BUSINESS STATISTICS", url: "/pdf/bba/semester3/2025/Business_statistics.pdf" },
+                                { name: "ELEMENTS OF COSTING ACCOUNTING", url: "/pdf/bba/semester3/2025/Elements_of_costing_accounting.pdf" },
+                                { name: "HINDI", url: "/pdf/bba/semester3/2025/Hindi.pdf" },
+                                { name: "KANNADA", url: "/pdf/bba/semester3/2025/Kannada.pdf" },
+                                { name: "ORGANISATIONAL BEHAVIOUR", url: "/pdf/bba/semester3/2025/Organizational_Behaviour.pdf" },
+                                
+                            ]
+                        },
+                          {
                             id: "2024",
                             title: "2024",
                             pdfs: [
@@ -134,6 +183,18 @@ export const ugcPreparationData = {
                     title: "4th Semester",
                     years: [
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                             
+                                { name: "FINANCIAL MANAGEMENT", url: "/pdf/bba/semester4/2025/Financial_management.pdf" },
+                                { name: "INDIAN FINANCIAL SYSTEM", url: "/pdf/bba/semester4/2025/Indian_financial _system.pdf" },
+                                { name: "KANNADA", url: "/pdf/bba/semester4/2025/Kannada.pdf" },
+                                { name: "MANAGEMENT ACCOUNTING", url: "/pdf/bba/semester4/2025/Management_accounting.pdf" },
+                          
+                            ]
+                        },
+                        {
                             id: "2024",
                             title: "2024",
                             pdfs: [
@@ -166,6 +227,20 @@ export const ugcPreparationData = {
                     id: "sem5",
                     title: "5th Semester",
                     years: [
+                        {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                            
+                                { name: "INCOME TAX 1", url: "/pdf/bba/semester5/2025/Income_Tax_I.pdf" },
+                                { name: "ADVANCED CORPORATE FINANCIAL MANAGEMENT", url: "/pdf/bba/semester5/2025/Advance_corporate_financial_management.pdf" },
+                                { name: "BANKING LAW AND PRACTICE", url: "/pdf/bba/semester5/2025/Banling_law_and_practice.pdf" },
+                                { name: "COMPENSATION AND PERFORMANCE MANAGEMENT", url: "/pdf/bba/semester5/2025/Compensation_and_performance_management.pdf" },
+                                { name: "INCOME TAX LAW AND PRACTICE", url: "/pdf/bba/semester5/2025/Income_Tax_Law_and_Practice.pdf" },
+                                { name: "PRODUCTION AND OPERATIONS MANAGEMENT", url: "/pdf/bba/semester5/2025/Production_and_Operation_Management.pdf" },
+                              
+                               ]
+                        },
                         {
                             id: "2024",
                             title: "2024",
@@ -202,6 +277,20 @@ export const ugcPreparationData = {
                     id: "sem6",
                     title: "6th Semester",
                     years: [
+                        {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                              
+                                { name: "ADVERTISING AND MEDIA MANAGEMENT", url: "/pdf/bba/semester6/2025/Advertising_and_Media_Management.pdf" },
+                                { name: "BUSINESS LAW", url: "/pdf/bba/semester6/2025/Business_law.pdf" },
+                                { name: "CULTURAL DIVERSITY AT WORK PLACE", url: "/pdf/bba/semester6/2025/Cultural_Diversity_at_Workplace.pdf" },
+                                { name: "GOODS AND SERVICE TAX", url: "/pdf/bba/semester6/2025/Goods_and_services_tax.pdf" },
+                                { name: "INCOME TAX II", url: "/pdf/bba/semester6/2025/Income_tax_II.pdf" },
+                                { name: "SECURITY ANALYSIS AND PORTFOLIO MANAGEMENT", url: "/pdf/bba/semester6/2025/Security_Analysis_and_portfolio_management.pdf" },
+                               
+                            ]
+                        },
                         {
                             id: "2024",
                             title: "2024",
@@ -281,6 +370,23 @@ export const ugcPreparationData = {
                     title: "2nd Semester",
                     years: [
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                               
+                                { name: "ADVANCED FINANCIAL ACCOUNTING SEP", url: "/pdf/bcom/semester2/2025/Advanced_financial_accounting_SEP.pdf" },
+                                { name: "ADVANCED FINANCIAL ACCOUNTING", url: "/pdf/bcom/semester2/2025/Advanced_financial_accounting.pdf" },
+                                { name: "COMPUTER FUNDAMENTALS", url: "/pdf/bcom/semester2/2025/Computer_fundamentals.pdf" },
+                                { name: "BANKING INNOVATION", url: "/pdf/bcom/semester2/2025/Banking_innovation.pdf" }, 
+                                { name: "HINDI", url: "/pdf/bcom/semester2/2025/Hindi.pdf" },
+                                { name: "BUSINESS DATA ANALYSIS", url: "/pdf/bcom/semester2/2025/Business_data_analysis.pdf" },
+                                { name: "MODERN BANKING", url: "/pdf/bcom/semester2/2025/Modern_banking.pdf" },
+                                { name: "BUSINESS ETHICS", url: "/pdf/bcom/semester2/2025/Business_ethics.pdf" },
+                                { name: "VANIJYA KANNADA", url: "/pdf/bcom/semester2/2025/Vanijya_Kannda.pdf" }, 
+                                { name: "COMPUTER ACCOUNTING AND TALLY PRIME", url: "/pdf/bcom/semester2/2025/Computer_Accounting_and_Tally_Prime.pdf" },
+                            ]
+                        },
+                        {
                             id: "2024",
                             title: "2024",
                             pdfs: [
@@ -347,6 +453,16 @@ export const ugcPreparationData = {
                     id: "sem4",
                     title: "4th Semester",
                     years: [
+                        {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                              
+                                { name: "ADVANCED CORPORATE ACCOUNTING", url: "/pdf/bcom/semester4/2025/Advanced_corporate_accounting.pdf" },
+                                { name: "BUSINESS REGULATION", url: "/pdf/bcom/semester4/2025/Business_regulation.pdf" },                                 
+                                { name: "COST ACCOUNTING", url: "/pdf/bcom/semester4/2025/Cost_accounting.pdf" },
+                            ]
+                        },
                         {
                             id: "2024",
                             title: "2024",
@@ -438,6 +554,22 @@ export const ugcPreparationData = {
                     title: "6th Semester",
                     years: [
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                               
+                                { name: "ADVANCED FINANCIAL MANAGEMENT", url: "/pdf/bcom/semester6/2025/Advanced_Financial_Management.pdf" },
+                                { name: "E COMMERCE", url: "/pdf/bcom/semester6/2025/E_commerce.pdf" },
+                                { name: "GENERIC ENGLISH", url: "/pdf/bcom/semester6/2025/Generic_English.pdf" },
+                                { name: "IAS II", url: "/pdf/bcom/semester6/2025/IAS_II.pdf" },
+                                { name: "INCOME TAX LAW AND PRACTICE", url: "/pdf/bcom/semester6/2025/INCOME_TAX_LAW_AND_PRACTICE.pdf" },
+                                { name: "INDIAN ACCOUNTING STANDARDS II", url: "/pdf/bcom/semester6/2025/Indian_Accounting_Standards_II.pdf" },
+                                { name: "INVESTMENT MANAGEMENT", url: "/pdf/bcom/semester6/2025/Investment_management.pdf" },
+                                { name: "MANAGEMENT ACCOUNTING", url: "/pdf/bcom/semester6/2025/Management_Accounting.pdf" },
+                     
+                            ]
+                        },
+                        {
                             id: "2024",
                             title: "2024",
                             pdfs: [
@@ -488,6 +620,21 @@ export const ugcPreparationData = {
                     title: "1st Semester",
                     years: [
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                               
+                                { name: "DATA STRUCTURES", url: "/pdf/bca/semester1/2025/Data_Structures.pdf" },
+                                { name: "DISCRETE STRUCTURES", url: "/pdf/bca/semester1/2025/Discretes_Structurtre.pdf" },
+                                { name: "GENERIC ENGLISH", url: "/pdf/bca/semester1/2025/Generic_English.pdf" },
+                                { name: "HINDI", url: "/pdf/bca/semester1/2025/Hindi.pdf" },
+                                { name: "KANNADA", url: "/pdf/bca/semester1/2025/Kannada.pdf" },
+                                { name: "PROBLEM SOLVING TECHNIQUE", url: "/pdf/bca/semester1/2025/Problem_solving_techniques.pdf" }
+
+
+                            ]
+                        },
+                        {
                             id: "2024",
                             title: "2024",
                             pdfs: [
@@ -512,6 +659,23 @@ export const ugcPreparationData = {
                     id: "sem2",
                     title: "2st Semester",
                     years: [
+                        {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                             
+                                { name: "COMPUTER ARCHITECTURE", url: "/pdf/bca/semester2/2025/Computer_architecture.pdf" },
+                                { name: "DATA STRUCTURES", url: "/pdf/bca/semester2/2025/Data_structures.pdf" },
+                                { name: "DATABASE MANAGEMENT SYSTEM", url: "/pdf/bca/semester2/2025/Database_management_system.pdf" },
+                                { name: "GENERAL ENGLISH", url: "/pdf/bca/semester2/2025/General_english.pdf" },
+                                { name: "HINDI", url: "/pdf/bca/semester2/2025/Hindi.pdf" },
+                                { name: "KANNADA", url: "/pdf/bca/semester2/2025/Kannada.pdf" },
+                                { name: "OBJECT ORIENTED PROGRAMMING USING JAVA NEP", url: "/pdf/bca/semester2/2025/Object_oriented_programming_using_JAVA_NEP.pdf" },
+                                { name: "OBJECT ORIENTED PROGRAMMING USING JAVA SEP", url: "/pdf/bca/semester2/2025/Object_oriented_programming_using_JAVA_SEP.pdf" },
+                                { name: "OPERATING SYSTEM", url: "/pdf/bca/semester2/2025/Operating_system.pdf" },
+                             
+                            ]
+                        },
                         {
                             id: "2024",
                             title: "2024",
@@ -541,6 +705,17 @@ export const ugcPreparationData = {
                     title: "3st Semester",
                     years: [
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                              
+                                { name: "COMPUTER NETWORKS", url: "/pdf/bca/semester3/2025/Computer_Networks.pdf" },
+                                { name: "GENERAL ENGLISH", url: "/pdf/bca/semester3/2025/Generic_English.pdf" },
+                                { name: "OPERATING SYSTEM", url: "/pdf/bca/semester3/2025/Operating_system.pdf" },
+                                { name: "PYTHON PROGRAMMING", url: "/pdf/bca/semester3/2025/Python_Programming.pdf" },
+                            ]
+                        },
+                        {
                             id: "2024",
                             title: "2024",
                             pdfs: [
@@ -550,7 +725,7 @@ export const ugcPreparationData = {
                                 { name: "GENERAL ENGLISH", url: "/pdf/bca/semester3/2024/GENERAL_ENGLISH.pdf" },
                                 { name: "KANNADA", url: "/pdf/bca/semester3/2024/KANNADA.pdf" }
                             ]
-                        },
+                        },     
                         {
                             id: "2023",
                             title: "2023",
@@ -567,6 +742,20 @@ export const ugcPreparationData = {
                     id: "sem4",
                     title: "4st Semester",
                     years: [
+                       
+                        {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                              
+                                { name: "DESIGN AND ANALYSIS OF ALGORITHMS", url: "/pdf/bca/semester4/2025/Design_and_analysis_of_algorithm.pdf" },
+                                { name: "GENERAL ENGLISH", url: "/pdf/bca/semester4/2025/Generic_English.pdf" },
+                                { name: "HINDI", url: "/pdf/bca/semester4/2025/Hindi.pdf" },
+                                { name: "INTERNET TECHNOLOGY", url: "/pdf/bca/semester4/2025/Internet_technologies.pdf" },
+                                { name: "KANNADA", url: "/pdf/bca/semester4/2025/kannada.pdf" },
+                                { name: "SOFTWARE ENGINEERING", url: "/pdf/bca/semester4/2025/Software_Engineering.pdf" },
+                            ]
+                        },
                         {
                             id: "2024",
                             title: "2024",
@@ -594,6 +783,15 @@ export const ugcPreparationData = {
                     id: "sem5",
                     title: "5st Semester",
                     years: [
+                        {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                            
+                                { name: "DATA MINING", url: "/pdf/bca/semester5/2025/Data_mining.pdf" },
+                              
+                            ]
+                        },
                         {
                             id: "2024",
                             title: "2024",
@@ -624,6 +822,18 @@ export const ugcPreparationData = {
                     id: "sem6",
                     title: "6st Semester",
                     years: [
+                        {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                                { name: "ELECTRONIC CONTROL DESIGN", url: "/pdf/bca/semester6/2025/ELectronic_Control_design.pdf" },
+                                { name: "MACHINE LEARNING", url: "/pdf/bca/semester6/2025/Machine_learning_NEP.pdf" },
+                                { name: "MOBILE APPLICATION DEVELOPMENT", url: "/pdf/bca/semester6/2025/Mobile_application_development.pdf" },
+                                { name: "OPERATION RESEARCH", url: "/pdf/bca/semester6/2025/Operations_research.pdf" },
+                                { name: "SOFTWARE TESTING", url: "/pdf/bca/semester6/2025/Software_testing.pdf" },
+                             
+                            ]
+                        },
                         {
                             id: "2024",
                             title: "2024",
@@ -658,6 +868,20 @@ export const ugcPreparationData = {
                     title: "1st Semester",
                     years: [
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                               { name: "ACCOMMODATION OPERATIONS", url: "/pdf/bhm/semester1/2025/Accommodation_Operations.pdf" },
+                               { name: "FOOD AND BEVERAGE PRODUCTION", url: "/pdf/bhm/semester1/2025/Food_and_Beverage_Production.pdf" },
+                               { name: "FOOD AND BEVERAGE SERVICES I", url: "/pdf/bhm/semester1/2025/Food_and_Beverage_Services_I.pdf" },
+                               { name: "FOOD AND BEVERAGE SERVICES", url: "/pdf/bhm/semester1/2025/Food_and_Beverage_Services.pdf" },
+                               { name: "FRONT OFFICE I", url: "/pdf/bhm/semester1/2025/Front_Office_I.pdf" },
+                               { name: "HINDI", url: "/pdf/bhm/semester1/2025/Hindi.pdf" },
+                               { name: "HOUSEKEEPING", url: "/pdf/bhm/semester1/2025/Housekeeping.pdf" },
+                               { name: "KANNADA", url: "/pdf/bhm/semester1/2025/Kannada.pdf" },
+                            ]
+                        },
+                        {
                             id: "2024",
                             title: "2024",
                             pdfs: [
@@ -683,6 +907,16 @@ export const ugcPreparationData = {
                     title: "2st Semester",
                     years: [
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                                { name: "FOOD AND BEVERAGE PRODUCTION II", url: "/pdf/bhm/semester2/2025/Food_and_beverage_production_II.pdf" },
+                                { name: "FOOD AND BEVERAGE SERVICES II", url: "/pdf/bhm/semester2/2025/Food_and_beverage_service_II.pdf" },
+                                { name: "HOUSEKEEPING II", url: "/pdf/bhm/semester2/2025/Housekeeping_II.pdf" },
+                                { name: "KANNADA", url: "/pdf/bhm/semester2/2025/Kannada.pdf" },
+                            ]
+                        },
+                        {
                             id: "2024",
                             title: "2024",
                             pdfs: [
@@ -707,6 +941,18 @@ export const ugcPreparationData = {
                     title: "3st Semester",
                     years: [
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                              
+                                { name: "ACCOMMODATION OPERATIONS III", url: "/pdf/bhm/semester3/2025/Accommodation_Operations_III.pdf" },
+                                { name: "FOOD AND BEVERAGE SERVICE III", url: "/pdf/bhm/semester3/2025/Food_and_Beverage_service_III.pdf" },
+                                { name: "FOOD AND BEVERAGE PRODUCTION III", url: "/pdf/bhm/semester3/2025/Food_Beverage_Production_III.pdf" },
+                                { name: "HINDI", url: "/pdf/bhm/semester3/2025/HINDI.pdf" },
+                                { name: "KANNADA", url: "/pdf/bhm/semester3/2025/KANNADA.pdf" },
+                            ]
+                        },
+                        {
                             id: "2024",
                             title: "2024",
                             pdfs: [
@@ -721,6 +967,16 @@ export const ugcPreparationData = {
                     id: "sem4",
                     title: "4st Semester",
                     years: [
+                        {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                                { name: "ACCOMMODATION OPERATIONS IV", url: "/pdf/bhm/semester4/2025/Accommodation_operations_IV.pdf" },
+                                { name: "FOOD AND BEVERAGE PRODUCTION IV", url: "/pdf/bhm/semester4/2025/Food_and_beverage_production_IV.pdf" },
+                                { name: "FOOD AND BEVERAGE SERVICE IV", url: "/pdf/bhm/semester4/2025/Food_and_beverage_service_IV.pdf" },
+                                
+                            ]
+                        },
                         {
                             id: "2024",
                             title: "2024",
@@ -746,6 +1002,17 @@ export const ugcPreparationData = {
                     title: "5st Semester",
                     years: [
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                                { name: "ACCOMMODATION OPERATION V", url: "/pdf/bhm/semester5/2025/Accommodation_Operation_V.pdf" },
+                                { name: "FOOD AND BEVERAGE PRODUCTION V", url: "/pdf/bhm/semester5/2025/Food_and_Beverage_Production_V.pdf" },
+                                { name: "FOOD AND BEVERAGE SERVICE V", url: "/pdf/bhm/semester5/2025/Food_and_Beverage_Service_V.pdf" },
+                                { name: "FOOD AND NUTRITION", url: "/pdf/bhm/semester5/2025/Food_and_Nutrition.pdf" },
+                                { name: "FOOD AND WINE ART", url: "/pdf/bhm/semester5/2025/Food_and_wine_art.pdf" },
+                            ]
+                        },
+                        {
                             id: "2024",
                             title: "2024",
                             pdfs: [
@@ -754,6 +1021,7 @@ export const ugcPreparationData = {
                                 { name: "FOOD AND WINE ART", url: "/pdf/bhm/semester5/2024/FOOD_AND_WINE_ART.pdf" }
                             ]
                         },
+                     
                     ]
                 },
                 {
@@ -870,6 +1138,19 @@ export const ugcPreparationData = {
                     title: "2st Semester",
                     years: [
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                           
+                                { name: "AIRPORT OPERATIONS MANAGEMENT", url: "/pdf/bba-aviation/semester2/2025/Airport_operations_management.pdf" },
+                                { name: "AIRPORT SAFETY AND SECURITY MANAGEMENT", url: "/pdf/bba-aviation/semester2/2025/Airport_safety_and_security_management.pdf" },
+                                { name: "GROUND HANDLING OPERATIONS", url: "/pdf/bba-aviation/semester2/2025/Ground_heading_operations.pdf" },
+                                { name: "INTRODUCTION TO AIRPORT OPERATIONS", url: "/pdf/bba-aviation/semester2/2025/Introduction_to_airport_operations.pdf" },
+                                { name: "KANNADA", url: "/pdf/bba-aviation/semester2/2025/Kannada.pdf" },
+                                { name: "ORGANISATIONAL BEHAVIOUR", url: "/pdf/bba-aviation/semester2/2025/Organisational_behaviour.pdf" },   
+                            ]
+                        },
+                        {
                             id: "2024",
                             title: "2024",
                             pdfs: [
@@ -908,6 +1189,15 @@ export const ugcPreparationData = {
                     id: "sem4",
                     title: "4st Semester",
                     years: [
+                        {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                                { name: "AIRLINE FINANCE", url: "/pdf/bba-aviation/semester4/2025/Airline_finance.pdf" },
+                                { name: "ELEMENTS AND METHODS OF COSTING", url: "/pdf/bba-aviation/semester4/2025/Elements_of_methods_of_costing.pdf" },
+                               
+                            ]
+                        },
                         {
                             id: "2024",
                             title: "2024",
@@ -957,6 +1247,17 @@ export const ugcPreparationData = {
                     title: "6st Semester",
                     years: [
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                                { name: "AIR TRAVEL MANAGEMENT", url: "/pdf/bba-aviation/semester6/2025/Air_Travel_Management.pdf" },
+                                { name: "ENTREPRENEURSHIP MANAGEMENT", url: "/pdf/bba-aviation/semester6/2025/Entrepreneurship_management.pdf" },
+                                { name: "GOODS AND SERVICE TAX LAW AND PRACTICE", url: "/pdf/bba-aviation/semester6/2025/Goods_and_service_tax_law_and_practice.pdf" },
+                                { name: "TECHNOLOGICAL TRENDS IN AVIATION", url: "/pdf/bba-aviation/semester6/2025/Technplogical_Trends_in_Aviation.pdf" },
+                               
+                            ]
+                        },
+                        {
                             id: "2023",
                             title: "2023",
                             pdfs: [
@@ -983,6 +1284,23 @@ export const ugcPreparationData = {
                     id: "sem1",
                     title: "1st Semester",
                     years: [
+                        {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                                { name: "ACCOUNTING FOR MANAGERS", url: "/pdf/mba/semester1/2025/Accounting_for_managers.pdf" },
+                                { name: "DATA SCIENCE USING R AND PYTHON", url: "/pdf/mba/semester1/2025/Data_science_using_R_and_Paython.pdf" },
+                                { name: "ECONOMICS FOR MANAGERS 1", url: "/pdf/mba/semester1/2025/Economics_for_managers_1.pdf" },
+                                { name: "LEARNING AND DEVELOPMENT", url: "/pdf/mba/semester1/2025/Learning_and_development.pdf" },
+                                { name: "LEGAL ASPECTS AND INTELLECTUAL PROPERTY RIGHTS", url: "/pdf/mba/semester1/2025/Legal_aspects_and_intellectual_property_rights.pdf" },
+                                { name: "STATISTICS FOR MANAGEMENT", url: "/pdf/mba/semester1/2025/Statistics_for_management.pdf" },
+                                { name: "MANAGERIAL SKILLS 1", url: "/pdf/mba/semester1/2025/Managerial_skills_1.pdf" },
+                                { name: "MARKETING FOR CUSTOMER VALUE", url: "/pdf/mba/semester1/2025/Marketing_for_customer_value.pdf" },
+                                { name: "ORGANIZATIONAL BEHAVIOR", url: "/pdf/mba/semester1/2025/Organizational_behaviour.pdf" },
+
+                               
+                            ]
+                        },
                         {
                             id: "2024",
                             title: "2024",
@@ -1064,6 +1382,30 @@ export const ugcPreparationData = {
                     title: "3st Semester",
                     years: [
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [                              
+                                { name: "ADVANCED STATISTICAL METHODS FOR BUSINESS DECISION MAKING", url: "/pdf/mba/semester3/2025/Advanced_statistical_methods_for_business_decision_making.pdf" },
+                                { name: "ANALYTICS FOR DECISION MAKING", url: "/pdf/mba/semester3/2025/Analytics_for_decision_making.pdf" },
+                                { name: "BUSINESS VALUATION AND VALUE BASED MANAGEMENT", url: "/pdf/mba/semester3/2025/Business_valuation_and_value_based_management.pdf" },
+                                { name: "CONSUMER BEHAVIOR ", url: "/pdf/mba/semester3/2025/Consumer_behaviour.pdf" },
+                                { name: "DATA SCIENCE USING R AND PYTHON", url: "/pdf/mba/semester3/2025/Data_science_using_R_and_Paython.pdf" },
+                                { name: "INDIAN FINANCIAL SYSTEM", url: "/pdf/mba/semester3/2025/Indian_financial_system.pdf" },
+                                { name: "INVENTORY MANAGEMENT", url: "/pdf/mba/semester3/2025/Inventory_management.pdf" },
+                                { name: "INVESTMENT ANALYSIS AND MANAGEMENT", url: "/pdf/mba/semester3/2025/Investment_analysis_and_management.pdf" },
+                                { name: "LEARNING AND DEVELOPMENT", url: "/pdf/mba/semester3/2025/Learning_and_development.pdf" },
+                                { name: "LOGISTICS MANAGEMENT SYSTEMS AND PRACTICES", url: "/pdf/mba/semester3/2025/Logistics_management_systems_and_practices.pdf" },
+                                { name: "MANAGEMENT PERSPECTIVES", url: "/pdf/mba/semester3/2025/Management_perspectives.pdf" },
+                                { name: "PERFORMANCE MANAGEMENT SYSTEMS", url: "/pdf/mba/semester3/2025/Performs_management_systems.pdf" },
+                                { name: "PROJECT AND OPERATION MANAGEMENT", url: "/pdf/mba/semester3/2025/Project_and_operation_management.pdf" },
+                                { name: "RETAILING MANAGEMENT AND SERVICES", url: "/pdf/mba/semester3/2025/Retailing_management_and_Services.pdf" },
+                                { name: "RURAL AND AGRICULTURAL MARKETING", url: "/pdf/mba/semester3/2025/Rural_and_agriculture_marketing.pdf" },
+                                { name: "STRATEGIC MANAGEMENT AND CORPORATE GOVERNANCE", url: "/pdf/mba/semester3/2025/Strategic_management_and_corporate_governance.pdf" },
+                                { name: "SUPPLY CHAIN MANAGEMENT", url: "/pdf/mba/semester3/2025/Supply_chain_management.pdf" },
+                                { name: "TEAMS DYANAMICS AT WORKS", url: "/pdf/mba/semester3/2025/Teams_dyanamics_at_works.pdf" },
+                            ]
+                        },
+                        {
                             id: "2024",
                             title: "2024",
                             pdfs: [
@@ -1123,6 +1465,23 @@ export const ugcPreparationData = {
                     title: "1st Semester",
                     years: [
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                              
+                                { name: "CORPORATE COMMUNICATION SKILLS", url: "/pdf/mcom/semester1/2025/Corporate_Communication_Skills.pdf" },
+                                { name: "CORPORATE FINANCIAL MANAGEMENT", url: "/pdf/mcom/semester1/2025/Corporate_financial_management.pdf" },
+                                { name: "CUSTOMS DUTY AND GST", url: "/pdf/mcom/semester1/2025/Customs_Duty_and_GST.pdf" },
+                                { name: "GLOBAL TALENT MANAGEMENT", url: "/pdf/mcom/semester1/2025/Global_Talent_Management.pdf" },
+                                { name: "INFORMATION TECHNOLOGY FOR BUSINESS", url: "/pdf/mcom/semester1/2025/Information_Technology_for_Business.pdf" },
+                                { name: "INTERNATIONAL BUSINESS ENVIRONMENT", url: "/pdf/mcom/semester1/2025/International_Business_Environment.pdf" },
+                                { name: "MANAGERIAL FINANCE", url: "/pdf/mcom/semester1/2025/Managerial_finance.pdf" },
+                                { name: "MONETARY SYSTEM", url: "/pdf/mcom/semester1/2025/Monetary_System.pdf" },
+                                { name: "PRINCIPLES AND PRACTICES OF BUSINESS DECISIONS", url: "/pdf/mcom/semester1/2025/Principles_and_Practice_of_Business_Decisions.pdf" },
+                        
+                            ]
+                        },
+                        {
                             id: "2024",
                             title: "2024",
                             pdfs: [
@@ -1137,7 +1496,7 @@ export const ugcPreparationData = {
                                 { name: "MANAGERIAL FINANCE", url: "/pdf/mcom/semester1/2024/MANAGERIAL_FINANCE.pdf" },
                                 { name: "MONETARY SYSTEM", url: "/pdf/mcom/semester1/2024/MONETARY_SYSTEM.pdf" }
                             ]
-                        },                 
+                        },                  
                         {
                             id: "2023",
                             title: "2023",
@@ -1174,6 +1533,20 @@ export const ugcPreparationData = {
                     title: "2st Semester",
                     years: [                                       
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                                  { name: "ADVANCED RESEARCH METHODOLOGY", url: "/pdf/mcom/semester2/2025/Advanced_Research_Methodology.pdf" },
+                                  { name: "ARTIFICIAL AND BUSINESS INTELLIGENCE", url: "/pdf/mcom/semester2/2025/Artificial_and_business_intelligence.pdf" },
+                                  { name: "DIGITAL MARKETING", url: "/pdf/mcom/semester2/2025/Digital_marketing.pdf" },
+                                  { name: "EMERGING TRENDS IN ENTREPRENUIRSHIP", url: "/pdf/mcom/semester2/2025/Emerging_trends_in_entrepreneurship.pdf" },
+                                  { name: "INDIAN ETHOS AND LEADERSHIP", url: "/pdf/mcom/semester2/2025/Indian_Ethos_and_Leadership.pdf" },
+                                  { name: "INNOVATION IN BUSINESS AND INTELLECTUAL PROPERTY RIGHTS", url: "/pdf/mcom/semester2/2025/Innovation_in_Business_and_intellectual_property_rights.pdf" },
+                                  { name: "MODERN INDIAN BANKING", url: "/pdf/mcom/semester2/2025/Modern_Indian_Banking.pdf" },
+                                  { name: "RISK MANAGEMENT AND DERIVATIVES", url: "/pdf/mcom/semester2/2025/Risk_management_and_derivatives.pdf" },
+                            ]
+                        },
+                        {
                             id: "2023",
                             title: "2023",
                             pdfs: [
@@ -1203,6 +1576,22 @@ export const ugcPreparationData = {
                     id: "sem3",
                     title: "3st Semester",
                     years: [                                       
+                        {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                                { name: "BUSINESS RESEARCH METHODS", url: "/pdf/mcom/semester3/2025/Business_research_methods.pdf" },
+                                { name: "CORPORATE REPORTING PRACTICE", url: "/pdf/mcom/semester3/2025/Corporate_reporting_practice.pdf" },
+                                { name: "CORPORATE TAX PLANNING", url: "/pdf/mcom/semester3/2025/Corporate_tax_planning.pdf" },
+                                { name: "FINANCIAL DERVATIVES", url: "/pdf/mcom/semester3/2025/Financial_dervatives.pdf" },
+                                { name: "FINANCIAL REPORTING", url: "/pdf/mcom/semester3/2025/Financial_Reporting.pdf" },
+                                { name: "INTELLECTUAL PROPERTY RIGHTS", url: "/pdf/mcom/semester3/2025/Intellectual_property rights.pdf" },
+                                { name: "LOGISTICS AND SUPPLY CHAIN MANAGEMENT", url: "/pdf/mcom/semester3/2025/Logistics_and_Supply_Chain_Management.pdf" },
+                                { name: "MERGERS, ACQUISITIONS AND RESTRUCTURING", url: "/pdf/mcom/semester3/2025/Mergers_Acquisitions_and_Restructuring.pdf" },
+                                { name: "SECURITY ANALYSIS AND PORTFOLIO MANAGEMENT", url: "/pdf/mcom/semester3/2025/Security_analysis_and_portfolio_management.pdf" },
+                                { name: "STRATEGIC COST MANAGEMENT", url: "/pdf/mcom/semester3/2025/Strategic_Cost_Management.pdf" },                           
+                            ]
+                        },
                         {
                             id: "2024",
                             title: "2024",
@@ -1260,6 +1649,25 @@ export const ugcPreparationData = {
                     title: "4st Semester",
                     years: [                                       
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                                { name: "BUSINESS ANALYTICS", url: "/pdf/mcom/semester4/2025/Business_analytics.pdf" },
+                                { name: "CORPORATE REPORTING PRACTICES II", url: "/pdf/mcom/semester4/2025/Corporate_reporting_practices_II.pdf" },
+                                { name: "CUSTOMS DUTY AND GST", url: "/pdf/mcom/semester4/2025/Customs_Duty_and_GST.pdf" },
+                                { name: "EMERGING TRENDS IN ENTREPRENUIRSHIP", url: "/pdf/mcom/semester4/2025/Emerging_trends_in_entrepeneurship.pdf" },
+                                { name: "FORENSIC ACCOUNTING AND AUDITING", url: "/pdf/mcom/semester4/2025/Forensic_accounting_and_auditing.pdf" },
+                                { name: "FOREX MANAGEMENT", url: "/pdf/mcom/semester4/2025/Foresic_accounting_and_audit.pdf" },
+                                { name: "PERSONAL FINANCIAL PLANNING", url: "/pdf/mcom/semester4/2025/Forex_management.pdf" },
+                                { name: "PERSONAL FINANCIAL PLANNING", url: "/pdf/mcom/semester4/2025/Personal_financial_planning.pdf" },
+                                { name: "SECURITY ANALYSIS AND PORTFOLIO MANAGEMENT", url: "/pdf/mcom/semester4/2025/Security_analysis_and_portfolio_management.pdf" },
+                                { name: "STRATEGIES FOR BANKING RISK AND MANAGEMENT", url: "/pdf/mcom/semester4/2025/Strategies_for_banking_risk_and_marketing_mnagement.pdf" },
+                                { name: "STRATEGIC COST MANAGEMENT II", url: "/pdf/mcom/semester4/2025/Stretegic_cost_management_II.pdf" },
+                               
+                               
+                            ]
+                        },
+                        {
                             id: "2023",
                             title: "2023",
                             pdfs: [
@@ -1285,6 +1693,19 @@ export const ugcPreparationData = {
                     id: "sem1",
                     title: "1st Semester",
                     years: [                        
+                        {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                                { name: "COMPUTER ORGANIZATION AND ARCHITECTURE", url: "/pdf/mca/semester1/2025/Computer_organisation_and_architecture.pdf" },
+                                { name: "DATA STRUCTURES", url: "/pdf/mca/semester1/2025/Data_structures.pdf" },
+                                { name: "DISCRETE MATHEMATICS", url: "/pdf/mca/semester1/2025/Discrete_Mathematics.pdf" },
+                                { name: "EQUIVALENT TO DISCRETE MATHEMATICS AND ITS APPLICATION", url: "/pdf/mca/semester1/2025/Equivalent_to_discrete_mathematics_and_its_application.pdf" },
+                                { name: "OBJECT ORIENTED PROGRAMMING", url: "/pdf/mca/semester1/2025/Object_oriented_programming.pdf" },
+                                { name: "THE ART OF PROGRAMMING", url: "/pdf/mca/semester1/2025/The_art_of_programming.pdf" },
+                                { name: "THEORY OF COMPUTATION", url: "/pdf/mca/semester1/2025/Theory_of_computation.pdf" },                     
+                            ]
+                        },
                         {
                             id: "2024",
                             title: "2024",
@@ -1340,6 +1761,16 @@ export const ugcPreparationData = {
                     title: "3st Semester",
                     years: [                                               
                         {
+                            id: "2025",
+                            title: "2025",
+                            pdfs: [
+                       
+                                { name: "CLOUD COMPUTING", url: "/pdf/mca/semester3/2025/Cloud_computing.pdf" },
+                                { name: "CYBER SPACE", url: "/pdf/mca/semester3/2025/Cyber_space.pdf" },
+                                { name: "MACHINE LEARNING", url: "/pdf/mca/semester3/2025/Machine_learning.pdf" },
+                            ]
+                        },   
+                        {
                             id: "2024",
                             title: "2024",
                             pdfs: [
@@ -1348,7 +1779,7 @@ export const ugcPreparationData = {
                                 { name: "QUANTITATIVE TEACHING AND RESEARCH", url: "/pdf/mca/semester3/2024/QUANTITATIVE_TEACHING_AND_RESEARCH.pdf" },
                                 { name: "RESEARCH METHODOLOGY", url: "/pdf/mca/semester3/2024/RESEARCH_METHODOLOGY.pdf" }
                             ]
-                        },                                             
+                        },                                            
                     ]
                 },
                 // Add remaining 7 semesters for MCA with similar structure
