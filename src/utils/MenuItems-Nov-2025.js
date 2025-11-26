@@ -6,7 +6,7 @@ export const MenuItems = [
       { name: "Acts and Statutes or MoA", href: "/acts-and-statutes-moa" },
       {
         name: "Institutional Development Plan",
-        href: "/aims-ipd/aims-ipd.pdf",
+        href: "institutional-development-plan",
       },
       // { name: "Swayam-NPTEL", href: "/upcoming-page" },
       { name: "Accreditation and Rankings", href: "/accreditations-rankings" },
