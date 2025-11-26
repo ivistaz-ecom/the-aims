@@ -12,7 +12,7 @@ export const MenuItems = [
       { name: "Accreditation and Rankings", href: "/accreditations-rankings" },
       // { name: "NAAC Accreditation", href: "/naac-accreditation" },
       // { name: "NIRF", href: "/nirf-ranking" },
-      { name: "UGC 2 (f) & 12B", href: "/ugc/2f_and_12b_certificate.pdf" },
+      { name: "UGC 2 (f) & 12B", href: "/ugc-2f-12b" },
       { name: "Annual Reports", href: "/annual-reports" },
       { name: "Annual Accounts", href: "/annual-accounts" },
     ],
@@ -62,7 +62,7 @@ export const MenuItems = [
       { name: "Admissions Process & Guidelines", href: "/admission-process" },
       {
         name: "Fee Refund policy",
-        href: "/fee-refund-policy/fee-payment-terms-and-conditions.pdf",
+        href: "/fee-refund-policy",
       },
       { name: "Scholarships", href: "/scholarships" },
       { name: "Education Loans", href: "/education-loans" },
@@ -110,13 +110,13 @@ export const MenuItems = [
     title: "Student Life",
     links: [
       { name: "Sports Facilities", href: "/sports-facilities" },
-      { name: "NCC/NSS", href: "/pdf/nss/About-NSS.pdf" },
+      { name: "NCC/NSS", href: "/ncc-nss" },
       { name: "Hostel Details", href: "/hostel-details" },
       { name: "Placement Cell", href: "/placement" },
       { name: "Health Facilities", href: "/health-facilities" },
       {
         name: "Internal Complaint Committee",
-        href: "/pdf/icc/ICC-website.pdf",
+        href: "/internal-complaint-committee",
       },
       {
         name: "Student Grievance Redressal Committee (SGRC)",
@@ -136,7 +136,7 @@ export const MenuItems = [
       },
       {
         name: "Facilities for differently-abled",
-        href: "/pdf/fda/Barrier-Free-Environment.pdf",
+        href: "/facilities-for-differently-abled",
       },
     ],
   },
