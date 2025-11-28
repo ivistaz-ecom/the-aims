@@ -20,7 +20,7 @@ const index = () => {
         <Overview />
         <ValueAddedPrograms />
         {/* <ProgramsDatas/> */}
-        <Companies />
+        {/* <Companies /> */}
         <BhmCourseStructure />
         <BhmAims />
         <AlumniinHospitality />
