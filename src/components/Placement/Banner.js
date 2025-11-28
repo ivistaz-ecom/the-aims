@@ -1,23 +1,64 @@
-import React from "react";
-import Image from "next/image";
-import ApplicationMarquee from "@/shared/ApplicationMarquee";
+import React from "react"
+import ApplicationMarquee from "@/shared/ApplicationMarquee"
+import Image from "next/image"
 
 const PlacementBanner = ({ announcements, pageType = "phd" }) => {
   return (
     <>
-      <div>
-        <div className="px-4 lg:px-8 bg-[#E1F9F4]">
-          <div className="container mx-auto flex flex-col items-center justify-center px-4 lg:px-0">
-            <div className="text-center lg:w-[80%] py-10">
-              <h1 className="text-4xl font-bold text-[#0C2165]">
-                Placement
-              </h1>
+      <div className="relative w-full h-[83vh] md:h-[76vh] overflow-hidden">
+        {/* Background Image - Desktop */}
+        <div className="hidden md:block w-full h-full bg-cover bg-top bg-no-repeat bg-[url('/placements-mba/pgdm/banner.webp')]" />
+
+        {/* Background Image - Mobile */}
+        <div className="md:hidden w-full h-full bg-cover bg-top bg-no-repeat bg-[url('/placements-mba/pgdm/mobile.webp')]" />
+
+        {/* Gradient Overlay - Figma Design */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(179deg, rgba(12, 33, 101, 0.00) 11%, #08101D 99%)",
+          }}
+        ></div>
+
+        {/* Top Content Container */}
+        <div className="absolute top-5 md:right-18 left-0">
+          <div className="">
+            <div className="container mx-auto py-4 px-4 lg:px-8">
+              <div className="flex lg:flex-row flex-col items-start justify-between md:gap-10 gap-4">
+                <div className="flex items-center">
+                  <Image
+                    src="/white-empower.svg"
+                    alt="Recruiters"
+                    width={200}
+                    height={200}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Content Container */}
+        <div className="absolute bottom-10 left-0 right-0 px-4 lg:px-0">
+          <div className="lg:px-8 px-4">
+            <div className="container mx-auto">
+              <div className="flex lg:flex-row flex-col items-center justify-between md:gap-4 gap-4">
+                <div className="flex items-center">
+                  <h1 className="text-white text-center lg:text-left md:text-left xl:text-left text-2xl lg:text-[60px] playfair-300 lg:leading-16">
+                    Placement Cell
+                  </h1>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </>
-  );
-};
 
-export default PlacementBanner;
+      {/* Application Announcements Marquee */}
+      <ApplicationMarquee announcements={announcements} pageType={pageType} />
+    </>
+  )
+}
+
+export default PlacementBanner

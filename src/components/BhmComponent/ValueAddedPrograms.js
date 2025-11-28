@@ -2,7 +2,7 @@ import React from "react"
 import ValueAddedProgramsCommon from "../shared/BBA-MBA-BBA-Aviation/ValueAddedPrograms"
 import ValueAddedPrograms from "../shared/ValueAddedProgramsProps"
 import Image from "next/image"
-
+import BhmCompanies from "../shared/BhmCompanies"
 
 const BbaValueAddedPrograms = () => {
   return (
@@ -73,6 +73,8 @@ const BbaValueAddedPrograms = () => {
           </div>
         </div>
       </div>
+      {/* Companies Grid */}
+      <BhmCompanies />
     </>
   )
 }

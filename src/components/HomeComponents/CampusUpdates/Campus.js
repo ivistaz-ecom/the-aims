@@ -1,94 +1,129 @@
-"use client";
+"use client"
 
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-
-const slides = [
-  {
-    id: "s2",
-    src: "/home/campus/embla-002.webp",
-    description: "LGBTQIA+ Session",
-    date: "Jul 14, 2025",
-    alt: "card 2",
-    link: "/news/lgbtqia-session",
-  },
-  {
-    id: "s6",
-    src: "/home/campus/embla-006.webp",
-    description: "UG 28th Graduation Ceremony",
-    date: "Jul 14, 2025",
-    alt: "card 6",
-    link: "/news/ug-28th-graduation-ceremony",
-  },
-  {
-    id: "s4",
-    src: "/home/campus/slide-02.webp",
-    description: "AIMS School of Business Shines Again",
-    date: "Jun 6, 2025",
-    alt: "card 4",
-    link: "/news/aims-school-of-business-shines-again",
-  },
-  {
-    id: "s1",
-    src: "/home/campus/embla-001-updated.webp",
-    description: "A Proud Moment for BHM Dept. of AIMS Institutes!",
-    date: "Jun 7, 2025",
-    alt: "card 1",
-    link: "/news/a-proud-moment-for-bhm-dept-of-aims-institutes",
-  },
-
-  {
-    id: "s3",
-    src: "/home/campus/slide-01.webp",
-    description:
-      "A Milestone Achievement for BBA Aviation at AIMS Institutes!",
-    date: "Jun 6, 2025",
-    alt: "card 3",
-    link: "/news/a-milestone-achievement-for-bba-aviation-at-aims-institutes",
-  },
-
-
-];
+import { useState, useEffect, useRef } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
+import Link from "next/link"
+import { API_CONFIG } from "../../../config/config"
 
 export default function AimsCarousel() {
-  const [start, setStart] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const intervalRef = useRef(null);
-  const [visible, setVisible] = useState(4);
-  const [isMobile, setIsMobile] = useState(false);
+  const [start, setStart] = useState(0)
+  const [paused, setPaused] = useState(false)
+  const intervalRef = useRef(null)
+  const [visible, setVisible] = useState(4)
+  const [isMobile, setIsMobile] = useState(false)
+  const [slides, setSlides] = useState([])
+  const [loading, setLoading] = useState(true)
 
-  const next = () => setStart((i) => (i + 1) % slides.length);
-  const prev = () => setStart((i) => (i - 1 + slides.length) % slides.length);
+  const formatDate = (dateString) => {
+    const date = new Date(dateString)
+    return date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    })
+  }
+
+  const stripHtml = (html) => {
+    if (typeof window === "undefined") return html
+    const tmp = document.createElement("div")
+    tmp.innerHTML = html
+    return tmp.textContent || tmp.innerText || ""
+  }
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        setLoading(true)
+        const url = `${API_CONFIG.SERVER_URL}posts?categories=4&_embed&production=${API_CONFIG.PRODUCTION_SERVER_ID}&status=publish&per_page=100`
+
+        const response = await fetch(url)
+        if (!response.ok)
+          throw new Error(`HTTP error! status: ${response.status}`)
+        const data = await response.json()
+      
+
+        if (Array.isArray(data) && data.length > 0) {
+          const formattedSlides = data.map((event, index) => ({
+            id: `event-${event.id}`,
+            src:
+              event.acf?.thumbnail_image ||
+              event.acf?.banner_image ||
+              "/home/campus/embla-001-updated.webp",
+            description: stripHtml(event.title?.rendered || "Event"),
+            date: formatDate(event.date || new Date()),
+            alt: event.title?.rendered || `Event ${index + 1}`,
+            link: `/events/${event.slug}`,
+          }))
+          setSlides(formattedSlides)
+        } else {
+          setSlides([])
+        }
+      } catch (error) {
+        console.error("Error fetching events:", error)
+        setSlides([])
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchEvents()
+  }, [])
+
+  const next = () => {
+    if (slides.length > 0) {
+      setStart((i) => (i + 1) % slides.length)
+    }
+  }
+
+  const prev = () => {
+    if (slides.length > 0) {
+      setStart((i) => (i - 1 + slides.length) % slides.length)
+    }
+  }
 
   // Responsive visible count + mobile flag
   useEffect(() => {
     const handleResize = () => {
-      const mobile = window.innerWidth < 768;
-      setVisible(mobile ? 1 : 4);
-      setIsMobile(mobile);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+      const mobile = window.innerWidth < 768
+      setVisible(mobile ? 1 : 4)
+      setIsMobile(mobile)
+    }
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   const windowIdxs = Array.from(
     { length: visible },
     (_, k) => (start + k) % slides.length
-  );
+  )
 
   // Auto-slide effect
   useEffect(() => {
-    if (!paused) {
+    if (!paused && slides.length > 0) {
       intervalRef.current = setInterval(() => {
-        setStart((i) => (i + 1) % slides.length);
-      }, 20500);
+        setStart((i) => (i + 1) % slides.length)
+      }, 20500)
     }
-    return () => clearInterval(intervalRef.current);
-  }, [paused]);
+    return () => clearInterval(intervalRef.current)
+  }, [paused, slides.length])
+
+  if (loading) {
+    return (
+      <div className="bg-[#fff]">
+        <div className="relative w-full container mx-auto py-10">
+          <div className="flex items-center justify-center py-20">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#A22877]"></div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (slides.length === 0) {
+    return null
+  }
 
   return (
     <>
@@ -113,18 +148,18 @@ export default function AimsCarousel() {
                   className="relative rounded-2xl overflow-hidden flex flex-col items-center w-80 h-[420px]"
                 >
                   {/* image wrapper fixed height */}
-                  <div className="relative w-full">
+                  <div className="relative w-full h-[320px] rounded-lg shadow-5xl  overflow-hidden">
                     <Link
                       href={slides[start].link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="block w-full h-full"
                     >
                       <Image
                         src={slides[start].src}
                         alt={slides[start].alt}
-                        width={500}
-                        height={500}
-                        className="object-contain"
+                        fill
+                        className="object-cover rounded-lg"
                         priority
                       />
                     </Link>
@@ -132,8 +167,8 @@ export default function AimsCarousel() {
 
                   {/* description stays at bottom */}
                   {slides[start].description && (
-                    <div className="w-full lg:py-2 bg-white">
-                      <p className="text-black text-sm font-medium text-center">
+                    <div className="w-full py-3 bg-white">
+                      <p className="text-black text-xs font-medium text-center truncate whitespace-nowrap overflow-hidden">
                         {slides[start].description}
                       </p>
                       <time className="text-black text-sm font-medium text-center pt-1">
@@ -152,8 +187,8 @@ export default function AimsCarousel() {
               transition={{ type: "spring", stiffness: 200, damping: 30 }}
             >
               {windowIdxs.map((idx, pos) => {
-                const item = slides[idx];
-                const isActive = pos === 0;
+                const item = slides[idx]
+                const isActive = pos === 0
                 return (
                   <motion.div
                     key={item.id}
@@ -171,24 +206,30 @@ export default function AimsCarousel() {
                     }}
                   >
                     {/* image wrapper fixed height */}
-                    <div className="relative w-full flex flex-col items-center justify-center h[500px]">
-                      <Link
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <div className="relative w-full flex flex-col items-center justify-center">
+                      <div
+                        className={`relative w-full rounded-lg overflow-hidden ${
+                          isActive ? "h-[320px]" : "h-[280px]"
+                        }`}
                       >
-                        <Image
-                          src={item.src}
-                          alt={item.alt}
-                          width={500} // keep actual width or max
-                          height={500} // keep actual height or max
-                          className="object-contain"
-                          priority={isActive}
-                        />
-                      </Link>
+                        <Link
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block w-full h-full"
+                        >
+                          <Image
+                            src={item.src}
+                            alt={item.alt}
+                            fill
+                            className="object-cover rounded-lg"
+                            priority={isActive}
+                          />
+                        </Link>
+                      </div>
                       {item.description && (
-                        <div className="w-full -mt-1">
-                          <p className="text-black text-sm md:text-base font-medium text-left break-words whitespace-normal">
+                        <div className="w-full py-3">
+                          <p className="text-black text-xs font-medium text-left truncate whitespace-nowrap overflow-hidden">
                             {item.description}
                           </p>
                           <time className="text-black text-sm font-medium text-left break-words whitespace-normal pt-1">
@@ -200,7 +241,7 @@ export default function AimsCarousel() {
 
                     {/* description at bottom */}
                   </motion.div>
-                );
+                )
               })}
             </motion.div>
           )}
@@ -255,5 +296,5 @@ export default function AimsCarousel() {
         </div>
       </div>
     </>
-  );
+  )
 }
