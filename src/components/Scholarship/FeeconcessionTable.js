@@ -174,15 +174,15 @@ const FeeconcessionTable = () => {
           Your Dreams, Our Support: AIMS Scholarship Program
           </h2>
           <div className="overflow-x-auto">
-            <table className="min-w-full border border-gray-300">
+            <table className="min-w-full border border-gray-300 !font-semibold">
               <thead>
-                <tr className="bg-[#003366] text-white">
-                  <th className="p-3 border border-gray-300">Category</th>
-                  <th className="p-3 border border-gray-300">Eligibility</th>
-                  <th className="p-3 border border-gray-300">
-                    Documents Required
+                <tr className="bg-[#003366] text-white !font-semibold">
+                  <th className="p-3 border border-gray-300 !font-semibold">Category</th>
+                  <th className="p-3 border border-gray-300 !font-semibold">Eligibility</th>
+                  <th className="p-3 border border-gray-300 !font-semibold">
+                    Documents Required !font-semibold
                   </th>
-                  <th className="p-3 border border-gray-300 text-center">
+                  <th className="p-3 border border-gray-300 text-center !font-semibold">
                     Scholarships % on Tuition fee
                   </th>
                 </tr>
@@ -191,26 +191,26 @@ const FeeconcessionTable = () => {
                 {scholarships.map((item, index) => (
                   <tr key={index} className="align-top">
                     {/* Category */}
-                    <td className="p-3 border border-gray-300 font-medium">
+                    <td className="p-3 border border-gray-300 !font-semibold">
                       {item.category}
                     </td>
 
                     {/* Eligibility - Gray */}
-                    <td className="p-3 border border-gray-300 bg-[#F3F3F3]">
+                    <td className="p-3 border border-gray-300 bg-[#F3F3F3] !font-semibold">
                       {item.eligibility}
                     </td>
 
                     {/* Required Documents */}
-                    <td className="p-3 border border-gray-300 align-top">
+                    <td className="p-3 border border-gray-300 align-top !font-semibold">
                       {item.slno >= 4 ? (
                         // Paragraph format for entries 4-8
-                        <span>{item.documents.join(", ")}.</span>
+                        <span className="!font-semibold">{item.documents.join(", ")}.</span>
                       ) : (
                         // Bullet list for entries 1-3
                         <div>
-                          <ul className="list-disc pl-5 text-md">
+                          <ul className="list-disc pl-5  !font-semibold text-md">
                             {item.documents.map((doc, idx) => (
-                              <li key={idx}>{doc}</li>
+                              <li key={idx} className="!font-semibold text-md">{doc}</li>
                             ))}
                           </ul>
                         </div>
@@ -218,7 +218,7 @@ const FeeconcessionTable = () => {
                     </td>
 
                     {/* Scholarship Percentage */}
-                    <td className="p-3 border border-gray-300 text-center align-middle bg-[#E0F9F4] font-medium">
+                    <td className="p-3 border border-gray-300 text-center align-middle bg-[#E0F9F4] !font-semibold">
                       {item.scholarship}
                     </td>
                   </tr>

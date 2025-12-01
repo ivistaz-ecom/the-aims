@@ -1,23 +1,23 @@
-"use client";
-import React, { useRef, useEffect, useState } from "react";
-import Slider from "react-slick";
-import { GoArrowLeft, GoArrowRight } from "react-icons/go";
-import Image from "next/image";
+"use client"
+import React, { useRef, useEffect, useState } from "react"
+import Slider from "react-slick"
+import { GoArrowLeft, GoArrowRight } from "react-icons/go"
+import Image from "next/image"
 // useEffect is already imported above via React import
 // Load slick CSS lazily after first paint
 const useLoadSlickCss = () => {
   useEffect(() => {
-    import("slick-carousel/slick/slick.css");
-    import("slick-carousel/slick/slick-theme.css");
-  }, []);
-};
+    import("slick-carousel/slick/slick.css")
+    import("slick-carousel/slick/slick-theme.css")
+  }, [])
+}
 
 // Generic Carousel Component
 const HostelDetailsGalleryCarousel = ({ title, description, category }) => {
-  useLoadSlickCss();
-  const sliderRef = useRef(null);
-  const [slides, setSlides] = useState([]);
-  const [slidesToShow, setSlidesToShow] = useState(4);
+  useLoadSlickCss()
+  const sliderRef = useRef(null)
+  const [slides, setSlides] = useState([])
+  const [slidesToShow, setSlidesToShow] = useState(4)
 
   // Fetch & filter data
   useEffect(() => {
@@ -25,12 +25,12 @@ const HostelDetailsGalleryCarousel = ({ title, description, category }) => {
       try {
         const res = await fetch(
           "https://docs.theaims.ac.in/wp-json/wp/v2/gallery?per_page=100"
-        );
-        const data = await res.json();
+        )
+        const data = await res.json()
 
-        console.log("Raw API data:", data);
+        console.log("Raw API data:", data)
 
-        const baseUrl = "https://docs.theaims.ac.in/wp-content/uploads/";
+        const baseUrl = "https://docs.theaims.ac.in/wp-content/uploads/"
 
         // Flatten multi_gallery into individual slides
         const formatted = data
@@ -40,13 +40,13 @@ const HostelDetailsGalleryCarousel = ({ title, description, category }) => {
               const imagePath =
                 img?.metadata?.full?.file ||
                 img?.metadata?.medium?.file ||
-                img?.metadata?.thumbnail?.file;
+                img?.metadata?.thumbnail?.file
 
-              const imageUrl = imagePath ? baseUrl + imagePath : null;
+              const imageUrl = imagePath ? baseUrl + imagePath : null
               const isValidUrl =
                 imageUrl &&
                 (imageUrl.startsWith("http://") ||
-                  imageUrl.startsWith("https://"));
+                  imageUrl.startsWith("https://"))
 
               return {
                 // per-image caption, fallback to parent caption
@@ -57,32 +57,32 @@ const HostelDetailsGalleryCarousel = ({ title, description, category }) => {
                   "",
                 category: item.acf?.select_gallery_type || "Uncategorized",
                 src: isValidUrl ? imageUrl : null,
-              };
+              }
             })
           )
-          .filter((slide) => slide.src); // Only include slides with valid URLs
+          .filter((slide) => slide.src) // Only include slides with valid URLs
 
-        setSlides(formatted);
+        setSlides(formatted)
       } catch (err) {
-        console.error("Error fetching gallery:", err);
+        console.error("Error fetching gallery:", err)
       }
-    };
+    }
 
-    fetchGallery();
-  }, [category]);
+    fetchGallery()
+  }, [category])
 
   // Responsive slide count
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 480) setSlidesToShow(1);
-      else if (window.innerWidth <= 768) setSlidesToShow(2);
-      else if (window.innerWidth <= 1024) setSlidesToShow(3);
-      else setSlidesToShow(4);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+      if (window.innerWidth <= 480) setSlidesToShow(1)
+      else if (window.innerWidth <= 768) setSlidesToShow(2)
+      else if (window.innerWidth <= 1024) setSlidesToShow(3)
+      else setSlidesToShow(4)
+    }
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   const settings = {
     dots: false,
@@ -91,7 +91,9 @@ const HostelDetailsGalleryCarousel = ({ title, description, category }) => {
     slidesToShow,
     slidesToScroll: 1,
     arrows: false,
-  };
+    autoplay: true,
+    autoplaySpeed: 2000,
+  }
 
   return (
     <div className="container mx-auto px-6 py-10 relative">
@@ -103,9 +105,7 @@ const HostelDetailsGalleryCarousel = ({ title, description, category }) => {
             {typeof description === "string"
               ? description
                   .split(/\n\s*\n/)
-                  .map((paragraph, idx) => (
-                    <p key={idx}>{paragraph.trim()}</p>
-                  ))
+                  .map((paragraph, idx) => <p key={idx}>{paragraph.trim()}</p>)
               : description}
           </div>
         </div>
@@ -158,8 +158,8 @@ const HostelDetailsGalleryCarousel = ({ title, description, category }) => {
         ))}
       </Slider>
     </div>
-  );
-};
+  )
+}
 
 // Page Component
 const HostelDetailsGallery = () => {
@@ -175,7 +175,7 @@ const HostelDetailsGallery = () => {
         category="Hostel Details"
       />
     </>
-  );
-};
+  )
+}
 
-export default HostelDetailsGallery;
+export default HostelDetailsGallery

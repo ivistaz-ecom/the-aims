@@ -7,15 +7,15 @@ import ProgramButton from "./ProgramButton"
 const financePrograms = [
   { title: "PhD in Commerce", href: "/phd-doctoral-programs" },
   {
-    title: "Master of Commerce M.Com",
+    title: "Master of Commerce M.COM",
     href: "/finance-commerce-school/master-of-commerce",
   },
   {
-    title: "Bachelor of Commerce B.Com",
+    title: "Bachelor of Commerce B.COM",
     href: "/finance-commerce-school/bachelor-of-commerce",
   },
   {
-    title: "CA/ACCA B.Com",
+    title: "B.COM+ CA/ACCA",
     href: "/finance-commerce-school/bachelor-of-commerce",
   },
 ]

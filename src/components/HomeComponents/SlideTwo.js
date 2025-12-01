@@ -48,7 +48,7 @@ const courses = [
         link: "/finance-commerce-school/bachelor-of-commerce",
       },
       {
-        name: "CA/ACCA B.COM+",
+        name: "B.COM+ CA/ACCA",
         link: "/finance-commerce-school/bachelor-of-commerce",
       },
     ],
@@ -105,7 +105,7 @@ const courses = [
         link: "/information-technology-school/bachelor-computer-applications",
       },
       {
-        name: "AI/ML | Data Science | Full-Stack Development BCA+",
+        name: "BCA+ AI/ML | Data Science | Full-stack Development",
         link: "/information-technology-school/bachelor-computer-applications",
       },
     ],

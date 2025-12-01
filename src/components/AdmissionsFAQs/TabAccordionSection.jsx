@@ -200,9 +200,9 @@ const TabAccordionSection = () => {
           id: "deadlines",
           title: "What are the key admission deadlines for 2025?",
           content: [
-            "MBA Application Deadline: 15 August 2025",
-            "PG (non-MBA) Deadline: 31 August 2025",
-            "UG Application Deadline: 15 August 2025",
+            "MBA Application Deadline: 2nd February 2026",
+            "PG (non-MBA) Deadline: Closed for 2025",
+            "UG Application Deadline: Closed for 2025",
             "View Important Dates",
           ],
         },

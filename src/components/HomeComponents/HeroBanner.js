@@ -219,15 +219,19 @@ const HeroBannerSoB = ({ announcements, pageType = "admissions" }) => {
             )}
 
             {/* Top Logo Section */}
-            <div className="absolute lg:top-10 top-0 lg:right-0 -right-5 z-10">
-              <div className="container mx-auto py-4 px-6 lg:px-8">
+            <div
+              className={`absolute lg:top-10 top-0 lg:right-0 -right-5 z-10 ${
+                index !== 0 ? "lg:hidden" : ""
+              }`}
+            >
+              <div className="container mx-auto py-4 px-8 lg:px-8">
                 <div className="flex lg:flex-row flex-col items-start justify-between md:gap-10 gap-4">
                   <div className="flex items-center">
                     <Image
                       src={banner.logo}
                       alt="Empower Logo"
-                      width={150}
-                      height={150}
+                      width={200}
+                      height={200}
                       priority={index === 0}
                       fetchPriority={index === 0 ? "high" : "auto"}
                     />
@@ -263,7 +267,7 @@ const HeroBannerSoB = ({ announcements, pageType = "admissions" }) => {
       {/* Application Announcements Marquee */}
       <ApplicationMarquee announcements={announcements} pageType={pageType} />
     </>
-  );
-};
+  )
+}
 
-export default HeroBannerSoB;
+export default HeroBannerSoB
