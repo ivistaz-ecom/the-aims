@@ -15,28 +15,46 @@ const GalleryCarousel = ({ title, description, category }) => {
     const [slides, setSlides] = useState([]);
     const [slidesToShow, setSlidesToShow] = useState(4);
 
-    // Modal state
-    const [selectedSlide, setSelectedSlide] = useState(null);
+    // Hover popup state
+    const [hoveredSlide, setHoveredSlide] = useState(null);
+    const hoverTimeoutRef = useRef(null);
 
-    // Handle ESC key to close modal
+    // Handle hover with delay for smooth UX
+    const handleMouseEnter = (slide) => {
+        hoverTimeoutRef.current = setTimeout(() => {
+            setHoveredSlide(slide);
+        }, 150);
+    };
+
+    const handleMouseLeave = () => {
+        if (hoverTimeoutRef.current) {
+            clearTimeout(hoverTimeoutRef.current);
+        }
+        // Don't close if popup is already showing
+        // Popup will close when clicking outside or close button
+    };
+
+    // Cleanup timeout on unmount
     useEffect(() => {
-        const handleKeyDown = (event) => {
-            if (event.key === 'Escape' && selectedSlide) {
-                setSelectedSlide(null);
+        return () => {
+            if (hoverTimeoutRef.current) {
+                clearTimeout(hoverTimeoutRef.current);
             }
         };
+    }, []);
 
-        if (selectedSlide) {
-            document.addEventListener('keydown', handleKeyDown);
-            // Prevent body scroll when modal is open
+    // Prevent background scroll when popup is open
+    useEffect(() => {
+        if (hoveredSlide) {
             document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
         }
 
         return () => {
-            document.removeEventListener('keydown', handleKeyDown);
             document.body.style.overflow = 'unset';
         };
-    }, [selectedSlide]);
+    }, [hoveredSlide]);
 
     // Fetch & filter data
     useEffect(() => {
@@ -86,6 +104,9 @@ const GalleryCarousel = ({ title, description, category }) => {
         slidesToShow,
         slidesToScroll: 1,
         arrows: false,
+        autoplay: true,
+        autoplaySpeed: 2000,
+
     };
 
     return (
@@ -121,10 +142,11 @@ const GalleryCarousel = ({ title, description, category }) => {
                 {slides.map((slide, index) => (
                     <div
                         key={index}
-                        className="px-2 cursor-pointer"
-                        onClick={() => setSelectedSlide(slide)} // open modal
+                        className="px-2"
+                        onMouseEnter={() => handleMouseEnter(slide)}
+                        onMouseLeave={handleMouseLeave}
                     >
-                        <div className="rounded-lg overflow-hidden shadow-lg relative w-full h-60">
+                        <div className="rounded-lg overflow-hidden shadow-lg relative w-full h-60 transition-shadow duration-300 hover:shadow-xl">
                             {slide.src ? (
                                 <Image
                                     src={slide.src}
@@ -146,56 +168,59 @@ const GalleryCarousel = ({ title, description, category }) => {
                 ))}
             </Slider>
 
-            {/* Modal */}
-            {selectedSlide && (
-                <div
-                    className="fixed inset-0 bg-black/90 flex items-center justify-center z-[9999] p-2 sm:p-4 md:p-6 overflow-y-auto"
-                    onClick={() => setSelectedSlide(null)} // clicking on overlay closes modal
+            {/* Hover Popup - Centered with transparent black background */}
+            {hoveredSlide && (
+                <div 
+                    className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 animate-fadeIn"
+                    onClick={() => setHoveredSlide(null)}
                 >
-                    <div
-                        className="rounded-lg w-full max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl max-h-[95vh] sm:max-h-[90vh] overflow-hidden relative bg-white flex flex-col"
-                        onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside modal
+                    <div 
+                        className="bg-white rounded-2xl shadow-2xl overflow-hidden w-80 sm:w-[26rem] md:w-[32rem] max-h-[90vh] animate-popup relative"
+                        onClick={(e) => e.stopPropagation()}
+                        onMouseLeave={() => setHoveredSlide(null)}
                     >
-                        {/* Close button */}
+                        {/* Close Button */}
                         <button
-                            onClick={() => setSelectedSlide(null)}
-                            className="absolute top-2 right-2 sm:top-3 sm:right-3 z-20 bg-white/90 hover:bg-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-gray-700 hover:text-black text-lg sm:text-xl font-bold shadow-lg transition-all duration-200 touch-manipulation"
-                            aria-label="Close modal"
+                            onClick={() => setHoveredSlide(null)}
+                            className="absolute top-3 right-3 z-10 bg-black/40 hover:bg-black/60 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
+                            aria-label="Close popup"
                         >
-                            ✕
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
                         </button>
 
-                        {/* Image */}
-                        <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96 flex-shrink-0">
-                            {selectedSlide.src ? (
+                        {/* Image - Large */}
+                        <div className="relative w-full h-64 sm:h-80 md:h-96">
+                            {hoveredSlide.src ? (
                                 <Image
-                                    src={selectedSlide.src}
-                                    alt={selectedSlide.title || ""}
+                                    src={hoveredSlide.src}
+                                    alt={hoveredSlide.title || ""}
                                     fill
-                                    className="object-contain rounded-t-lg"
-                                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 70vw, 60vw"
+                                    className="object-cover"
+                                    sizes="512px"
                                 />
                             ) : (
-                                <div className="bg-gray-200 w-full h-full flex items-center justify-center rounded-t-lg">
-                                    <span className="text-gray-500 text-sm sm:text-base">No Image</span>
+                                <div className="bg-gray-200 w-full h-full flex items-center justify-center">
+                                    <span className="text-gray-500 text-sm">No Image</span>
                                 </div>
                             )}
                         </div>
 
-                        {/* Content under image */}
-                        <div className="px-3 py-4 sm:px-4 sm:py-5 md:px-6 md:py-6 overflow-y-auto flex-1 min-h-0">
-                            {selectedSlide.title && (
-                                <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800 mb-2 text-center">
-                                    {selectedSlide.title}
+                        {/* Content */}
+                        <div className="p-4">
+                            {hoveredSlide.title && (
+                                <h3 className="text-xs sm:text-sm font-medium text-gray-700 mb-2 line-clamp-1">
+                                    {hoveredSlide.title}
                                 </h3>
                             )}
-                            {selectedSlide.description ? (
+                            {hoveredSlide.description ? (
                                 <div
-                                    className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed text-center prose prose-sm max-w-none"
-                                    dangerouslySetInnerHTML={{ __html: selectedSlide.description }}
+                                    className="text-xs text-gray-500 leading-relaxed line-clamp-3"
+                                    dangerouslySetInnerHTML={{ __html: hoveredSlide.description }}
                                 />
                             ) : (
-                                <div className="text-xs sm:text-sm text-gray-400 text-center italic">
+                                <div className="text-xs text-gray-400 italic">
                                     No description available
                                 </div>
                             )}
@@ -203,6 +228,29 @@ const GalleryCarousel = ({ title, description, category }) => {
                     </div>
                 </div>
             )}
+
+            <style jsx>{`
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+                @keyframes popupIn {
+                    from {
+                        opacity: 0;
+                        transform: scale(0.85) translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: scale(1) translateY(0);
+                    }
+                }
+                .animate-fadeIn {
+                    animation: fadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+                }
+                .animate-popup {
+                    animation: popupIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+                }
+            `}</style>
         </div>
     );
 };
