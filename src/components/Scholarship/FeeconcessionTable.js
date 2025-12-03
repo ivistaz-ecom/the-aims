@@ -169,7 +169,7 @@ const FeeconcessionTable = () => {
         </div>
       </section>
       <div className="lg:px-8">
-        <div className="container mx-auto lg:px-0 px-4 mb-5">
+        <div className="container mx-auto lg:px-0 px-4 mb-10 lg:pt-7 pt-5">
           <h2 className="text-center text-xl md:text-2xl font-bold mb-6 monser-500 ">
           Your Dreams, Our Support: AIMS Scholarship Program
           </h2>
