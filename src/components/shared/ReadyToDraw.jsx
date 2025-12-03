@@ -11,12 +11,14 @@ const ReadyToDraw = ({
   ),
   subtitle = "From helping you define your goals to guiding you through every step, we're here to help you take that first shot.",
   primaryButtonText = "Apply Now",
+  primaryButtonHref = "https://apply.theaims.ac.in/login",
   // secondaryButtonText = "Download Brochure",
   tertiaryButtonText = null,
   bgColor = "bg-[#A22877]",
   arrowImage = "/MBA/arrow.svg",
   swayamText = "Swayam",
   nptelText = "NPTEL",
+  target = "_blank",
 }) => {
   return (
     <>
@@ -39,34 +41,34 @@ const ReadyToDraw = ({
                   <Button
                     variant="secondary"
                     className="whitespace-nowrap "
-                    href="https://apply.theaims.ac.in/login"
-                    target="_blank"
+                    href={primaryButtonHref}
+                    target={target}
                   >
                     {primaryButtonText}
                   </Button>
                 )}
 
-{swayamText === true && (
-  <Button
-    variant="secondary"
-    className="whitespace-nowrap "
-    href="https://swayam.gov.in/"
-    target="_blank"
-  >
-    Swayam
-  </Button>
-)}
+                {swayamText === true && (
+                  <Button
+                    variant="secondary"
+                    className="whitespace-nowrap "
+                    href="https://swayam.gov.in/"
+                    target="_blank"
+                  >
+                    Swayam
+                  </Button>
+                )}
 
-{nptelText === true && (
-  <Button
-    variant="secondary"
-    className="whitespace-nowrap "
-    href="https://nptel.ac.in/"
-    target="_blank"
-  >
-    NPTEL
-  </Button>
-)}
+                {nptelText === true && (
+                  <Button
+                    variant="secondary"
+                    className="whitespace-nowrap "
+                    href="https://nptel.ac.in/"
+                    target="_blank"
+                  >
+                    NPTEL
+                  </Button>
+                )}
 
                 {/* {secondaryButtonText && (
                   <Button
