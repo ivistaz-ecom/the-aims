@@ -42,7 +42,6 @@ const GalleryCarousel = ({ title, description, category }) => {
             }
         };
     }, []);
-
     // Prevent background scroll when popup is open
     useEffect(() => {
         if (hoveredSlide) {
@@ -136,7 +135,7 @@ const GalleryCarousel = ({ title, description, category }) => {
                     </button>
                 </div>
             </div>
-
+            
             {/* Carousel */}
             <Slider ref={sliderRef} {...settings}>
                 {slides.map((slide, index) => (
@@ -167,7 +166,7 @@ const GalleryCarousel = ({ title, description, category }) => {
                     </div>
                 ))}
             </Slider>
-
+            
             {/* Hover Popup - Centered with transparent black background */}
             {hoveredSlide && (
                 <div 

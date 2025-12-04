@@ -22,7 +22,6 @@ const CentreForResearchBanner = ({ announcements, pageType = 'phd' }) => {
 
                 {/* Text/Logo Content */}
                 <div className="absolute inset-0 flex flex-col justify-between z-10 px-4 lg:px-8">
-
                     {/* Logo Block */}
                     <div className="container mx-auto pt-8 text-left">
                         <Image
