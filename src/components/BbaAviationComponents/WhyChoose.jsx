@@ -36,7 +36,7 @@ const WhyChoose = () => {
     <>
       <div className="bg-[#FFEFE3] py-6 md:py-10">
         <div className="container mx-auto">
-          <p className="text-base md:text-xl text-[#010066] max-w-4xl monser-400 text-center mx-auto px-4 md:px-0">
+          <p className="text-base md:text-xl max-w-4xl monser-400 text-center mx-auto px-4 md:px-0">
             BBA Aviation Management program at AIMS is designed for students
             aiming to take flight in a competitive global market. With strong
             academic grounding and industry links, our course equips you with

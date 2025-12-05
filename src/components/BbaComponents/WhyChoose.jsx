@@ -38,7 +38,7 @@ const WhyChoose = () => {
   return (
     <div className="py-6 md:py-10 px-4 lg:px-0">
       <div className="container mx-auto">
-        <p className="text-base md:text-xl text-[#010066] max-w-4xl md:max-w-5xl monser-400 text-center mx-auto leading-relaxed">
+        <p className="text-base md:text-xl max-w-4xl md:max-w-5xl monser-400 text-center mx-auto leading-relaxed">
           Experience the foundation of business leadership at AIMS Institutes,
           acknowledged as one of the Top B schools in India where precision,
           focus, and ambition drive every student's journey. The Bachelor of

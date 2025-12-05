@@ -90,6 +90,12 @@ const HeroBannerSoB = ({ announcements, pageType = "admissions" }) => {
       logo: "/white-empower.svg",
     },
     {
+      desktop: "/home/slide-05-final-banner.webp",
+      tablet: "/home/tab-home-banner-slider-5th.webp",
+      mobile: "/home/mobile-home-banner-slider-5th.webp",
+      logo: "/white-empower.svg",
+    },
+    {
       desktop: "/home/slide-03-final.webp",
       tablet: "/home/tab-home-banner-slider03.webp",
       mobile: "/home/mobile-home-banner-slider003.webp",

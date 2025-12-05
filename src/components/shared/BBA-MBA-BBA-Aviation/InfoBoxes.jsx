@@ -8,7 +8,7 @@ const InfoBoxes = ({
   boxHoverBg = "hover:bg-[#C9FFF4]",
   numberColor = "text-[#A22877]",
   titleColor = "text-[#A22877]",
-  descColor = "text-[#0C2165]",
+  descColor = "text-[#000000]",
 }) => {
   return (
     <>
