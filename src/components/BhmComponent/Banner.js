@@ -141,7 +141,7 @@ const HeroBannerSoH = ({ announcements, pageType = "admissions" }) => {
                     priority
                     fetchPriority="high"
                     quality={90}
-                    className="hidden lg:block object-cover object-center"
+                    className="hidden lg:block object-cover object-top"
                     sizes="100vw"
                   />
                   {/* Tablet Image - Priority */}

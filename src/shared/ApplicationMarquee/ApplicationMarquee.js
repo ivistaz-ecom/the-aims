@@ -6,7 +6,7 @@ const ApplicationMarquee = ({ announcements, pageType = "admissions" }) => {
   const pageAnnouncements = {
     admissions: [
       {
-        text: "DEADLINE FOR MBA ADMISSIONS DECEMBER 31, 2025",
+        text: "DEADLINE FOR MBA ADMISSIONS JANUARY 31, 2026",
         link: "/business-school/master-business-administration",
       },
       {

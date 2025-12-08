@@ -78,9 +78,9 @@ const HeroBannerSoB = ({ announcements, pageType = "admissions" }) => {
   // You can add as many banner slides as you want here
   const banners = [
     {
-      desktop: "/home/banner-003.webp",
-      tablet: "/home/home-banner-tab-02.webp",
-      mobile: "/home/mobile-latest.webp",
+      desktop: "/home/home_banner_Desktop.webp",
+      tablet: "/home/Home_banner_tab.webp",
+      mobile: "/home/Home_Banner_mobile_new.webp",
       logo: "/white-empower.svg",
     },
     {

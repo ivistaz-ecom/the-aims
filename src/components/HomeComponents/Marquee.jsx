@@ -4,7 +4,7 @@ const Marquee = () => {
   const marqueeContent = [
     "AIMS - Empowering Minds Since 1994",
     "Choose Your Goal • AIM for The Future",
-    "Average Package: ₹8 LPA • Highest Package: ₹27 LPA",
+    "Average Package: ₹8 LPA • Highest Package: ₹23 LPA",
     "IACBE Accredited • NAAC 'A' Grade • VET by EHL",
     "Transform Your Career with AIMS",
     "Quality Education • Professional Excellence"

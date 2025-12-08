@@ -46,11 +46,10 @@ const HeroBanner = ({ announcements, pageType = "admissions" }) => {
     },
     {
       id: 2,
-      desktop: "/home/slide-02-final-banner.webp",
+      desktop: "/MBA/MBA_ADMISSSION_DESKTOP.webp",
       tablet: "/home/tab-home-banner-slider-2nd.webp",
       mobile: "/home/mobile-home-banner-slider-2nd.webp",
       iacbeMobile: "/MBA/MBA_Details.svg",
-      
     }
   ]
 
@@ -114,7 +113,7 @@ const HeroBanner = ({ announcements, pageType = "admissions" }) => {
       >
         {slides.map((slide, index) => (
           <div key={slide.id}>
-            <div className="relative w-full h-[83vh] md:h-[100vh] lg:h-[76vh] overflow-clip">
+            <div className="relative w-full h-[83vh] md:h-[100vh] lg:h-[76vh] xl:h-[77vh] 2xl:h-[90vh] lg:top[60%] xl:top[60%] overflow-clip">
               {/* Background Images */}
               {index === 0 ? (
                 <>
