@@ -38,6 +38,7 @@ const SchoolOfBusinessFacultyTable = () => {
         { sno: 32, name: "Mr. Sunil Augustine", gender: "Male", designation: "Assistant Professor", department: "Management", qualification: "BE, MBA" },
         { sno: 33, name: "Mr. Dr Srinivas R", gender: "Male", designation: "Assistant Professor", department: "Management", qualification: "B.Com, MBS, UGC NET, KSET, PHD" },
     ]
+    
 
     const headers = ["S.No", "Name of the Staff", "Gender", "Designation/Position", "Department", "Qualification"]
 
