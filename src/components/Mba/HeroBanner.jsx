@@ -23,6 +23,7 @@ const Carousel = dynamic(() => import("react-multi-carousel"), {
 
 const HeroBanner = ({ announcements, pageType = "admissions" }) => {
   // Add or modify slides here - each slide has its own images and content
+  //slides for mba hero banner
   const slides = [
     {
       id: 1,
@@ -46,9 +47,9 @@ const HeroBanner = ({ announcements, pageType = "admissions" }) => {
     },
     {
       id: 2,
-      desktop: "/MBA/MBA_ADMISSSION_DESKTOP.webp",
-      tablet: "/home/tab-home-banner-slider-2nd.webp",
-      mobile: "/home/mobile-home-banner-slider-2nd.webp",
+      desktop: "/MBA/MBAPage_ADMISSSION_Banner2.webp",
+      tablet: "/MBA/MBA_banner_tab.webp",
+      mobile: "/MBA/MBA_banner_mobile.webp",
       iacbeMobile: "/MBA/MBA_Details.svg",
     }
   ]

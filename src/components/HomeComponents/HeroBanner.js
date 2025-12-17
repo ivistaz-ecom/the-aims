@@ -17,6 +17,7 @@ const BannerFallback = () => {
   return (
     <div className="relative w-full h-[83vh] md:h-[100vh] overflow-hidden">
       {/* Desktop Image */}
+      {/* banner.desktop is the desktop image */}
       <Image
         src={banner.desktop}
         alt="Hero Banner"
@@ -84,15 +85,15 @@ const HeroBannerSoB = ({ announcements, pageType = "admissions" }) => {
       logo: "/white-empower.svg",
     },
     {
-      desktop: "/home/slide-02-final-banner.webp",
-      tablet: "/home/tab-home-banner-slider-2nd.webp",
-      mobile: "/home/mobile-home-banner-slider-2nd.webp",
+      desktop: "/home/MBA_homepage_banner.webp",
+      tablet: "/home/MBA_banner_tab.webp",
+      mobile: "/home/MBA_banner_mobile.webp",
       logo: "/white-empower.svg",
     },
     {
-      desktop: "/home/slide-05-final-banner.webp",
-      tablet: "/home/tab-home-banner-slider-5th.webp",
-      mobile: "/home/mobile-home-banner-slider-5th.webp",
+      desktop: "/home/VETdesktop_homebanner.webp",
+      tablet: "/home/VETbhm_Tab.webp",
+      mobile: "/home/VETbgmpage_Mobile.webp",
       logo: "/white-empower.svg",
     },
     {

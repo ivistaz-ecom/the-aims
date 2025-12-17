@@ -58,12 +58,12 @@ const HeroBannerSoH = ({ announcements, pageType = "admissions" }) => {
     {
       desktop: "/bhm-img/banner-img_converted.webp",
       tablet: "/bhm-img/banner-img_converted.webp",
-      mobile: "/bhm-img/bhm-mobile-banner_converted.webp",
+      mobile: "/bhm-img/chef_mobile.webp",
     },
     {
-      desktop: "/bhm-img/bhmBannerDesktop.webp",
-      tablet: "/bhm-img/bhmBannerTab.webp",
-      mobile: "/bhm-img/bhmBannerMobile.webp",
+      desktop: "/bhm-img/VETbhmpage_desktop.webp",
+      tablet: "/bhm-img/VETbhm_Tab.webp",
+      mobile: "/bhm-img/VETbhmpage_Mobile.webp",
     },
   ]
 

@@ -4,8 +4,8 @@ import React from "react"
 const SchoolOfBusinessFacultyTable = () => {
     // Faculty data
     const facultyData = [
-        { sno: 1, name: "Dr. Kiran Reddy", gender: "Female", designation: "Sr. Professor", department: "Mgmt Studies", qualification: "PhD" },
-        { sno: 2, name: "Dr. Roja Reddy M", gender: "Female", designation: "Professor & Executive Director", department: "Mgmt Studies", qualification: "PhD" },
+        { sno: 1, name: "Dr. Kiran Reddy", gender: "Female", designation: "Sr. Professor", department: "Management", qualification: "PhD" },
+        { sno: 2, name: "Dr. Roja Reddy M", gender: "Female", designation: "Professor & Executive Director", department: "Management", qualification: "PhD" },
         { sno: 3, name: "Dr. Ramamurthy B.M", gender: "Male", designation: "Principal & Professor", department: "Management", qualification: "MBA, M.Phil, NET, Ph.D" },
         { sno: 4, name: "Dr. Hemanth Kumar S", gender: "Male", designation: "Dean / Professor", department: "Management", qualification: "BE, MBA, Ph.D" },
         { sno: 5, name: "Dr. Kalpana Venugopal", gender: "Female", designation: "Associate Dean / Professor", department: "Management", qualification: "BBM, MBA, MHRM, PhD" },
@@ -36,7 +36,9 @@ const SchoolOfBusinessFacultyTable = () => {
         { sno: 30, name: "Ms. Modugula Vidyullatha", gender: "Female", designation: "Assistant Professor", department: "Management", qualification: "BE, MBA" },
         { sno: 31, name: "Mr. Ramakrishna", gender: "Male", designation: "Assistant Professor", department: "Management", qualification: "BE" },
         { sno: 32, name: "Mr. Sunil Augustine", gender: "Male", designation: "Assistant Professor", department: "Management", qualification: "BE, MBA" },
+        { sno: 33, name: "Mr. Dr Srinivas R", gender: "Male", designation: "Assistant Professor", department: "Management", qualification: "B.Com, MBS, UGC NET, KSET, PHD" },
     ]
+    
 
     const headers = ["S.No", "Name of the Staff", "Gender", "Designation/Position", "Department", "Qualification"]
 
