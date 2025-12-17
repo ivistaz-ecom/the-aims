@@ -17,6 +17,7 @@ const BannerFallback = () => {
   return (
     <div className="relative w-full h-[83vh] md:h-[100vh] overflow-hidden">
       {/* Desktop Image */}
+      {/* banner.desktop is the desktop image */}
       <Image
         src={banner.desktop}
         alt="Hero Banner"

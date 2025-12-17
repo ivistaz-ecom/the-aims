@@ -23,6 +23,7 @@ const Carousel = dynamic(() => import("react-multi-carousel"), {
 
 const HeroBanner = ({ announcements, pageType = "admissions" }) => {
   // Add or modify slides here - each slide has its own images and content
+  //slides for mba hero banner
   const slides = [
     {
       id: 1,
