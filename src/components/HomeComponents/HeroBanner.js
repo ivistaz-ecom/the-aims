@@ -84,15 +84,15 @@ const HeroBannerSoB = ({ announcements, pageType = "admissions" }) => {
       logo: "/white-empower.svg",
     },
     {
-      desktop: "/home/slide-02-final-banner.webp",
-      tablet: "/home/tab-home-banner-slider-2nd.webp",
-      mobile: "/home/mobile-home-banner-slider-2nd.webp",
+      desktop: "/home/MBA_homepage_banner.webp",
+      tablet: "/home/MBA_banner_tab.webp",
+      mobile: "/home/MBA_banner_mobile.webp",
       logo: "/white-empower.svg",
     },
     {
-      desktop: "/home/slide-05-final-banner.webp",
-      tablet: "/home/tab-home-banner-slider-5th.webp",
-      mobile: "/home/mobile-home-banner-slider-5th.webp",
+      desktop: "/home/VETdesktop_homebanner.webp",
+      tablet: "/home/VETbhm_Tab.webp",
+      mobile: "/home/VETbgmpage_Mobile.webp",
       logo: "/white-empower.svg",
     },
     {
