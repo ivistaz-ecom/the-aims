@@ -122,7 +122,7 @@ const HeroBannerSoB = ({ announcements, pageType = "admissions" }) => {
         responsive={responsive}
         infinite={true}
         autoPlay={true}
-        autoPlaySpeed={5000}
+        autoPlaySpeed={4000}
         arrows={true}
         customLeftArrow={
           <div className="z-auto absolute left-10 cursor-pointer top-1/2 -translate-y-1/2 bg-white hover:bg-[#A22877] hover:text-white text-black p-3 rounded-full shadow">
@@ -162,7 +162,7 @@ const HeroBannerSoB = ({ announcements, pageType = "admissions" }) => {
           </div>
         }
         showDots={false}
-        pauseOnHover={false}
+        pauseOnHover={true}
         swipeable={true}
         draggable={true}
         className="relative"
