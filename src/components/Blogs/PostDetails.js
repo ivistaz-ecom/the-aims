@@ -35,6 +35,7 @@ const BlogPostDetails = () => {
         } finally {
             setLoading(false)
         }
+        console.log("blogsData", blogsData)
     }
 
     const loadMore = () => {
@@ -50,7 +51,22 @@ const BlogPostDetails = () => {
         return tmp.textContent || tmp.innerText || ''
     }
 
-    if (!loading && blogsData.length === 0) return null
+
+    const getImageUrl = (blog) => {
+        if (!blog?.acf) return '/images/placeholder.jpg'
+
+        const image =
+            blog.acf.thumbnail_image ||
+            blog.acf.banner_image
+
+        // Image URL string
+        if (typeof image === 'string') return image
+
+        // ACF image object
+        if (typeof image === 'object' && image?.url) return image.url
+
+        return '/images/placeholder.jpg'
+    }
 
     return (
         <div className="py-10 px-4 lg:px-8">
@@ -65,12 +81,14 @@ const BlogPostDetails = () => {
                         {/* Image - always first on mobile, alternating on desktop */}
                         <div className={`w-full lg:w-1/2 order-1 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
                             <Image
-                                src={blog.acf.thumbnail_image || blog.acf.banner_image}
-                                alt={blog.title?.rendered || "Blog Image"}
+                                src={getImageUrl(blog)}
+                                alt={blog.title?.rendered || 'Blog Image'}
                                 width={800}
                                 height={500}
                                 className="object-cover w-full h-full"
                             />
+
+
                         </div>
 
                         {/* Content - always second on mobile, alternating on desktop */}

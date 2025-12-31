@@ -4,18 +4,22 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'docs-aims.ivista.biz',
-                port: '',
+                hostname: 'docs.theaims.ac.in',
                 pathname: '/wp-content/uploads/**',
             },
             {
                 protocol: 'https',
-                hostname: 'docs.theaims.ac.in',
-                port: '',
+                hostname: 'docs-aims.ivista.biz',
+                pathname: '/wp-content/uploads/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.docs.theaims.ac.in',
                 pathname: '/wp-content/uploads/**',
             },
         ],
     },
+    
     eslint: {
         ignoreDuringBuilds: true, // ✅ Skip ESLint (no TypeScript needed)
     },
