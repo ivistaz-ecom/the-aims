@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useMemo, useState } from "react"
+import React, { useMemo, useState, useEffect } from "react"
 import Select, { components as selectComponents } from "react-select"
 import CountryListWithDialCode from "country-list-with-dial-code-and-flag"
 import { Country, State, City } from "country-state-city"
@@ -73,16 +73,42 @@ const HeroEnquiryForm = ({ includeId = true }) => {
   const [formData, setFormData] = useState(initialFormData)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState({ success: false })
+  const [isClient, setIsClient] = useState(false)
 
-  const countries = useMemo(() => Country.getAllCountries(), [])
+  // Ensure we're on the client before using country-state-city
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  const countries = useMemo(() => {
+    if (!isClient) return []
+    try {
+      return Country.getAllCountries()
+    } catch (error) {
+      console.error("Error loading countries:", error)
+      return []
+    }
+  }, [isClient])
+
   const states = useMemo(() => {
-    if (!formData.country) return []
-    return State.getStatesOfCountry(formData.country)
-  }, [formData.country])
+    if (!isClient || !formData.country) return []
+    try {
+      return State.getStatesOfCountry(formData.country)
+    } catch (error) {
+      console.error("Error loading states:", error)
+      return []
+    }
+  }, [isClient, formData.country])
+
   const cities = useMemo(() => {
-    if (!formData.country || !formData.state) return []
-    return City.getCitiesOfState(formData.country, formData.state)
-  }, [formData.country, formData.state])
+    if (!isClient || !formData.country || !formData.state) return []
+    try {
+      return City.getCitiesOfState(formData.country, formData.state)
+    } catch (error) {
+      console.error("Error loading cities:", error)
+      return []
+    }
+  }, [isClient, formData.country, formData.state])
 
   const countryOptions = useMemo(
     () =>
@@ -125,9 +151,10 @@ const HeroEnquiryForm = ({ includeId = true }) => {
     NZ: 9,
   }
 
-  const dialCodeOptions = useMemo(
-    () =>
-      CountryListWithDialCode.getAll({ withSecondary: false }).map(
+  const dialCodeOptions = useMemo(() => {
+    if (!isClient) return []
+    try {
+      return CountryListWithDialCode.getAll({ withSecondary: false }).map(
         (country) => ({
           value: country.code,
           label: country.dialCode,
@@ -135,19 +162,30 @@ const HeroEnquiryForm = ({ includeId = true }) => {
           flag: country.flag,
           phoneLength: phoneLengthByCountry[country.code] || 15,
         })
-      ),
-    []
-  )
+      )
+    } catch (error) {
+      console.error("Error loading dial codes:", error)
+      return []
+    }
+  }, [isClient])
 
   const defaultPhoneCountry = useMemo(() => {
+    if (!isClient || dialCodeOptions.length === 0) return null
     return (
       dialCodeOptions.find((option) => option.value === "IN") ||
       dialCodeOptions[0] ||
       null
     )
-  }, [dialCodeOptions])
+  }, [isClient, dialCodeOptions])
 
-  const [phoneCountry, setPhoneCountry] = useState(defaultPhoneCountry)
+  const [phoneCountry, setPhoneCountry] = useState(null)
+
+  // Set default phone country once dialCodeOptions are loaded
+  useEffect(() => {
+    if (isClient && defaultPhoneCountry && !phoneCountry) {
+      setPhoneCountry(defaultPhoneCountry)
+    }
+  }, [isClient, defaultPhoneCountry, phoneCountry])
   const phoneMaxLength = useMemo(() => {
     return (
       phoneCountry?.phoneLength || phoneLengthByCountry[formData.country] || 10
@@ -267,7 +305,9 @@ const HeroEnquiryForm = ({ includeId = true }) => {
     setFormData(initialFormData)
     setErrors({})
     setStatus({ success: true })
-    setPhoneCountry(defaultPhoneCountry)
+    if (defaultPhoneCountry) {
+      setPhoneCountry(defaultPhoneCountry)
+    }
     setTimeout(() => setStatus({ success: false }), 8000)
   }
 
