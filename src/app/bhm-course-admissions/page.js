@@ -1,5 +1,6 @@
 import BhmLandingPage from "@/components/BhmLandingPage"
 import SeoMetadata from "@/components/shared/Seo/SeoMetadata"
+
 const page = () => {
   return (
     <div>
