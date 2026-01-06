@@ -12,7 +12,7 @@ export default function MbaCourseAdmissionsLayout({ children }) {
       {/* Google Tag Manager (noscript) - Immediately after body opening tag */}
       <noscript>
         <iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-MH7G66FX"
+          src="https://www.googletagmanager.com/ns.html?id=GTM-M28ZNRQC"
           height="0"
           width="0"
           style={{ display: "none", visibility: "hidden" }}

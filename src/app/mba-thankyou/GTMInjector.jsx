@@ -17,7 +17,7 @@ export default function GTMInjector() {
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MH7G66FX');`
+})(window,document,'script','dataLayer','GTM-M28ZNRQC');`
 
     // Insert as high as possible in head (before other scripts)
     const head = document.head || document.getElementsByTagName("head")[0]
