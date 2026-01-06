@@ -48,7 +48,7 @@ const SelectYourCourse = () => {
         "MBA Master of Business Administration",
         "BBA Bachelor of Business Administration",
         "BBA Aviation",
-        "BBA+ CA/ACCA"
+       // "BBA+ CA/ACCA"
     ];
 
     // Slick carousel settings for marquee-style infinite scroll

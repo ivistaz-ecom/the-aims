@@ -16,10 +16,10 @@ const programs = [
     title: "BBA Aviation",
     href: "/business-school/bachelor-business-administration-aviation-management",
   },
-  {
+  /*{
     title: "BBA+ CA/ACCA",
     href: "/business-school/bachelor-business-administration",
-  },
+  },*/
 ]
 
 const SchoolOfBusiness = () => {

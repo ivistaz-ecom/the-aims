@@ -14,10 +14,10 @@ const financePrograms = [
     title: "Bachelor of Commerce B.COM",
     href: "/finance-commerce-school/bachelor-of-commerce",
   },
-  {
+  /*{
     title: "B.COM+ CA/ACCA",
     href: "/finance-commerce-school/bachelor-of-commerce",
-  },
+  },*/
 ]
 
 const SchoolOfFinance = () => {
