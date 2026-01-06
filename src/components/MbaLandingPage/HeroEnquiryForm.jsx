@@ -1,13 +1,13 @@
 "use client"
 
-import React, { useMemo, useState, useEffect } from "react"
+import React, { useMemo, useState } from "react"
 import Select, { components as selectComponents } from "react-select"
 import CountryListWithDialCode from "country-list-with-dial-code-and-flag"
 import { Country, State, City } from "country-state-city"
 
-// Salesforce Configuration
-const SALESFORCE_ORG_ID = "00DF9000001Fwgc"
-const SALESFORCE_WEB_TO_LEAD_ENDPOINT = `https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=${SALESFORCE_ORG_ID}`
+// Salesforce API Endpoint
+const SALESFORCE_API_ENDPOINT =
+  "https://aims-api-prod.ken42.com/v1/lead/post/bulkUpload"
 
 const initialFormData = {
   name: "",
@@ -73,42 +73,16 @@ const HeroEnquiryForm = ({ includeId = true }) => {
   const [formData, setFormData] = useState(initialFormData)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState({ success: false })
-  const [isClient, setIsClient] = useState(false)
 
-  // Ensure we're on the client before using country-state-city
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
-
-  const countries = useMemo(() => {
-    if (!isClient) return []
-    try {
-      return Country.getAllCountries()
-    } catch (error) {
-      console.error("Error loading countries:", error)
-      return []
-    }
-  }, [isClient])
-
+  const countries = useMemo(() => Country.getAllCountries(), [])
   const states = useMemo(() => {
-    if (!isClient || !formData.country) return []
-    try {
-      return State.getStatesOfCountry(formData.country)
-    } catch (error) {
-      console.error("Error loading states:", error)
-      return []
-    }
-  }, [isClient, formData.country])
-
+    if (!formData.country) return []
+    return State.getStatesOfCountry(formData.country)
+  }, [formData.country])
   const cities = useMemo(() => {
-    if (!isClient || !formData.country || !formData.state) return []
-    try {
-      return City.getCitiesOfState(formData.country, formData.state)
-    } catch (error) {
-      console.error("Error loading cities:", error)
-      return []
-    }
-  }, [isClient, formData.country, formData.state])
+    if (!formData.country || !formData.state) return []
+    return City.getCitiesOfState(formData.country, formData.state)
+  }, [formData.country, formData.state])
 
   const countryOptions = useMemo(
     () =>
@@ -151,10 +125,9 @@ const HeroEnquiryForm = ({ includeId = true }) => {
     NZ: 9,
   }
 
-  const dialCodeOptions = useMemo(() => {
-    if (!isClient) return []
-    try {
-      return CountryListWithDialCode.getAll({ withSecondary: false }).map(
+  const dialCodeOptions = useMemo(
+    () =>
+      CountryListWithDialCode.getAll({ withSecondary: false }).map(
         (country) => ({
           value: country.code,
           label: country.dialCode,
@@ -162,30 +135,19 @@ const HeroEnquiryForm = ({ includeId = true }) => {
           flag: country.flag,
           phoneLength: phoneLengthByCountry[country.code] || 15,
         })
-      )
-    } catch (error) {
-      console.error("Error loading dial codes:", error)
-      return []
-    }
-  }, [isClient])
+      ),
+    []
+  )
 
   const defaultPhoneCountry = useMemo(() => {
-    if (!isClient || dialCodeOptions.length === 0) return null
     return (
       dialCodeOptions.find((option) => option.value === "IN") ||
       dialCodeOptions[0] ||
       null
     )
-  }, [isClient, dialCodeOptions])
+  }, [dialCodeOptions])
 
-  const [phoneCountry, setPhoneCountry] = useState(null)
-
-  // Set default phone country once dialCodeOptions are loaded
-  useEffect(() => {
-    if (isClient && defaultPhoneCountry && !phoneCountry) {
-      setPhoneCountry(defaultPhoneCountry)
-    }
-  }, [isClient, defaultPhoneCountry, phoneCountry])
+  const [phoneCountry, setPhoneCountry] = useState(defaultPhoneCountry)
   const phoneMaxLength = useMemo(() => {
     return (
       phoneCountry?.phoneLength || phoneLengthByCountry[formData.country] || 10
@@ -305,9 +267,7 @@ const HeroEnquiryForm = ({ includeId = true }) => {
     setFormData(initialFormData)
     setErrors({})
     setStatus({ success: true })
-    if (defaultPhoneCountry) {
-      setPhoneCountry(defaultPhoneCountry)
-    }
+    setPhoneCountry(defaultPhoneCountry)
     setTimeout(() => setStatus({ success: false }), 8000)
   }
 
@@ -339,72 +299,48 @@ const HeroEnquiryForm = ({ includeId = true }) => {
     }
   }
 
-  // Send to Salesforce Web-to-Lead using hidden form
+  // Send to Salesforce using API POST request
   const sendToSalesforce = (data, phoneDisplay) => {
     try {
-      // Create a hidden iframe for silent submission
-      let hiddenIframe = document.getElementById("salesforce-hidden-iframe")
-      if (!hiddenIframe) {
-        hiddenIframe = document.createElement("iframe")
-        hiddenIframe.id = "salesforce-hidden-iframe"
-        hiddenIframe.name = "salesforce-hidden-iframe"
-        hiddenIframe.style.display = "none"
-        hiddenIframe.style.width = "0"
-        hiddenIframe.style.height = "0"
-        hiddenIframe.style.border = "none"
-        document.body.appendChild(hiddenIframe)
+      // Use full name as FirstName and "." as LastName
+      const firstName = (data.name || "").trim()
+      const lastName = "."
+
+      // Format phone number (ensure it has the dial code format)
+      const formatPhone = (phone) => {
+        if (!phone) return ""
+        // If phone already has +, use as is, otherwise ensure proper format
+        return phone.startsWith("+") ? phone : phone
       }
 
-      // Create a hidden form element
-      const form = document.createElement("form")
-      form.method = "POST"
-      form.action = SALESFORCE_WEB_TO_LEAD_ENDPOINT
-      form.style.display = "none"
-      form.target = "salesforce-hidden-iframe"
+      // API expects an array of lead objects
+      const payload = [
+        {
+          FirstName: firstName,
+          LastName: lastName,
+          Email: data.email || "",
+          Phone: formatPhone(phoneDisplay || ""),
+          Interested_Course__c: "Master of Business Administration (MBA)",
+          LeadSource: "MBA Landing Page",
+          Level__c: "Primary",
+          Country__c: data.country || "",
+          State__c: data.state || "",
+          City__c: data.city || "",
+          UTM_Touchpoint__c: "test",
+          Campaign__c: "Test",
+          Remarks__c: "test",
+        },
+      ]
 
-      // Helper function to create hidden input
-      const createInput = (name, value) => {
-        const input = document.createElement("input")
-        input.type = "hidden"
-        input.name = name
-        input.value = value || ""
-        return input
-      }
-
-      // Helper function to create hidden textarea (for description if needed)
-      const createTextarea = (name, value) => {
-        const textarea = document.createElement("textarea")
-        textarea.name = name
-        textarea.value = value || ""
-        textarea.style.display = "none"
-        return textarea
-      }
-
-      // Add all form fields
-      form.appendChild(createInput("oid", SALESFORCE_ORG_ID))
-      form.appendChild(createInput("retURL", window.location.origin))
-
-      // Standard Lead Fields
-      form.appendChild(createInput("first_name", data.name || ""))
-      form.appendChild(createInput("last_name", "")) // Empty since form only has single name field
-      form.appendChild(createInput("email", data.email || ""))
-      form.appendChild(createInput("phone", phoneDisplay || ""))
-
-      // Custom Fields (same as EnquiryForm)
-      form.appendChild(createInput("00NF9000007KmGY", data.country || "")) // Country
-      form.appendChild(createInput("00NF9000007KmGp", data.state || "")) // State
-      form.appendChild(createInput("00NF9000007KmGX", data.city || "")) // City
-
-      form.appendChild(createInput("lead_source", "MBA Landing Page"))
-
-      // Append form to body and submit
-      document.body.appendChild(form)
-      form.submit()
-
-      // Remove form after a short delay
-      setTimeout(() => {
-        document.body.removeChild(form)
-      }, 100)
+      fetch(SALESFORCE_API_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      }).catch(() => {
+        // Silent error handling
+      })
     } catch (error) {
       // Silent error handling
     }
@@ -441,7 +377,7 @@ const HeroEnquiryForm = ({ includeId = true }) => {
     // Send to Salesforce Web-to-Lead
     sendToSalesforce(payload, phoneDisplay)
 
-    saveToWordPress(payload)
+    // saveToWordPress(payload)
 
     const sheetsPayload = { ...payload, phone: sheetPhone }
 
@@ -453,9 +389,17 @@ const HeroEnquiryForm = ({ includeId = true }) => {
         redirect: "follow",
         body: JSON.stringify(sheetsPayload),
       }
-    ).catch(() => {
-      // Silent error handling
-    })
+    )
+      .then(async (response) => {
+        const responseData = await response.json().catch(() => ({}))
+        if (response.ok) {
+          return { success: true, service: "Salesforce" }
+        }
+        return { success: false, service: "Salesforce" }
+      })
+      .catch(() => {
+        return { success: false, service: "Salesforce" }
+      })
 
     resetForm()
   }

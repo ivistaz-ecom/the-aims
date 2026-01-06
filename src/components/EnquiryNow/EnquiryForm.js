@@ -8,11 +8,9 @@ import { Country, State, City } from "country-state-city"
 const GOOGLE_SHEETS_ENDPOINT =
   "https://script.google.com/macros/s/AKfycbxZjpAYfBBA9pAHzLlZKjjJTwntxAjnzIt5OD2nTlBwX8uKl3aTWn9jUl6LzmQd_5Yq/exec"
 
-// Salesforce Organization ID
-const SALESFORCE_ORG_ID = "00DF9000001Fwgc"
-
-// Salesforce Web-to-Lead Endpoint (with orgId in URL as per your HTML form)
-const SALESFORCE_WEB_TO_LEAD_ENDPOINT = `https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=${SALESFORCE_ORG_ID}`
+// Salesforce API Endpoint
+const SALESFORCE_API_ENDPOINT =
+  "https://aims-api-prod.ken42.com/v1/lead/post/bulkUpload"
 
 const levelOfStudyOptions = [
   { value: "PHD", label: "PHD" },
@@ -271,89 +269,68 @@ const ContactForm = () => {
   })
 
   const sendToGoogleSheets = (payload) => {
-    fetch(GOOGLE_SHEETS_ENDPOINT, {
+    return fetch(GOOGLE_SHEETS_ENDPOINT, {
       method: "POST",
       mode: "no-cors",
       redirect: "follow",
       body: JSON.stringify(payload),
-    }).catch(() => {
-      // Silent fail
     })
+      .then(() => ({ success: true, service: "Google Sheets" }))
+      .catch(() => ({ success: false, service: "Google Sheets" }))
   }
 
-  // Send to Salesforce Web-to-Lead using hidden form (more reliable than fetch)
+  // Send to Salesforce using API POST request
   const sendToSalesforce = (formData, payload) => {
     try {
-      // Create a hidden iframe for silent submission
-      let hiddenIframe = document.getElementById("salesforce-hidden-iframe")
-      if (!hiddenIframe) {
-        hiddenIframe = document.createElement("iframe")
-        hiddenIframe.id = "salesforce-hidden-iframe"
-        hiddenIframe.name = "salesforce-hidden-iframe"
-        hiddenIframe.style.display = "none"
-        hiddenIframe.style.width = "0"
-        hiddenIframe.style.height = "0"
-        hiddenIframe.style.border = "none"
-        document.body.appendChild(hiddenIframe)
+      // Format phone number (remove spaces and ensure proper format)
+      const formatPhone = (phone) => {
+        if (!phone) return ""
+        // Remove all spaces and ensure it starts with +
+        const cleaned = phone.replace(/\s+/g, "").trim()
+        // If it already starts with +, return as is, otherwise add +
+        return cleaned.startsWith("+") ? cleaned : `+${cleaned}`
       }
 
-      // Create a hidden form element
-      const form = document.createElement("form")
-      form.method = "POST"
-      form.action = SALESFORCE_WEB_TO_LEAD_ENDPOINT
-      form.style.display = "none"
-      form.target = "salesforce-hidden-iframe" // Submit to hidden iframe
-
-      // Helper function to create hidden input
-      const createInput = (name, value) => {
-        const input = document.createElement("input")
-        input.type = "hidden"
-        input.name = name
-        input.value = value || ""
-        return input
-      }
-
-      // Add all form fields
-      form.appendChild(createInput("oid", SALESFORCE_ORG_ID))
-      form.appendChild(createInput("retURL", window.location.origin))
-
-      // Standard Lead Fields
-      form.appendChild(createInput("first_name", formData.firstName))
-      form.appendChild(createInput("last_name", formData.lastName))
-      form.appendChild(createInput("email", formData.email))
-      form.appendChild(createInput("phone", payload.phone))
-
-      // Address Fields - Custom field IDs from Web-to-Lead form
-      form.appendChild(createInput("00NF9000007KmGY", payload.country || "")) // Country
-      form.appendChild(createInput("00NF9000007KmGp", payload.state || "")) // State
-      form.appendChild(createInput("00NF9000007KmGX", formData.city || "")) // City
-
-      form.appendChild(createInput("lead_source", "Website Enquiry"))
-
-      // Custom Fields - Field IDs from Web-to-Lead form
-      form.appendChild(
-        createInput("00NF9000007KmGc", formData.levelOfStudy || "")
-      ) // Level of Study
-      form.appendChild(createInput("00NF9000007KmJQ", formData.course || "")) // Course
-      form.appendChild(
-        createInput("00NF9000007KmGW", formData.academicYear || "")
-        
-      ) // Academic Year
-
-      // Debug mode - uncomment to receive error emails
-      // form.appendChild(createInput("debug", "1"))
-      // form.appendChild(createInput("debugEmail", "marketing@theaims.ac.in"))
-
-      // Append form to body and submit
-      document.body.appendChild(form)
-      form.submit()
-
-      // Remove form after a short delay
-      setTimeout(() => {
-        document.body.removeChild(form)
-      }, 100)
+      // API expects an array of lead objects
+      const apiPayload = [
+        {
+          FirstName: formData.firstName || "",
+          LastName: formData.lastName || "",
+          Email: formData.email || "",
+          Phone: formatPhone(payload.phone || ""),
+          Month__c: "January",
+          Interested_Level_of_Study__c: formData.levelOfStudy || "",
+          Interested_Course__c: formData.course || "",
+          Country__c: payload.country || "",
+          State__c: payload.state || "",
+          City__c: formData.city || "",
+          Academic_Year__c: formData.academicYear || "",
+          LeadSource: "Website Enquiry",
+          UTM_Touchpoint__c: "test",
+          Level__c: "Primary",
+          Campaign__c: "Test",
+          Remarks__c: "test",
+        },
+      ]
+      return fetch(SALESFORCE_API_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(apiPayload),
+      })
+        .then(async (response) => {
+          const responseData = await response.json().catch(() => ({}))
+          if (response.ok) {
+            return { success: true, service: "Salesforce" }
+          }
+          return { success: false, service: "Salesforce" }
+        })
+        .catch(() => {
+          return { success: false, service: "Salesforce" }
+        })
     } catch (error) {
-      // Silent error handling
+      return Promise.resolve({ success: false, service: "Salesforce" })
     }
   }
 
@@ -521,66 +498,118 @@ const ContactForm = () => {
       sheetName: "Enquire Now",
     }
 
-    sendToGoogleSheets({ ...payload, phone: sheetPhone })
+    setStatus({ loading: true, success: null, message: "" })
 
-    // Send to Salesforce Web-to-Lead
-    sendToSalesforce(formData, payload)
+    // Send to WordPress (optional, fire-and-forget)
+    // const form = new FormData()
+    // form.append("your-first-name", formData.firstName)
+    // form.append("your-last-name", formData.lastName)
+    // form.append("your-email", formData.email)
+    // form.append("your-phone", phoneDisplay)
+    // form.append("your-level-of-study", formData.levelOfStudy)
+    // form.append("your-course", formData.course)
+    // form.append("your-country", payload.country)
+    // form.append("your-state", payload.state)
+    // form.append("your-city", formData.city)
+    // form.append("your-academic-year", formData.academicYear)
+    // form.append("_wpcf7", "675")
+    // form.append("_wpcf7_version", "5.7.7")
+    // form.append("_wpcf7_locale", "en_US")
+    // form.append("_wpcf7_unit_tag", "wpcf7-f675-p" + Date.now())
+    // form.append("_wpcf7_container_post", "0")
 
-    const form = new FormData()
-    form.append("your-first-name", formData.firstName)
-    form.append("your-last-name", formData.lastName)
-    form.append("your-email", formData.email)
-    form.append("your-phone", phoneDisplay)
-    form.append("your-level-of-study", formData.levelOfStudy)
-    form.append("your-course", formData.course)
-    form.append("your-country", payload.country)
-    form.append("your-state", payload.state)
-    form.append("your-city", formData.city)
-    form.append("your-academic-year", formData.academicYear)
-    form.append("_wpcf7", "675")
-    form.append("_wpcf7_version", "5.7.7")
-    form.append("_wpcf7_locale", "en_US")
-    form.append("_wpcf7_unit_tag", "wpcf7-f675-p" + Date.now())
-    form.append("_wpcf7_container_post", "0")
+    // fetch(
+    //   "https://docs.theaims.ac.in/wp-json/contact-form-7/v1/contact-forms/761/feedback",
+    //   {
+    //     method: "POST",
+    //     body: form,
+    //   }
+    // ).catch(() => {
+    //   // Silent error handling - WordPress is optional
+    // })
 
-    fetch(
-      "https://docs.theaims.ac.in/wp-json/contact-form-7/v1/contact-forms/761/feedback",
-      {
-        method: "POST",
-        body: form,
-      }
-    ).catch(() => {
-      // Silent error handling
-    })
+    // Send to critical services and track results
+    Promise.all([
+      sendToGoogleSheets({ ...payload, phone: sheetPhone }),
+      sendToSalesforce(formData, payload),
+    ])
+      .then((results) => {
+        const googleSheetsResult = results[0]
+        const salesforceResult = results[1]
 
-    setStatus({
-      loading: false,
-      success: true,
-      message: "Thank you! Your message has been sent successfully.",
-    })
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      levelOfStudy: "",
-      course: "",
-      country: "IN",
-      state: "",
-      city: "",
-      academicYear: "",
-    })
-    setPhoneCountry(defaultPhoneCountry)
-    setErrors({})
+        // Check if at least one critical service succeeded
+        const criticalServicesSucceeded =
+          googleSheetsResult.success || salesforceResult.success
 
-    // Clear success message after 5 seconds
-    setTimeout(() => {
-      setStatus({
-        loading: false,
-        success: null,
-        message: "",
+        if (criticalServicesSucceeded) {
+          // Success - at least one service worked
+          setStatus({
+            loading: false,
+            success: true,
+            message: "Thank you! Your message has been sent successfully.",
+          })
+
+          // Reset form only on success
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            levelOfStudy: "",
+            course: "",
+            country: "IN",
+            state: "",
+            city: "",
+            academicYear: "",
+          })
+          setPhoneCountry(defaultPhoneCountry)
+          setErrors({})
+
+          // Clear success message after 5 seconds
+          setTimeout(() => {
+            setStatus({
+              loading: false,
+              success: null,
+              message: "",
+            })
+          }, 5000)
+        } else {
+          // Both critical services failed
+          setStatus({
+            loading: false,
+            success: false,
+            message:
+              "We're experiencing technical difficulties. Please try again later or contact us directly.",
+          })
+
+          // Clear error message after 5 seconds
+          setTimeout(() => {
+            setStatus({
+              loading: false,
+              success: null,
+              message: "",
+            })
+          }, 5000)
+        }
       })
-    }, 5000)
+      .catch(() => {
+        // Error handling
+        setStatus({
+          loading: false,
+          success: false,
+          message:
+            "We're experiencing technical difficulties. Please try again later or contact us directly.",
+        })
+
+        // Clear error message after 5 seconds
+        setTimeout(() => {
+          setStatus({
+            loading: false,
+            success: null,
+            message: "",
+          })
+        }, 5000)
+      })
   }
 
   return (
