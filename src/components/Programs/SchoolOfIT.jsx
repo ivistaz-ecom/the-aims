@@ -13,10 +13,10 @@ const itPrograms = [
     title: "Bachelor of Computer Application BCA",
     href: "/information-technology-school/bachelor-computer-applications",
   },
-  {
+ /* {
     title: "AI/ML | Data Science | Full-Stack Development BCA+",
     href: "/information-technology-school/bachelor-computer-applications",
-  },
+  },*/
 ]
 
 const SchoolOfIT = () => {

@@ -23,10 +23,10 @@ const courses = [
         name: "BBA Aviation",
         link: "/business-school/bachelor-business-administration-aviation-management",
       },
-      {
+      /*{
         name: "BBA+ CA/ACCA",
         link: "/business-school/bachelor-business-administration",
-      },
+      },*/
     ],
     leftImage: "/home/course/school-of-buisnesss-left.webp",
     rightImage: "/home/course/slides/school-of-buisnesss.webp",
@@ -47,10 +47,10 @@ const courses = [
         name: "Bachelor of Commerce B.COM",
         link: "/finance-commerce-school/bachelor-of-commerce",
       },
-      {
+     /* {
         name: "B.COM+ CA/ACCA",
         link: "/finance-commerce-school/bachelor-of-commerce",
-      },
+      },*/
     ],
     leftImage: "/home/course/school-of-finance-left.webp",
     rightImage: "/home/course/slides/school-of-finance.webp",
@@ -104,10 +104,10 @@ const courses = [
         name: "Bachelor of Computer Application BCA",
         link: "/information-technology-school/bachelor-computer-applications",
       },
-      {
+     /* {
         name: "BCA+ AI/ML | Data Science | Full-stack Development",
         link: "/information-technology-school/bachelor-computer-applications",
-      },
+      }*/
     ],
     leftImage: "/home/course/school-of-information-left.webp",
     rightImage: "/home/course/slides/school-of-information.webp",
