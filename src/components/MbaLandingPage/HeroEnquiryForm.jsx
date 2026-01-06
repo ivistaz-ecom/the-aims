@@ -70,6 +70,7 @@ const customSelectStyles = {
   }),
 }
 
+// Component to handle the enquiry form
 const HeroEnquiryForm = ({ includeId = true }) => {
   const router = useRouter()
   const [formData, setFormData] = useState(initialFormData)
