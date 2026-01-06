@@ -6,9 +6,9 @@ import { GoArrowDownRight, GoArrowUpRight } from "react-icons/go"
 const GOOGLE_SHEETS_ENDPOINT =
   "https://script.google.com/macros/s/AKfycbynlXpBVntVd6ZRFibHRAmEzUQpLetlqQDbjEukZdoCwPUCoo5Ge0zVegAKyWx3tIK2/exec"
 
-// Salesforce Configuration
-const SALESFORCE_ORG_ID = "00DF9000001Fwgc"
-const SALESFORCE_WEB_TO_LEAD_ENDPOINT = `https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=${SALESFORCE_ORG_ID}`
+// Salesforce API Endpoint
+const SALESFORCE_API_ENDPOINT =
+  "https://aims-api-prod.ken42.com/v1/lead/post/bulkUpload"
 
 const enquiryOptions = [
   {
@@ -157,78 +157,52 @@ const ContactForm = () => {
     })
   }
 
-  // Send to Salesforce Web-to-Lead using hidden form
+  // Send to Salesforce using API POST request
   const sendToSalesforce = (formData) => {
     try {
-      // Create a hidden iframe for silent submission
-      let hiddenIframe = document.getElementById("salesforce-hidden-iframe")
-      if (!hiddenIframe) {
-        hiddenIframe = document.createElement("iframe")
-        hiddenIframe.id = "salesforce-hidden-iframe"
-        hiddenIframe.name = "salesforce-hidden-iframe"
-        hiddenIframe.style.display = "none"
-        hiddenIframe.style.width = "0"
-        hiddenIframe.style.height = "0"
-        hiddenIframe.style.border = "none"
-        document.body.appendChild(hiddenIframe)
+      // Format phone number (add +91 if it's a 10-digit Indian number)
+      const formatPhone = (phone) => {
+        if (!phone) return ""
+        const cleaned = phone.replace(/\D/g, "")
+        if (cleaned.length === 10) {
+          return `+91${cleaned}`
+        }
+        return phone.startsWith("+") ? phone : `+${phone}`
       }
 
-      // Create a hidden form element
-      const form = document.createElement("form")
-      form.method = "POST"
-      form.action = SALESFORCE_WEB_TO_LEAD_ENDPOINT
-      form.style.display = "none"
-      form.target = "salesforce-hidden-iframe"
+      // API expects an array of lead objects - only sending current form fields
+      const payload = [
+        {
+          FirstName: formData.firstName || "",
+          LastName: formData.lastName || "",
+          Email: formData.email || "",
+          Phone: formatPhone(formData.contact),
+          Interested_Course__c: formData.course || "",
+          LeadSource: "Website Contact Us",
+          Enquiry_Type__c: formData.enquiry || "",
+          How_Did_You_Hear_About_Us__c: formData.hearAboutUs || "",
+          Level__c: "Primary",
+          Remarks__c: formData.message || "",
+        },
+      ]
 
-      // Helper function to create hidden input
-      const createInput = (name, value) => {
-        const input = document.createElement("input")
-        input.type = "hidden"
-        input.name = name
-        input.value = value || ""
-        return input
-      }
-
-      // Helper function to create hidden textarea (for description)
-      const createTextarea = (name, value) => {
-        const textarea = document.createElement("textarea")
-        textarea.name = name
-        textarea.value = value || ""
-        textarea.style.display = "none"
-        return textarea
-      }
-
-      // Add all form fields
-      form.appendChild(createInput("oid", SALESFORCE_ORG_ID))
-      form.appendChild(createInput("retURL", window.location.origin))
-
-      // Standard Lead Fields
-      form.appendChild(createInput("first_name", formData.firstName || ""))
-      form.appendChild(createInput("last_name", formData.lastName || ""))
-      form.appendChild(createInput("email", formData.email || ""))
-      form.appendChild(createInput("phone", formData.contact || ""))
-
-      // Custom Fields
-      form.appendChild(createInput("00Nfv00000205Zd", formData.enquiry || ""))
-      form.appendChild(createInput("00Nfv000002CGXh", formData.course || ""))
-      form.appendChild(
-        createInput("00Nfv00000205OL", formData.hearAboutUs || "")
-      )
-
-      // Add description/message field
-      if (formData.message) {
-        form.appendChild(createTextarea("description", formData.message))
-      }
-      // Add lead_source field
-      form.appendChild(createInput("lead_source", "Website Contact Us"))
-      // Append form to body and submit
-      document.body.appendChild(form)
-      form.submit()
-
-      // Remove form after a short delay
-      setTimeout(() => {
-        document.body.removeChild(form)
-      }, 100)
+      fetch(SALESFORCE_API_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      })
+        .then(async (response) => {
+          const responseData = await response.json().catch(() => ({}))
+          if (response.ok) {
+            return { success: true, service: "Salesforce" }
+          }
+          return { success: false, service: "Salesforce" }
+        })
+        .catch(() => {
+          return { success: false, service: "Salesforce" }
+        })
     } catch (error) {
       // Silent error handling
     }
@@ -299,30 +273,30 @@ const ContactForm = () => {
     sendToSalesforce(formData)
 
     // Fire-and-forget CF7 submission
-    const form = new FormData()
-    form.append("your-first-name", formData.firstName)
-    form.append("your-last-name", formData.lastName)
-    form.append("your-email", formData.email)
-    form.append("your-contact", formData.contact)
-    form.append("your-enquiry", formData.enquiry)
-    form.append("your-course", formData.course)
-    form.append("your-hear-about-us", formData.hearAboutUs)
-    form.append("your-message", formData.message)
-    form.append("_wpcf7", "675")
-    form.append("_wpcf7_version", "5.7.7")
-    form.append("_wpcf7_locale", "en_US")
-    form.append("_wpcf7_unit_tag", "wpcf7-f675-p" + Date.now())
-    form.append("_wpcf7_container_post", "0")
+    // const form = new FormData()
+    // form.append("your-first-name", formData.firstName)
+    // form.append("your-last-name", formData.lastName)
+    // form.append("your-email", formData.email)
+    // form.append("your-contact", formData.contact)
+    // form.append("your-enquiry", formData.enquiry)
+    // form.append("your-course", formData.course)
+    // form.append("your-hear-about-us", formData.hearAboutUs)
+    // form.append("your-message", formData.message)
+    // form.append("_wpcf7", "675")
+    // form.append("_wpcf7_version", "5.7.7")
+    // form.append("_wpcf7_locale", "en_US")
+    // form.append("_wpcf7_unit_tag", "wpcf7-f675-p" + Date.now())
+    // form.append("_wpcf7_container_post", "0")
 
-    fetch(
-      "https://docs.theaims.ac.in/wp-json/contact-form-7/v1/contact-forms/675/feedback",
-      {
-        method: "POST",
-        body: form,
-      }
-    ).catch(() => {
-      // Silent error handling
-    })
+    // fetch(
+    //   "https://docs.theaims.ac.in/wp-json/contact-form-7/v1/contact-forms/675/feedback",
+    //   {
+    //     method: "POST",
+    //     body: form,
+    //   }
+    // ).catch(() => {
+    //   // Silent error handling
+    // })
 
     setStatus({
       loading: false,
